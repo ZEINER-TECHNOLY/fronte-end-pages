@@ -4,29 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha Médica</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>República de Angola</h1>
-    <h2>Ministério do Interior</h2>
-    <h2>Polícia Nacional de Angola</h2>
-    <h2>Direção de Trânsito e Segurança Rodoviária</h2>
-    <h1>CENTRO MÉDICO</h1>
+    <header>
+        <img src="Image/images.jpg" alt="insignia">
+        <h1>República de Angola</h1>
+        <h4>Ministério do Interior</h4>
+        <h4>Polícia Nacional de Angola</h4>
+        <h4>Direção de Trânsito e Segurança Rodoviária</h4>
+        <h1>CENTRO MÉDICO</h1>
+    </header>
+
     <form action="">
         <fieldset>
+            <label>Processo <input type="date"></label><br>
+            <label>Data do exame <input type="date"></label>
 
         </fieldset>
     </form>
+
     <form action="">
         <fieldset>
-            <legend>1ª Parte - Identificação pessoal</legend>
-            <label>Nome <input type="text" name="nome"></label>
-            <label>idade <input type="text" name="nome"></label><br>
+            <legend>1. Identificação pessoal</legend>
+            <label>Nome 
+                <input type="text" name="nome">
+                idade <input type="text" name="idade">
+            </label><br>
+            
             <label>Residência <input type="text" name="residencia"></label><br>
-            <label>Nacionalidade <input type="text" name="nacionalidade"></label>
-            <label>Naturalidade <input type="text" name="naturalidade"></label><br>
-            <label>Contacto: Telef <input type="text" name="contacto"> / <input type="text"></label>
+
+            <label>Nacionalidade 
+                <input type="text" name="nacionalidade">
+                Naturalidade <input type="text" name="naturalidade">
+            </label><br>
+            
+            <label>Contacto: 
+                <input type="text" name="contacto"> / <input type="text">
+                email 
+                <input type="email" name="email" placeholder="coloque seu email">
+            </label><br>
+
+            <label>BI / Passaporte nº 
+                <input type="text" name="BI">
+                emitido em  <input type="date" name="emitido">
+            </label><br>            
+
+            <label>Até <input type="date" name="ate"></label><br>
+
+            <label>Habilitações Literárias 
+                <input type="text" name="habilitaçoes">
+            </label><br>
+
+            <label>Categorias <input type="text" name="categorias"></label><br>
+
+            <label>Validade Grupo 1 
+                <input type="date" name="validade">
+                Restrições / Adaptações <input type="text" name="restriçoes">
+            </label><br>
+            
+            <label>Validade Grupo 2 <input type="date" name="nome"></label>
             
         </fieldset>
+
+        <fieldset>
+            <legend>2. Antecedentes de saúde</legend>
+            <label>Problemas de visão?
+               <input type="radio" name="visao" value="nao">Não
+               <input type="radio" name="visao" value="sim">Sim 
+               Quais? <input type="text" name="visao_quais">
+            </label><br>
+
+
+            <label>Problemas de audição?
+               <input type="radio" name="audicao" value="nao">Não
+               <input type="radio" name="audicao" value="sim">Sim
+               Quais? <input type="text" name="audicao_quais">
+            </label><br>
+
+
+            <label>Limitações dos membros?
+               <input type="radio" name="membros" value="nao">Não
+               <input type="radio" name="membros" value="sim">Sim
+               Quais? <input type="text" name="membros_quais">
+            </label><br>
+
+
+            <label>Limitações da coluna vertebral?
+               <input type="radio" name="coluna" value="nao">Não
+               <input type="radio" name="coluna" value="sim">Sim
+               Quais? <input type="text" name="coluna_quais">
+            </label><br>
+
+            <label>Problemas do sistema nervoso?
+               <input type="radio" name="coluna" value="nao">Não
+               <input type="radio" name="coluna" value="sim">Sim
+               Quais? <input type="text" name="sistema_quais">
+            </label><br>
+
+            <label>Outro (s) problema (s) de saúde?
+               <input type="radio" name="coluna" value="nao">Não
+               <input type="radio" name="coluna" value="sim">Sim
+               Quais? <input type="text" name="saude_quais">
+            </label><br>
+
+            <label>Consumo de medicamentos?
+               <input type="radio" name="coluna" value="nao">Não
+               <input type="radio" name="coluna" value="sim">Sim
+               Quais? <input type="text" name="medicamentos_quais">
+            </label><br>
+
+            <label>
+                <input type="text" name="medicamentos_quais_cont">
+                Quantidade / dia <input type="text" name="quantidade">
+            </label><br>
+
+            <input type="text">
+
+            <label>Dependências (ex:álcool e drogas)?
+               <input type="radio" name="coluna" value="nao">Não
+               <input type="radio" name="coluna" value="sim">Sim
+               Quais? <input type="text" name="dependencia_quais">
+            </label><br>
+
+            <label>Consumo de bebidas alcoólicas
+               <input type="radio" name="coluna" value="nao">Não
+               <input type="radio" name="coluna" value="sim">Sim
+               Quais? <input type="text" name="bebidas_quais">
+            </label><br>
+        </fieldset>
+
     </form>
 </body>
 </html>
