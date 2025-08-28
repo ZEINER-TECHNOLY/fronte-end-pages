@@ -1,101 +1,146 @@
-/* Reset básico */
+/* ========== RESET BÁSICO ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
+/* ========== CORPO DA PÁGINA ========== */
 body {
-    background-color: #f9f9f9;
-    padding: 20px;
-    line-height: 1.6;
-    color: #333;
+  padding: 20px;
+  background-color: #f5f5f5;
 }
 
-img {
-    width: 130px;
-    display: block;
-    margin: 20px auto;
-}
-
-h1 {
-    text-align: center;
-    color: #004080;
-    margin-bottom: 10px;
+/* ========== CABEÇALHO ========== */
+header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 h4 {
-    text-align: center;
-    color: #0066cc;
-    margin-bottom: 5px;
+  line-height: 22px;
 }
 
+.centro_medico {
+  margin-top: 30px;
+  color: #004080;
+}
+
+header img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* ========== FORMULÁRIO ========== */
 form {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 fieldset {
-    border: 2px solid #0066cc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+  border: 2px solid #0066cc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.processo {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 legend {
-    font-weight: bold;
-    color: #004080;
-    padding: 0 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0 10px;
 }
 
 label {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
 }
 
+/* ========== LINHAS DE CAMPOS ========== */
+.form-grupo {
+  display: flex;
+  gap: 15px;      /* espaço entre os campos */
+  margin-bottom: 15px;
+}
+
+.form-grupo label {
+  flex: 1;
+  display: flex;
+  flex-direction: row; /* label em cima, input embaixo */
+}
+
+.form-grupo input {
+  width: 100%;
+  padding: 5px;
+}
+
+.form-grupo input:hover {
+  border: solid 0.5px #0066cc;
+  transition: 0.5s;
+}
+
+/* ========== CAMPOS ========== */
 input[type="text"],
 input[type="email"],
-input[type="date"] {
-    padding: 6px 10px;
-    margin-top: 5px;
-    width: 100%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+input[type="date"],
+input[type="number"] {
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-
-input[type="radio"] {
-    margin-left: 10px;
-    margin-right: 5px;
+/* ========== BOTÃO ========== */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-
-br {
-    margin-bottom: 10px;
+button:hover {
+  background-color: #005fa3;
 }
 
-/* Inputs lado a lado (nome/idade, nacionalidade/naturalidade) */
-label input[type="text"] {
-    width: auto;
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 20px;
+.required::after {
+      content: " *";
+      color: red;
+    }
+
+/* ========== CAMPOS CONDICIONAIS ========== */
+.campo-condicional {
+  display: none;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
-input::placeholder {
-    color: #aaa;
-    font-style: italic;
+/* ========== ERROS DE VALIDAÇÃO ========== */
+input.erro {
+  border: 2px solid red;
+  background-color: #ffe6e6;
 }
 
-input:focus {
-    border-color: #004080;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
+.mensagem-erro {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
