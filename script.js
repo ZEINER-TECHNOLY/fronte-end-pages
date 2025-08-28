@@ -39,14 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let valido = true;
 
-    // Exemplo: valida que o nome não está vazio
-    const nome = form.elements['nome'];
-    if (!nome.value.trim()) {
-      valido = false;
-      mostrarErro(nome, 'O campo nome é obrigatório.');
-    }
+    // Campos obrigatórios a validar
+    const camposObrigatorios = [
+      { name: 'nome', mensagem: 'O campo nome é obrigatório.' },
+      { name: 'contacto', mensagem: 'O campo contacto é obrigatório.' },
+      { name: 'nacionalidade', mensagem: 'O campo nacionalidade é obrigatório.' },
+      { name: 'categorias', mensagem: 'O campo categorias é obrigatório.' },
+      { name: 'validade1', mensagem: 'O campo validade grupo 1 é obrigatório.' },
+      { name: 'validade2', mensagem: 'O campo validade grupo 2 é obrigatório.' }
+    ];
 
-    // Exemplo: valida email se preenchido
+    camposObrigatorios.forEach(campo => {
+      const input = form.elements[campo.name];
+      if (!input || !input.value.trim()) {
+        valido = false;
+        mostrarErro(input, campo.mensagem);
+      }
+    });
+
+    // Validação do email se preenchido
     const email = form.elements['email'];
     if (email.value.trim()) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -76,3 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
