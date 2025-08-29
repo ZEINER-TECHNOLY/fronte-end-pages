@@ -18,14 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const radios = document.querySelectorAll(`input[name="${p.nome}"]`);
       const campo = document.getElementById(p.campo);
 
+      // Esconde inicialmente os campos condicionais
+      campo.style.display = 'none';
+
       radios.forEach(radio => {
         radio.addEventListener('change', () => {
           if (radio.value === 'sim' && radio.checked) {
             campo.style.display = 'block';
           } else if (radio.value === 'nao' && radio.checked) {
             campo.style.display = 'none';
-            // Limpa os inputs dentro do campo condicional
-            campo.querySelectorAll('input').forEach(input => input.value = '');
+            // Limpa os inputs e textareas dentro do campo condicional
+            campo.querySelectorAll('input, textarea').forEach(input => input.value = '');
           }
         });
       });
@@ -59,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validação do email se preenchido
     const email = form.elements['email'];
-    if (email.value.trim()) {
+    if (email && email.value.trim()) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email.value.trim())) {
         valido = false;
@@ -71,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function mostrarErro(input, mensagem) {
+    if (!input) return; // Segurança no caso de input undefined
     input.classList.add('erro');
     const erro = document.createElement('div');
     erro.className = 'mensagem-erro';
