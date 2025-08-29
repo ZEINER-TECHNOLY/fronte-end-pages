@@ -27,7 +27,7 @@ h4 {
 }
 
 header img {
-  width: 100px;
+  width: 80px;
   height: auto;
   margin-bottom: 10px;
 }
@@ -127,7 +127,7 @@ button {
 }
 
 button:hover {
-  background-color: #005fa3;
+  background-color: #2481c4;
 }
 
 .required::after {
@@ -206,8 +206,11 @@ input.erro {
   }
 
   button {
-    width: 100%;
+    display: block;
+    width: 70%;
     padding: 12px;
     font-size: 18px;
+    margin: 10px auto;
+    
   }
 }
