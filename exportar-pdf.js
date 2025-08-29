@@ -16,13 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     doc.setFontSize(12);
     doc.setTextColor(0);
 
+    // Função para adicionar linhas normais (titulo: valor) com quebra automática de texto
     function adicionarLinha(titulo, valor) {
       if (y > 270) {
         doc.addPage();
         y = 15;
       }
-      doc.text(`${titulo}: ${valor || '---'}`, 15, y);
-      y += 8;
+      const textoCompleto = `${titulo}: ${valor || '---'}`;
+      const linhas = doc.splitTextToSize(textoCompleto, 180);
+      doc.text(linhas, 15, y);
+      y += linhas.length * 8;
+    }
+
+    // Função para adicionar detalhes (ex: textos explicativos) com indentação e itálico
+    function adicionarDetalhes(titulo, valor) {
+      if (y > 270) {
+        doc.addPage();
+        y = 15;
+      }
+      doc.setFont(undefined, "italic");
+      const linhas = doc.splitTextToSize(`${titulo}: ${valor}`, 180);
+      doc.text(linhas, 20, y);
+      y += linhas.length * 7;
+      doc.setFont(undefined, "normal");
     }
 
     // 1. Identificação Pessoal
@@ -59,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (valor === "sim" && form[nomeTextarea]) {
         const texto = form[nomeTextarea].value.trim();
         if (texto) {
-          adicionarLinha("➤ Detalhes", texto);
+          adicionarDetalhes("➤ Detalhes", texto);
         }
       }
     }

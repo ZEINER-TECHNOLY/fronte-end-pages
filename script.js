@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('ficha-medica');
+  const botaoExportar = document.getElementById('exportar-pdf');
 
   function configurarCamposCondicionais() {
     const perguntas = [
@@ -18,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const radios = document.querySelectorAll(`input[name="${p.nome}"]`);
       const campo = document.getElementById(p.campo);
 
-      // Esconde inicialmente os campos condicionais
       campo.style.display = 'none';
 
       radios.forEach(radio => {
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             campo.style.display = 'block';
           } else if (radio.value === 'nao' && radio.checked) {
             campo.style.display = 'none';
-            // Limpa os inputs e textareas dentro do campo condicional
             campo.querySelectorAll('input, textarea').forEach(input => input.value = '');
           }
         });
@@ -36,13 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function validarFormulario() {
-    // Limpa erros anteriores
     form.querySelectorAll('.erro').forEach(el => el.classList.remove('erro'));
     form.querySelectorAll('.mensagem-erro').forEach(el => el.remove());
 
     let valido = true;
 
-    // Campos obrigatórios a validar
     const camposObrigatorios = [
       { name: 'nome', mensagem: 'O campo nome é obrigatório.' },
       { name: 'contacto', mensagem: 'O campo contacto é obrigatório.' },
@@ -60,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Validação do email se preenchido
     const email = form.elements['email'];
     if (email && email.value.trim()) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -74,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function mostrarErro(input, mensagem) {
-    if (!input) return; // Segurança no caso de input undefined
+    if (!input) return;
     input.classList.add('erro');
     const erro = document.createElement('div');
     erro.className = 'mensagem-erro';
@@ -85,10 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
   configurarCamposCondicionais();
 
   form.addEventListener('submit', e => {
-    if (!validarFormulario()) {
-      e.preventDefault();
+    e.preventDefault(); // evita envio real para que possamos controlar
+    if (validarFormulario()) {
+      // Aqui você pode fazer o envio via AJAX ou qualquer outra coisa
+
+      // Habilita o botão exportar PDF só depois de validação aprovada
+      botaoExportar.disabled = false;
+
+      alert('Formulário enviado com sucesso! Agora você pode exportar o PDF.');
+    } else {
       alert('Por favor, corrija os erros no formulário antes de enviar.');
     }
   });
 });
-
