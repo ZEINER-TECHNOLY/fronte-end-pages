@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário Centro Médico</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header>
+      <img src="../Image/images.jpg" alt="insignia" />
+      <h4>REPÚBLICA DE ANGOLA</h4>
+      <h4>MINISTÉRIO DO INTERIOR</h4>
+      <h4>DIREÇÃO DE TRÂNSITO E SEGURANÇA RODOVIÁRIA</h4>
+      <h1 class="centro_medico">CENTRO MÉDICO</h1>
+  </header>
+  
+  
+
+  <form id="ficha-medica" method="post">
+     <fieldset>
+        <p>Entidade / Psicólogo</p>
+        <div>
+          <label for="processo">Processo: 
+            <input type="data" id="processo" name="processo">
+          </label>
+          <label for="data_exame">Data exame: 
+            <input type="data" id="data_exame" name="data_exame">
+          </label>
+        </div>
+     </fieldset>
+
+     <!-- Parte 1 - Identificação pessoal -->
+     <fieldset>
+        <legend>1. Identificação Pessoal</legend>
+
+        <div class="form-grupo">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+        
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" name="idade" min="0" max="100">
+        </div>
+
+        
+        <div class="form-grupo">
+          <label for="residencia">Residência:</label>
+          <input type="text" id="residencia" name="residencia">
+        </div>
+
+        <div class="form-grupo">
+          <label class="required" for="nacionalidade">Nacionalidade:</label> 
+          <select id="nacionalidade" name="nacionalidade" required></select>
+
+          <label for="naturalidade">Naturalidade:</label>
+          <input type="text" id="naturalidade" name="naturalidade">
+        </div>
+
+        <div class="form-grupo">
+          <label for="contactos">Contactos:</label>
+          <input type="number" id="contactos" name="contactos">
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-grupo">
+          <label for="profissao">Profissão:</label>
+          <input type="text" id="profissao" name="profissao">
+
+          <label for="bi">B.I:</label>
+          <input type="text" id="bi" name="bi">
+        </div>
+
+        <div class="form-grupo">
+          <label for="carta">Carta de Condução nº:</label>
+          <input type="text" id="carta" name="carta">
+
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" name="sexo">
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="habilitacao">Habilitação Literária:</label>
+          <input type="text" id="habilitacao" name="habilitacao">
+
+          <label for="tipo_avaliacao">Tipo de Avaliação:</label>
+          <input type="text" id="tipo_avaliacao" name="tipo_avaliacao">
+        </div>
+
+        <div class="form-grupo">
+          <label for="primeira_avaliacao">Primeira Avaliação:</label>
+          <input type="text" id="primeira_avaliacao" name="primeira_avaliacao">
+
+        </div>
+
+        <div class="form-grupo">
+            <label for="reavaliacao">Reavaliação Pós Acidente:</label>
+          <input type="text" id="reavaliacao" name="reavaliacao">
+        </div>
+
+        <p><p>Avaliação solicitada por (DTSER, MÉDICO, DECISÃO JUDICIAL, PSICÓLOGO)</p></p>
+        
+        <div class="form-grupo">
+            <input type="text" name="" id="">
+        </div>
+        
+          
+        </div>
+     </fieldset>
+
+     <!-- Parte 2 - Dados clínicos -->
+     <fieldset>
+        <legend>2. Dados Clínicos</legend>
+
+        <div class="grupo-condicional">
+          <label>Problemas de visão?
+            <input type="radio" name="visao" value="nao" /> Não
+            <input type="radio" name="visao" value="sim" /> Sim
+          </label>
+          <div class="campo-condicional" id="campo-visao">
+            Quais? <textarea name="visao_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+          </div>
+        </div>
+
+        <div class="grupo-condicional">
+          <label>Problemas de audição?
+            <input type="radio" name="audicao" value="nao" /> Não
+            <input type="radio" name="audicao" value="sim" /> Sim
+          </label>
+          <div class="campo-condicional" id="campo-audicao">
+            Quais? <textarea name="audicao_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+          </div>
+        </div>
+
+      <div class="grupo-condicional">
+        <label>Limitações dos membros?
+          <input type="radio" name="membros" value="nao" /> Não
+          <input type="radio" name="membros" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-membros">
+          Quais? <textarea name="membros_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <label>Limitações da coluna vertebral?
+          <input type="radio" name="coluna" value="nao" /> Não
+          <input type="radio" name="coluna" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-coluna">
+          Quais? <textarea name="coluna_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <label>Problemas do sistema nervoso?
+          <input type="radio" name="sistema" value="nao" /> Não
+          <input type="radio" name="sistema" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-sistema">
+          Quais? <textarea name="sistema_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+      
+      <div class="grupo-condicional">
+        <label>Outro(s) problemas de saúde?
+          <input type="radio" name="outros" value="nao" /> Não
+          <input type="radio" name="outros" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-outros">
+          Quais? <textarea name="saude_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <label>Consumo de medicamentos?
+          <input type="radio" name="medicamentos" value="nao" /> Não
+          <input type="radio" name="medicamentos" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-medicamentos">
+          Quais? <textarea name="medicamentos_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea><br />
+          Quantidade / dia: <input type="text" name="quantidade" />
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <label>Dependências (ex: álcool e drogas)?
+          <input type="radio" name="dependencias" value="nao" /> Não
+          <input type="radio" name="dependencias" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-dependencias">
+          Quais? <textarea name="dependencia_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <label>Consumo de bebidas alcoólicas?
+          <input type="radio" name="alcool" value="nao" /> Não
+          <input type="radio" name="alcool" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-alcool">
+          Quais? <textarea name="bebidas_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <label>Consumo de drogas?
+          <input type="radio" name="drogas" value="nao" /> Não
+          <input type="radio" name="drogas" value="sim" /> Sim
+        </label>
+        <div class="campo-condicional" id="campo-drogas">
+          Quais? <textarea name="drogas_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        </div>
+      </div>
+        
+
+     </fieldset>
+
+     <!-- Parte 3 - Dados de condução -->
+     <fieldset>
+        <legend>3 Dados relativos à condução automóvel</legend>
+
+        <div>
+            <label for="experiencia">Experiência:
+                <input type="radio" id="experiencia" name="experiencia" value="nao"> Não
+                <input type="radio" id="experiencia" name="experiencia" value="sim"> Sim
+            </label>
+                                      
+            <label for="anos_experiencia">nº anos:
+                <input type="number" id="anos_experiencia" name="anos_experiencia">
+            </label>
+                
+        </div>
+
+        <div>
+            <label for="km">nº km no último ano
+                <input type="number" id="km" name="km">
+            </label>
+
+            <label for="condutor_profissional">Condutor profissional (motorista, examinador, instrutor):
+                <input type="radio" id="condutor_profissional" name="condutor_profissional" value="nao"> Não
+                <input type="radio" id="condutor_profissional" name="condutor_profissional" value="sim"> Sim
+            </label>
+            <div class="campo-condicional" id="campo-condutor_profissional">
+                Qual <textarea name="condutor_profissional_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+            </div>
+      </div>
+        </div>
+
+        
+        <div class="campo">
+          <label for="profissional_nao">Condutor profissional:</label>
+          <input type="radio" id="profissional_nao" name="profissional" value="nao">
+          <label for="profissional_nao">Não</label>
+  
+          <input type="radio" id="profissional_sim" name="profissional" value="sim">
+          <label for="profissional_sim">Sim</label>
+  
+          <label for="profissional_quais">Qual?</label>
+          <input type="text" id="profissional_quais" name="profissional_quais">
+        </div>
+
+        <div class="campo">
+          <label for="coimas_nao">Contra-ordenações (coimas):</label>
+          <input type="radio" id="coimas_nao" name="coimas" value="nao">
+          <label for="coimas_nao">Não</label>
+  
+          <input type="radio" id="coimas_sim" name="coimas" value="sim">
+          <label for="coimas_sim">Sim</label>
+        </div>
+
+        <div class="campo">
+          <label for="crimes_nao">Crimes rodoviários:</label>
+          <input type="radio" id="crimes_nao" name="crimes" value="nao">
+          <label for="crimes_nao">Não</label>
+  
+          <input type="radio" id="crimes_sim" name="crimes" value="sim">
+          <label for="crimes_sim">Sim</label>
+        </div>
+
+        <div class="campo">
+          <label for="titulo_nao">Apresentação do título:</label>
+          <input type="radio" id="titulo_nao" name="titulo" value="nao">
+          <label for="titulo_nao">Não</label>
+  
+          <input type="radio" id="titulo_sim" name="titulo" value="sim">
+          <label for="titulo_sim">Sim</label>
+        </div>
+
+      </fieldset>
+
+    </form>
+
+    <button type="submit">Enviar Formulário</button>
+  </form>
+
+  <script src="../scripts/paises.js"></script>
+  <script src="../scripts/script.js"></script>
+</body>
+</html>

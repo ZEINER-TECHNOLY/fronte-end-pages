@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ficha para Rastreio de Hipertensão Arterial</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+
+  <header>
+    <img src="../Image/images.jpg" alt="insignia" />
+    <h4>Direcção de Serviços de Saúde</h4>
+    <h2>FICHA PARA RASTREIO DE HIPERTENSÃO ARTERIAL</h2>
+  </header>
+
+  <form id="ficha-hipertensao">
+    <!-- IDENTIFICAÇÃO PESSOAL -->
+    <fieldset>
+      <legend>Identificação Pessoal</legend>
+
+      <div class="row">
+        <label for="patente">Patente:</label>
+        <input id="patente" name="patente" type="text" />
+      </div>
+
+      <div class="row">
+        <label for="nome">Nome completo:</label>
+        <input id="nome" name="nome" type="text" />
+      </div>
+
+      <div class="row">
+        <label>Sexo:</label>
+        <div>
+          <label class="inline"><input type="radio" name="sexo" value="M" /> Masculino</label>
+          <label class="inline"><input type="radio" name="sexo" value="F" /> Feminino</label>
+          <span class="inline"><strong>Idade:</strong>
+            <input type="number" name="idade" min="0" step="1" style="width:90px" /> anos
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="nascimento">Data de nascimento:</label>
+        <input id="nascimento" name="nascimento" type="date" />
+      </div>
+
+      <div class="row">
+        <label for="nip">NIP:</label>
+        <input id="nip" name="nip" type="text" />
+      </div>
+
+      <div class="row">
+        <label for="telefone">Telefone/Contacto:</label>
+        <input id="telefone" name="telefone" type="tel" />
+      </div>
+
+      <div class="row">
+        <label for="endereco">Endereço:</label>
+        <input id="endereco" name="endereco" type="text" />
+      </div>
+    </fieldset>
+
+    <!-- ANTECEDENTES PESSOAIS -->
+    <fieldset>
+      <legend>Antecedentes Pessoais</legend>
+      <div class="antecedentes_pessoais">
+        <label class="inline"><input type="checkbox" name="antecedentes" value="hipertensao" /> Hipertensão Arterial</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="diabetes" /> Diabetes Mellitus</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="dislipidemia" /> Dislipidemia</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="drc" /> Doença Renal Crónica</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="avc_enfarte" /> Histórico de AVC ou Enfarte</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="tabagismo" /> Tabagismo</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="etilismo" /> Etilismo</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="sedentarismo" /> Sedentarismo</label>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <label>História familiar de hipertensão:</label>
+        <div>
+          <label class="inline"><input type="radio" name="hf_hta" value="sim" /> Sim</label>
+          <label class="inline"><input type="radio" name="hf_hta" value="nao" /> Não</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- DADOS CLÍNICOS -->
+    <fieldset>
+      <legend>Dados Clínicos</legend>
+
+      <div class="row">
+        <label for="pa1_sis">Pressão Arterial (1.ª aferição - 08h00):</label>
+        <div>
+          <input id="pa1_sis" name="pa1_sis" type="number" placeholder="Sistólica" />
+          /
+          <input id="pa1_dia" name="pa1_dia" type="number" placeholder="Diastólica" />
+          <span class="hint">mmHg</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="pa2_sis">Pressão Arterial (2.ª aferição - 14h00):</label>
+        <div>
+          <input id="pa2_sis" name="pa2_sis" type="number" placeholder="Sistólica" />
+          /
+          <input id="pa2_dia" name="pa2_dia" type="number" placeholder="Diastólica" />
+          <span class="hint">mmHg</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="fc">Frequência Cardíaca (bpm):</label>
+        <input id="fc" name="fc" type="number" />
+      </div>
+
+      <div class="grid-2">
+        <div class="row">
+          <label for="altura">Altura (cm):</label>
+          <input id="altura" name="altura" type="number" />
+        </div>
+        <div class="row">
+          <label for="peso">Peso (kg):</label>
+          <input id="peso" name="peso" type="number" step="0.1" />
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- SINTOMAS REFERIDOS -->
+    <fieldset>
+      <legend>SINTOMAS REFERIDOS</legend>
+      <div class="sintomas">
+        <label class="inline"><input type="checkbox" name="sintomas" value="cefaleia" /> Cefaleia</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="tonturas" /> Tonturas</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="palpitacoes" /> Palpitações</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="visao_turva" /> Visão turva</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="dor_toracica" /> Dor torácica</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="edema_mi" /> Edema nos membros inferiores</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="nenhum" /> Nenhum</label>
+      </div>
+    </fieldset>
+
+    <!-- ORIENTAÇÕES REALIZADAS -->
+    <fieldset>
+      <legend>Orientações Realizadas</legend>
+      <div class="orientacoes_realizadas">
+        <label class="inline"><input type="checkbox" name="orientacoes" value="encaminhado" /> Encaminhado para consulta médica</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="habitos" /> Orientado a manter hábitos saudáveis</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="repetir_pa" /> Repetir PA em nova consulta</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="educacao" /> Educação sobre alimentação e atividade física</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="medicacao" /> Orientação sobre uso correcto da medicação</label>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <label for="outras">Outras:</label>
+        <input id="outras" name="outras" type="text" />
+      </div>
+    </fieldset>
+
+    <!-- PROFISSIONAL RESPONSÁVEL -->
+    <fieldset>
+      <legend>Profissional Responsável</legend>
+      <div class="row">
+        <label for="prof-nome">Nome:</label>
+        <input id="prof-nome" name="prof_nome" type="text" />
+      </div>
+      <div class="row">
+        <label for="prof-profissao">Profissão:</label>
+        <input id="prof-profissao" name="prof_profissao" type="text" />
+      </div>
+      <div class="row">
+        <label for="prof-assinatura">Assinatura:</label>
+        <input id="prof-assinatura" name="prof_assinatura" type="text" />
+      </div>
+      <div class="row">
+        <label for="data">Data:</label>
+        <input id="data" name="data" type="date" />
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="reset" class="secondary">Limpar</button>
+      <button type="submit" class="primary">Guardar</button>
+    </div>
+  </form>
+
+</body>
+</html>

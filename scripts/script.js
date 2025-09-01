@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { nome: 'outros', campo: 'campo-outros' },
       { nome: 'medicamentos', campo: 'campo-medicamentos' },
       { nome: 'dependencias', campo: 'campo-dependencias' },
-      { nome: 'alcool', campo: 'campo-alcool' }
+      { nome: 'alcool', campo: 'campo-alcool' },
+      { nome: 'drogas', campo: 'campo-drogas' }
     ];
 
     perguntas.forEach(p => {
