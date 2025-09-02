@@ -11,6 +11,60 @@ body {
   background-color: #f5f5f5;
 }
 
+/* ========== CORPO DA PÁGINA PRINCIPAL ========== */
+#principal {
+  background: #084386;
+  background-image: url("../Image/group_1049_144964019467af4abd52ecd.png"); 
+  background-size: 100%;
+  background-position: center;  
+  background-repeat: no-repeat; 
+  min-height: 100vh;            
+  color: white;                 
+}
+
+.caixa_fichas {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.caixa_fichas p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0d62b6;
+}
+
+.caixa_fichas ul {
+  list-style: none;       
+  padding: 0;
+  margin: 0;
+}
+
+.caixa_fichas li {
+  margin: 12px 0;
+}
+
+.caixa_fichas a {
+  display: block;
+  text-decoration: none;
+  background: #0d62b6;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.caixa_fichas a:hover {
+  background: #2481c4;
+  transform: scale(1.03);
+}
+
+
 /* ========== CABEÇALHO ========== */
 header {
   text-align: center;
@@ -139,6 +193,24 @@ button:hover {
   color: red;
 }
 
+.btn-voltar {
+  display: inline-block;
+  margin: 15px 20px;
+  padding: 10px 18px;
+  background-color: #abb8c5;
+  color: #003366;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: #2481c4;
+  transform: scale(1.05);
+}
+
+
 /* ========== Ficha Hipertensão ========== */
 .antecedentes_pessoais {
   display: flex;
@@ -182,8 +254,16 @@ input.erro {
     padding: 10px;
   }
 
+  h1 {
+    font-size: 30px;
+  }
+
+  .caixa_fichas {
+  width: 300px;
+  }
+
   header {
-  width: 80%;
+  width: 60%;
   height: 80%;
   margin: 20px auto;
 }
