@@ -247,48 +247,156 @@
             <div class="campo-condicional" id="campo-condutor_profissional">
                 Qual <textarea name="condutor_profissional_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
             </div>
-      </div>
         </div>
 
         
-        <div class="campo">
-          <label for="profissional_nao">Condutor profissional:</label>
-          <input type="radio" id="profissional_nao" name="profissional" value="nao">
-          <label for="profissional_nao">Não</label>
-  
-          <input type="radio" id="profissional_sim" name="profissional" value="sim">
-          <label for="profissional_sim">Sim</label>
-  
-          <label for="profissional_quais">Qual?</label>
-          <input type="text" id="profissional_quais" name="profissional_quais">
+        <div>
+          <label for="contra_ordenacoes">Contra ordenações (coimas):
+              <input type="radio" id="contra_ordenacoes" name="contra_ordenacoes" value="nao">Não
+              <input type="radio" id="contra_ordenacoes" name="contra_ordenacoes" value="sim">Sim
+          </label>
+
+          <div class="campo-condicional" id="campo-contra_ordenacoes">
+                Motivos (últimos 5 anos) <textarea name="contra_ordenacoes_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+          </div>
+          
         </div>
 
-        <div class="campo">
-          <label for="coimas_nao">Contra-ordenações (coimas):</label>
-          <input type="radio" id="coimas_nao" name="coimas" value="nao">
-          <label for="coimas_nao">Não</label>
-  
-          <input type="radio" id="coimas_sim" name="coimas" value="sim">
-          <label for="coimas_sim">Sim</label>
+        <div>
+          <label for="crimes_rodoviarios">Crimes rodoviários:
+              <input type="radio" id="crimes_rodoviarios" name="crimes_rodoviarios" value="nao">Não
+              <input type="radio" id="crimes_rodoviarios" name="crimes_rodoviarios" value="sim">Sim
+          </label>
+
+          <div class="campo-condicional" id="campo-crimes_rodoviarios">
+                Motivos (últimos 5 anos) <textarea name="crimes_rodoviarios_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+          </div>
+          
         </div>
 
-        <div class="campo">
-          <label for="crimes_nao">Crimes rodoviários:</label>
-          <input type="radio" id="crimes_nao" name="crimes" value="nao">
-          <label for="crimes_nao">Não</label>
-  
-          <input type="radio" id="crimes_sim" name="crimes" value="sim">
-          <label for="crimes_sim">Sim</label>
+        <div>
+          <label for="apreensao_titulo">Apreensão do título:
+              <input type="radio" id="apreensao_titulo" name="apreensao_titulo" value="nao">Não
+              <input type="radio" id="apreensao_titulo" name="apreensao_titulo" value="sim">Sim
+          </label>
+
+          <div class="campo-condicional" id="campo-apreensao_titulo">
+                Quantas vezes? <input type="number" min="0">
+                Motivos <textarea name="apreensao_titulo_quais" rows="3" cols="40" 
+                placeholder="Descreva aqui..."></textarea>
+          </div>
+          
         </div>
 
-        <div class="campo">
-          <label for="titulo_nao">Apresentação do título:</label>
-          <input type="radio" id="titulo_nao" name="titulo" value="nao">
-          <label for="titulo_nao">Não</label>
-  
-          <input type="radio" id="titulo_sim" name="titulo" value="sim">
-          <label for="titulo_sim">Sim</label>
+        <div>
+          <label for="caducidade">Caducidade e cancelamento de títulos de condução:
+              <input type="radio" id="caducidade" name="caducidade" value="nao">Não
+              <input type="radio" id="caducidade" name="caducidade" value="sim">Sim
+          </label>
+
+          <div class="campo-condicional" id="campo-caducidade">
+                Quantas vezes? <input type="number" min="0">
+                Motivos <textarea name="apreensao_titulo_quais" rows="3" cols="40" 
+                placeholder="Descreva aqui..."></textarea>
+          </div>
+          
         </div>
+
+        <div>
+          <label for="acidente_condutor">Acidentes como condutor:
+              <input type="radio" id="acidente_condutor" name="acidente_condutor" value="nao">Não
+              <input type="radio" id="acidente_condutor" name="acidente_condutor" value="sim">Sim
+          </label>
+
+          <div class="campo-condicional" id="campo-acidente_condutor">
+                últimos 5 anos, 2 anos 
+                com vítimas: feridos ligeiros, feridos graves, mortes >
+            
+          </div>
+          
+        </div>
+
+        <div>
+          <label for="avaliacoes_psicologicas">Avaliações psicológicas anteriores:
+              <input type="radio" id="avaliacoes_psicologicas" name="avaliacoes_psicologicas" value="nao">Não
+              <input type="radio" id="avaliacoes_psicologicas" name="avaliacoes_psicologicas" value="sim">Sim
+          </label>
+
+          <div class="campo-condicional" id="campo-avaliacoes_psicologicas">
+                Quantas <textarea name="avaliacoes_psicologicas_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+          </div>
+        </div>
+
+        <div>
+          <label for="resultado">Resultado:
+              <input type="radio" id="resultado" name="resultado" value="apto">Apto
+              <input type="radio" id="resultado" name="resultado" value="inapto">Inapto
+          </label>
+        </div>
+
+        Data e assinatura
+
+        
+
+      </fieldset>
+
+      <!-- Parte 4 - Avaliação cognitiva -->
+     <fieldset>
+         <legend>4 Avaliação Cognitiva</legend>
+
+         <div>
+            <label for="capacidade_atencao">Capacidade de atenção:
+               <input type="radio" id="capacidade_atencao" name="capacidade_atencao" value="curto"> Curto
+               <input type="radio" id="capacidade_atencao" name="capacidade_atencao" value="longo"> Longo 
+               <input type="radio" id="capacidade_atencao" name="capacidade_atencao" value="medio"> Médio 
+            </label>
+         </div>
+
+         <div>
+            <label for="capacidade_julgamento">Capacidade de julgamento e tomada de decisão:
+               <input type="radio" id="capacidade_julgamento" name="capacidade_julgamento" value="curto"> Rápida
+               <input type="radio" id="capacidade_julgamento" name="capacidade_julgamento" value="media"> Média
+               <input type="radio" id="capacidade_julgamento" name="capacidade_julgamento" value="lenta"> Lenta 
+               <input type="radio" id="capacidade_julgamento" name="capacidade_julgamento" value="muito_lenta"> Muito lenta
+            </label>
+         </div>
+
+         <div>
+            <label for="reagir">Como reage em situação de risco</label>
+            <textarea name="reagir" id="reagir" rows="3" cols="40" 
+                placeholder="Descreva aqui..."></textarea>
+         </div>
+
+         <div>
+            <p>Para Condutor envolvidos em acidentes graves (Reações)</p>
+            <label for="reacoes_trauma">
+                Reações ao traumas (Estado emocional) <textarea name="reacoes_trauma" id="reacoes_trauma"></textarea>
+            </label>
+         </div>
+
+         <div>
+            <p>Sintomas Pós traumáticos</p>
+            <label for="hipervilancia">Hipervigilância:
+                <input type="radio" id="hipervilancia" name="hipervilancia" value="sim">Sim
+                <input type="radio" id="hipervilancia" name="hipervilancia" value="nao">Não
+            </label>
+
+            <label for="flash_backs">Flash backs:
+                <input type="radio" id="flash_backs" name="flash_backs" value="sim">Sim
+                <input type="radio" id="flash_backs" name="flash_backs" value="nao">Não
+            </label>
+
+            <label for="pesadelos">Pesadelos:
+                <input type="radio" id="pesadelos" name="pesadelos" value="sim">Sim
+                <input type="radio" id="pesadelos" name="pesadelos" value="nao">Não
+            </label>
+
+            <label for="medo">Medo:
+                <input type="radio" id="medo" name="hipervilancia" value="sim">Sim
+                <input type="radio" id="medo" name="hipervilancia" value="nao">Não
+            </label>
+         </div>
+
 
       </fieldset>
 
