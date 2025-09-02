@@ -397,10 +397,128 @@
             </label>
          </div>
 
+         <div>
+            <label for="obs_geral">Observação geral do perfil psicológico do condutor 
+              (Padrões comportamentais que destacam)
+            </label>
+            <input type="text" id="obs_geral" name="obs_geral">
+            <input type="text" id="obs_geral" name="obs_geral">
+            <input type="text" id="obs_geral" name="obs_geral">
+            <input type="text" id="obs_geral" name="obs_geral">
+         </div>
 
       </fieldset>
 
+      <!-- Parte 5 - Avaliação psicométrica -->
+     <fieldset>
+         <legend>5. Avaliação Psicométrica (testes utilizados)</legend>
+
+         <div>
+            <label for="psicometrico_resultado">
+              <input type="text" id="psicometrico_resultado" name="psicometrico_resultado">Resultado 
+              <input type="text" id="psicometrico_resultado" name="psicometrico_resultado">
+            </label>
+
+            <label for="psicometrico_resultado">
+              <input type="text" id="psicometrico_resultado" name="psicometrico_resultado">Resultado 
+              <input type="text" id="psicometrico_resultado" name="psicometrico_resultado">
+            </label>
+         </div>
+
+
+      </fieldset>
+
+      <!-- Parte 6 - Observações durante a aplicação -->
+     <fieldset>
+         <legend>6. Observações durante a aplicação do teste</legend>
+
+         <div>
+            <label for="clareza_resposta">Clareza nas respostas
+                <input type="text" id="clareza_resposta" name="clareza_resposta">
+            </label>
+
+            <label for="sinais_ansiedade">Sinais de ansiedade
+                <input type="text" id="sinais_ansiedade" name="sinais_ansiedade">
+            </label>
+
+            <label for="sinais_impulsividade">Sinais de impulsividade ou desatenção
+                <input type="text" id="sinais_impulsividade" name="sinais_impulsividade">
+            </label>
+
+            <label for="linguagem_comunicacao">Linguagem e comunicação
+                <input type="text" id="linguagem_comunicacao" name="linguagem_comunicacao">
+            </label>
+         </div>
+
+       </fieldset>
+
+       <!-- Parte 7 - Histórico de acidente -->
+     <fieldset>
+         <legend>7. Histórico de Acidente</legend>
+
+         <div>
+            <label for="descricao_acidente">Descrição do acidente (Detalhes sobre o ocorrido)
+                <textarea name="descricao_acidente" id="descricao_acidente" 
+                   rows="3" cols="40"></textarea>
+            </label>
+         </div>
+
+         <div>
+            <p>Causa do acidente</p>
+            <label for="fatores_externos">Fatores externos
+                <input type="radio" id="fatores_externos" name="fatores_externos" value="sim">Sim
+                <input type="radio" id="fatores_externos" name="fatores_externos" value="nao">Não
+            </label>
+
+            <label for="falha_humama">Falha Humana
+                <input type="radio" id="falha_humama" name="falha_humama" value="sim">Sim
+                <input type="radio" id="falha_humama" name="falha_humama" value="nao">Não
+            </label>
+
+            <label for="fatores_ambientais">Fatores ambientais
+                <input type="radio" id="fatores_ambientais" name="fatores_ambientais" value="sim">Sim
+                <input type="radio" id="fatores_ambientais" name="fatores_ambientais" value="nao">Não
+            </label>
+         </div>
+
+         <div>
+            <label for="acidente_consid_grave">Acidente considerado grave
+                <input type="radio" id="acidente_consid_grave" name="acidente_consid_grave" value="sim">Sim
+                <input type="radio" id="acidente_consid_grave" name="acidente_consid_grave" value="nao">Não
+            </label>
+         </div>
+
+         <div>
+            <label for="acidentes_mortais">Acidente com vítimas mortais
+                <input type="radio" id="acidentes_mortais" name="acidentes_mortais" value="sim">Sim
+                <input type="radio" id="acidentes_mortais" name="acidentes_mortais" value="nao">Não
+            </label>
+         </div>
+
+      </fieldset>
+
+      <!-- Parte 8 - Conclusão -->
+     <fieldset>
+         <legend>8. Conclusão</legend>
+
+         <label for="candidato_esta">O candidato está
+            <input type="radio" id="candidato_esta" name="candidato_esta" value="apto">Apto
+            <input type="radio" id="candidato_esta" name="candidato_esta" value="inapto">Inapto
+            <input type="radio" id="candidato_esta" name="candidato_esta" value="apto">Pendente
+         </label>
+
+     </fieldset>
+
+     <p>OBS: Necessidade de acompanhamentos psicológicos (caso o condutor apresente sintomas de TEPT (Pertubação de estresse pós traumático, ansiedade, depressão, etc.))</p>
+
     </form>
+
+    <div>
+      <p>Local e data <input type="text" name="" id="">, <input type="date"></p>
+      <p>O Psicólogo <input type="text"></p>
+      <p>CP nº <input type="number"></p>
+    </div>
+  
 
     <button type="submit">Enviar Formulário</button>
     <a href="../index.html" class="btn-voltar">⬅ Voltar à Página Inicial</a>
