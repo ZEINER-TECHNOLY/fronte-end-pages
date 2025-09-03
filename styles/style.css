@@ -110,7 +110,7 @@ fieldset {
 .processo {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: right;
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -126,7 +126,7 @@ fieldset {
 }
 
 .processo input {
-  width: 100%;
+  width: 30%;
   padding: 5px;
 }
 
@@ -140,14 +140,14 @@ legend {
 /* ========== LINHAS DE CAMPOS ========== */
 .form-grupo {
   display: flex;
-  gap: 15px;      /* espaço entre os campos */
+  gap: 15px;     
   margin-bottom: 15px;
 }
 
 .form-grupo label {
   flex: 1;
   display: flex;
-  flex-direction: row; /* label em cima, input em cima */
+  flex-direction: row; 
   margin-top: 5px;
   font-size: 15px;
   text-align: center;
@@ -164,12 +164,23 @@ legend {
 }
 
 .grupo-condicional {
-  line-height: 30px;
+  display: flex;
+  gap: 10px;
+  line-height: 50px;
+  align-items: flex-start; /* alinha os itens pelo topo */
+  
 }
 
-.grupo-condicional textarea {
-  width: 100%;
+.campo-condicional {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.campo-condicional input {
   padding: 5px;
+  flex: 1;
 }
 
 /* ========== BOTÃO ========== */
@@ -239,90 +250,3 @@ button:hover {
 }
 
 
-/* ========== CAMPOS CONDICIONAIS ========== */
-.campo-condicional {
-  display: none;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
-/* ========== ERROS DE VALIDAÇÃO ========== */
-input.erro {
-  border: 2px solid red;
-  background-color: #ffe6e6;
-}
-
-.mensagem-erro {
-  color: red;
-  font-size: 0.9em;
-  margin-top: 4px;
-  margin-bottom: 10px;
-}
-
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  .caixa_fichas {
-  width: 300px;
-  }
-
-  header {
-  width: 60%;
-  height: 80%;
-  margin: 20px auto;
-}
-  form {
-    padding: 15px;
-    margin: 10px auto;
-    width: 90%;
-  }
-
-  .processo_1, .processo_2 {
-    flex-direction: column;
-  }
-
-  .processo label {
-    padding-right: 0;
-    margin-bottom: 8px;
-    text-align: left;
-  }
-
-  .form-grupo {
-    flex-direction: column;
-  }
-
-  .form-grupo label {
-    text-align: left;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  .campo-condicional {
-    margin-left: 0;
-  }
-
-  .grupo-condicional {
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  textarea {
-    font-size: 14px;
-  }
-
-  button {
-    display: block;
-    width: 70%;
-    padding: 12px;
-    font-size: 18px;
-    margin: 10px auto;
-    
-  }
-}
