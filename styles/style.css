@@ -95,7 +95,7 @@ form {
   max-width: 800px;
   margin: 20px auto;
   background: #fff;
-  padding: 25px;
+  padding: 25px; 
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -197,11 +197,6 @@ button {
 
 button:hover {
   background-color: #2481c4;
-}
-
-.required::after {
-  content: " *";
-  color: red;
 }
 
 .btn-voltar {

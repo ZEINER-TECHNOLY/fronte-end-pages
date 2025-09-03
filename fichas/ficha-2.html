@@ -14,7 +14,7 @@
     <h1 class="centro_medico">CENTRO MÉDICO</h1>
   </header>
 
-  <form id="ficha-medica" method="post">
+  <form id="ficha-medica" method="">
     <fieldset>
       <div class="p_ficha2">
           <p>Entidade / Psicólogo</p>
@@ -35,7 +35,7 @@
 
       <div class="form-grupo">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome">
 
         <label for="idade">Idade:</label>
         <input type="number" id="idade" name="idade" min="0" max="100">
@@ -48,7 +48,7 @@
 
       <div class="form-grupo">
         <label class="required" for="nacionalidade">Nacionalidade:</label>
-        <select id="nacionalidade" name="nacionalidade" required></select>
+        <input type="text" id="nacionalidade" name="nacionalidade">
 
         <label for="naturalidade">Naturalidade:</label>
         <input type="text" id="naturalidade" name="naturalidade">
@@ -108,118 +108,138 @@
     <!-- Parte 2 - Dados clínicos -->
     <fieldset>
       <legend>2. Dados Clínicos</legend>
-
+    
       <div class="grupo-condicional">
-        <label>Problemas de visão?
-          <input type="radio" id="visao_nao" name="visao" value="nao" /> Não
-          <input type="radio" id="visao_sim" name="visao" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-visao">
-          Quais? <textarea name="visao_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-        </div>
+          <div>
+            <label>Problemas de visão?</label>
+            <input type="radio" name="visao" value="nao"> Não
+            <input type="radio" name="visao" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="visao_quais">Quais?</label>
+            <input type="text" id="visao_quais" name="visao_quais">
+          </div>
       </div>
 
       <div class="grupo-condicional">
-        <label>Problemas de audição?
-          <input type="radio" id="audicao_nao" name="audicao" value="nao" /> Não
-          <input type="radio" id="audicao_sim" name="audicao" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-audicao">
-          Quais? <textarea name="audicao_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+          <div>
+              <label>Problemas de audição?</label>
+              <input type="radio" name="audicao" value="nao"> Não
+              <input type="radio" name="audicao" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="audicao_quais">Quais?</label>
+            <input type="text" id="audicao_quais" name="audicao_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Limitações dos membros?
-          <input type="radio" id="membros_nao" name="membros" value="nao" /> Não
-          <input type="radio" id="membros_sim" name="membros" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-membros">
-          Quais? <textarea name="membros_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        <div class="grupo-condicional">
+          <div>
+              <label>Limitações dos membros?</label>
+              <input type="radio" name="membros" value="nao"> Não
+              <input type="radio" name="membros" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="membros_quais">Quais?</label>
+            <input type="text" id="membros_quais" name="membros_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Limitações da coluna vertebral?
-          <input type="radio" id="coluna_nao" name="coluna" value="nao" /> Não
-          <input type="radio" id="coluna_sim" name="coluna" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-coluna">
-          Quais? <textarea name="coluna_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        <div class="grupo-condicional">
+          <div>
+              <label>Limitações da coluna vertebral?</label>
+              <input type="radio" name="coluna" value="nao"> Não
+              <input type="radio" name="coluna" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="coluna_quais">Quais?</label>
+            <input type="text" id="coluna_quais" name="coluna_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Problemas do sistema nervoso?
-          <input type="radio" id="sistema_nao" name="sistema" value="nao" /> Não
-          <input type="radio" id="sistema_sim" name="sistema" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-sistema">
-          Quais? <textarea name="sistema_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        <div class="grupo-condicional">
+          <div>
+              <label>Problemas do sistema nervoso?</label>
+              <input type="radio" name="sistema" value="nao"> Não
+              <input type="radio" name="sistema" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="sistema_quais">Quais?</label>
+            <input type="text" id="sistema_quais" name="sistema_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Outro(s) problemas de saúde?
-          <input type="radio" id="outros_nao" name="outros" value="nao" /> Não
-          <input type="radio" id="outros_sim" name="outros" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-outros">
-          Quais? <textarea name="saude_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        <div class="grupo-condicional">
+          <div>
+              <label>Outro(s) problemas de saúde?</label>
+              <input type="radio" name="outros" value="nao"> Não
+              <input type="radio" name="outros" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="saude_quais">Quais?</label>
+            <input type="text" id="saude_quais" name="saude_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Consumo de medicamentos?
-          <input type="radio" id="medicamentos_nao" name="medicamentos" value="nao" /> Não
-          <input type="radio" id="medicamentos_sim" name="medicamentos" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-medicamentos">
-          Quais? <textarea name="medicamentos_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea><br />
-          Quantidade / dia: <input type="text" id="medicamentos_quantidade" name="medicamentos_quantidade" />
+        <div class="grupo-condicional">
+          <div>
+              <label>Consumo de medicamentos?</label>
+              <input type="radio" name="medicamentos" value="nao"> Não
+              <input type="radio" name="medicamentos" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="medicamentos_quais">Quais?</label>
+            <input type="text" id="medicamentos_quais" name="medicamentos_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Dependências (ex: álcool e drogas)?
-          <input type="radio" id="dependencias_nao" name="dependencias" value="nao" /> Não
-          <input type="radio" id="dependencias_sim" name="dependencias" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-dependencias">
-          Quais? <textarea name="dependencia_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-        </div>
-      </div>
+        <div class="campo-condicional">
+            <label for="quantidade">Quantidade / dia:</label>
+            <input type="text" id="quantidade" name="quantidade">
+          </div>
 
-      <div class="grupo-condicional">
-        <label>Consumo de bebidas alcoólicas?
-          <input type="radio" id="alcool_nao" name="alcool" value="nao" /> Não
-          <input type="radio" id="alcool_sim" name="alcool" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-alcool">
-          Quais? <textarea name="bebidas_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-          Quantidade / dia: <input type="text" id="bebidas_quantidade" name="bebidas_quantidade" />
+        <div class="grupo-condicional">
+          <div>
+            <label>Dependências (ex: álcool e drogas)?</label>
+            <input type="radio" name="dependencias" value="nao"> Não
+            <input type="radio" name="dependencias" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="dependencia_quais">Quais?</label>
+            <input type="text" id="dependencia_quais" name="dependencia_quais">
+          </div>
         </div>
-      </div>
 
-      <div class="grupo-condicional">
-        <label>Consumo de drogas?
-          <input type="radio" id="drogas_nao" name="drogas" value="nao" /> Não
-          <input type="radio" id="drogas_sim" name="drogas" value="sim" /> Sim
-        </label>
-        <div class="campo-condicional" id="campo-drogas">
-          Quais? <textarea name="drogas_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        <div class="grupo-condicional">
+          <div>
+              <label>Consumo de bebidas alcoólicas?</label>
+              <input type="radio" name="alcool" value="nao"> Não
+              <input type="radio" name="alcool" value="sim"> Sim
+          </div>
+          
+          <div class="campo-condicional">
+            <label for="bebidas_quais">Quais?</label>
+            <input type="id="bebidas_quais" name="bebidas_quais">
+          </div>
         </div>
-      </div>
+     
 
       <div class="grupo-condicional">
         <label>Frequência:
-          <input type="radio" name="frequencia" id="frequencia">Diária
-          <input type="radio" name="frequencia" id="frequencia">Semanal
-          <input type="radio" name="frequencia" id="frequencia">Mensal
+          <input type="radio" name="frequencia" id="frequencia_diaria" value="diaria">Diária
+          <input type="radio" name="frequencia" id="frequencia_semanal" value="semanal">Semanal
+          <input type="radio" name="frequencia" id="frequencia_mensal" value="mensal">Mensal
 
         </label>
       </div>
-
 
     </fieldset>
 
@@ -512,7 +532,5 @@
     <a href="../index.html" class="btn-voltar">⬅ Voltar à Página Inicial</a>
   </form>
 
-  <script src="../scripts/paises.js"></script>
-  <script src="../scripts/script.js"></script>
 </body>
 </html>
