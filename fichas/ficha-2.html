@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Formulário Centro Médico</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
   <header>
     <img src="../Image/images.jpg" alt="insignia" />
@@ -17,15 +19,15 @@
   <form id="ficha-medica" method="">
     <fieldset>
       <div class="p_ficha2">
-          <p>Entidade / Psicólogo</p>
-          <div class="processo_ficha2">
-             <label for="processo">Processo:
-               <input type="text" id="processo" name="processo">
-             </label>
-             <label for="data_exame">Data exame:
-              <input type="date" id="data_exame" name="data_exame">
-             </label>
-          </div>
+        <p>Entidade / Psicólogo</p>
+        <div class="processo_ficha2">
+          <label for="processo">Processo:
+            <input type="text" id="processo" name="processo">
+          </label>
+          <label for="data_exame">Data exame:
+            <input type="date" id="data_exame" name="data_exame">
+          </label>
+        </div>
       </div>
     </fieldset>
 
@@ -99,8 +101,9 @@
         <input type="text" id="reavaliacao" name="reavaliacao">
       </div>
 
-      <p>Avaliação solicitada por (DTSER, MÉDICO, DECISÃO JUDICIAL, PSICÓLOGO)</p>
-      <div class="form-grupo">
+      <div class="">
+        <label for="avaliacao_solicitada">Avaliação solicitada por (DTSER, MÉDICO, DECISÃO JUDICIAL,
+          PSICÓLOGO)</label><br>
         <input type="text" id="avaliacao_solicitada" name="avaliacao_solicitada">
       </div>
     </fieldset>
@@ -108,137 +111,127 @@
     <!-- Parte 2 - Dados clínicos -->
     <fieldset>
       <legend>2. Dados Clínicos</legend>
-    
+
       <div class="grupo-condicional">
-          <div>
-            <label>Problemas de visão?</label>
-            <input type="radio" name="visao" value="nao"> Não
-            <input type="radio" name="visao" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="visao_quais">Quais?</label>
-            <input type="text" id="visao_quais" name="visao_quais">
-          </div>
+        <div>
+          <span>Problemas de visão?</span>
+          <label><input type="radio" name="visao" value="nao"> Não</label>
+          <label><input type="radio" name="visao" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="visao_quais">Quais?</label>
+          <input type="text" id="visao_quais" name="visao_quais">
+        </div>
       </div>
 
       <div class="grupo-condicional">
-          <div>
-              <label>Problemas de audição?</label>
-              <input type="radio" name="audicao" value="nao"> Não
-              <input type="radio" name="audicao" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="audicao_quais">Quais?</label>
-            <input type="text" id="audicao_quais" name="audicao_quais">
-          </div>
+        <div>
+          <span>Problemas de audição?</span>
+          <label><input type="radio" name="audicao" value="nao"> Não</label>
+          <label><input type="radio" name="audicao" value="sim"> Sim</label>
         </div>
-
-        <div class="grupo-condicional">
-          <div>
-              <label>Limitações dos membros?</label>
-              <input type="radio" name="membros" value="nao"> Não
-              <input type="radio" name="membros" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="membros_quais">Quais?</label>
-            <input type="text" id="membros_quais" name="membros_quais">
-          </div>
-        </div>
-
-        <div class="grupo-condicional">
-          <div>
-              <label>Limitações da coluna vertebral?</label>
-              <input type="radio" name="coluna" value="nao"> Não
-              <input type="radio" name="coluna" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="coluna_quais">Quais?</label>
-            <input type="text" id="coluna_quais" name="coluna_quais">
-          </div>
-        </div>
-
-        <div class="grupo-condicional">
-          <div>
-              <label>Problemas do sistema nervoso?</label>
-              <input type="radio" name="sistema" value="nao"> Não
-              <input type="radio" name="sistema" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="sistema_quais">Quais?</label>
-            <input type="text" id="sistema_quais" name="sistema_quais">
-          </div>
-        </div>
-
-        <div class="grupo-condicional">
-          <div>
-              <label>Outro(s) problemas de saúde?</label>
-              <input type="radio" name="outros" value="nao"> Não
-              <input type="radio" name="outros" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="saude_quais">Quais?</label>
-            <input type="text" id="saude_quais" name="saude_quais">
-          </div>
-        </div>
-
-        <div class="grupo-condicional">
-          <div>
-              <label>Consumo de medicamentos?</label>
-              <input type="radio" name="medicamentos" value="nao"> Não
-              <input type="radio" name="medicamentos" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="medicamentos_quais">Quais?</label>
-            <input type="text" id="medicamentos_quais" name="medicamentos_quais">
-          </div>
-        </div>
-
         <div class="campo-condicional">
-            <label for="quantidade">Quantidade / dia:</label>
-            <input type="text" id="quantidade" name="quantidade">
-          </div>
-
-        <div class="grupo-condicional">
-          <div>
-            <label>Dependências (ex: álcool e drogas)?</label>
-            <input type="radio" name="dependencias" value="nao"> Não
-            <input type="radio" name="dependencias" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="dependencia_quais">Quais?</label>
-            <input type="text" id="dependencia_quais" name="dependencia_quais">
-          </div>
+          <label for="audicao_quais">Quais?</label>
+          <input type="text" id="audicao_quais" name="audicao_quais">
         </div>
-
-        <div class="grupo-condicional">
-          <div>
-              <label>Consumo de bebidas alcoólicas?</label>
-              <input type="radio" name="alcool" value="nao"> Não
-              <input type="radio" name="alcool" value="sim"> Sim
-          </div>
-          
-          <div class="campo-condicional">
-            <label for="bebidas_quais">Quais?</label>
-            <input type="id="bebidas_quais" name="bebidas_quais">
-          </div>
-        </div>
-     
+      </div>
 
       <div class="grupo-condicional">
-        <label>Frequência:
-          <input type="radio" name="frequencia" id="frequencia_diaria" value="diaria">Diária
-          <input type="radio" name="frequencia" id="frequencia_semanal" value="semanal">Semanal
-          <input type="radio" name="frequencia" id="frequencia_mensal" value="mensal">Mensal
+        <div>
+          <span>Limitações dos membros?</span>
+          <label><input type="radio" name="membros" value="nao"> Não</label>
+          <label><input type="radio" name="membros" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="membros_quais">Quais?</label>
+          <input type="text" id="membros_quais" name="membros_quais">
+        </div>
+      </div>
 
-        </label>
+      <div class="grupo-condicional">
+        <div>
+          <span>Limitações da coluna vertebral?</span>
+          <label><input type="radio" name="coluna" value="nao"> Não</label>
+          <label><input type="radio" name="coluna" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="coluna_quais">Quais?</label>
+          <input type="text" id="coluna_quais" name="coluna_quais">
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <div>
+          <span>Problemas do sistema nervoso?</span>
+          <label><input type="radio" name="sistema" value="nao"> Não</label>
+          <label><input type="radio" name="sistema" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="sistema_quais">Quais?</label>
+          <input type="text" id="sistema_quais" name="sistema_quais">
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <div>
+          <span>Outro(s) problemas de saúde?</span>
+          <label><input type="radio" name="outros" value="nao"> Não</label>
+          <label><input type="radio" name="outros" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="saude_quais">Quais?</label>
+          <input type="text" id="saude_quais" name="saude_quais">
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <div>
+          <span>Consumo de medicamentos?</span>
+          <label><input type="radio" name="medicamentos" value="nao"> Não</label>
+          <label><input type="radio" name="medicamentos" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="medicamentos_quais">Quais?</label>
+          <input type="text" id="medicamentos_quais" name="medicamentos_quais">
+        </div>
+      </div>
+
+      <div class="campo-condicional">
+        <label for="quantidade">Quantidade / dia:</label>
+        <input type="text" id="quantidade" name="quantidade">
+      </div>
+
+      <div class="grupo-condicional">
+        <div>
+          <span>Dependências (ex: álcool e drogas)?</span>
+          <label><input type="radio" name="dependencias" value="nao"> Não</label>
+          <label><input type="radio" name="dependencias" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="dependencia_quais">Quais?</label>
+          <input type="text" id="dependencia_quais" name="dependencia_quais">
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <div>
+          <span>Consumo de bebidas alcoólicas?</span>
+          <label><input type="radio" name="alcool" value="nao"> Não</label>
+          <label><input type="radio" name="alcool" value="sim"> Sim</label>
+        </div>
+        <div class="campo-condicional">
+          <label for="bebidas_quais">Quais?</label>
+          <input type="text" id="bebidas_quais" name="bebidas_quais">
+        </div>
+      </div>
+
+      <div class="grupo-condicional">
+        <div>
+          <span>Frequência:</span>
+          <label><input type="radio" name="frequencia" value="diaria"> Diária</label>
+          <label><input type="radio" name="frequencia" value="semanal"> Semanal</label>
+          <label><input type="radio" name="frequencia" value="mensal"> Mensal</label>
+        </div>
       </div>
 
     </fieldset>
@@ -248,97 +241,103 @@
       <legend>3. Dados relativos à condução automóvel</legend>
 
       <div class="dados-conducao">
-          <label>Experiência:</label>
-          <label><input type="radio" name="experiencia" value="nao"> Não</label>
-          <label><input type="radio" name="experiencia" value="sim"> Sim</label>
-          <label>Nº de anos: <input type="number" name="anos_experiencia" min="0"></label>
-  
 
-      <!-- Quilometragem -->
-      <label>Nº km no último ano:
-        <input type="number" name="km_ultimo_ano" min="0">
-      </label>
+        <span>Experiência:</span>
+        <label><input type="radio" name="experiencia" value="nao"> Não</label>
+        <label><input type="radio" name="experiencia" value="sim"> Sim</label><br>
+        <label>Nº de anos: <input type="number" name="anos_experiencia" min="0"></label>
 
-      <!-- Condutor profissional -->
-      <label>Condutor profissional (motorista, examinador, instrutor):</label>
-      <div class="radio-group">
+        <label>Nº km no último ano:
+          <input type="number" name="km_ultimo_ano" min="0">
+        </label><br>
+
+        <!-- Condutor profissional -->
+        <span>Condutor profissional (motorista, examinador, instrutor):</span>
+
         <label><input type="radio" name="condutor_profissional" value="nao"> Não</label>
-        <label><input type="radio" name="condutor_profissional" value="sim"> Sim</label>
+        <label><input type="radio" name="condutor_profissional" value="sim"> Sim</label><br>
         <label>Qual: <input type="text" name="qual_profissao"></label>
-      </div>
 
-      <!-- Contra ordenações -->
-      <label>Contra ordenações (coimas):</label>
-      <div class="radio-group">
+
+        <!-- Contra ordenações -->
+        <span>Contra ordenações (coimas):</span>
+
         <label><input type="radio" name="contra_ord" value="nao"> Não</label>
-        <label><input type="radio" name="contra_ord" value="sim"> Sim</label>
-      </div>
-      <label>Motivos (últimos 5 anos):
-        <textarea name="motivos_contra_ord" rows="2"></textarea>
-      </label>
+        <label><input type="radio" name="contra_ord" value="sim"> Sim</label><br>
 
-      <!-- Crimes rodoviários -->
-      <label>Crimes rodoviários:</label>
-      <div class="radio-group">
+        <label for="motivos_contra_ord">Motivos (últimos 5 anos):</label><br>
+        <textarea id="motivos_contra_ord" name="motivos_contra_ord" rows="2" cols="40"></textarea>
+
+
+        <!-- Crimes rodoviários -->
+        <label>Crimes rodoviários:</label>
+
         <label><input type="radio" name="crimes_rod" value="nao"> Não</label>
-        <label><input type="radio" name="crimes_rod" value="sim"> Sim</label>
-      </div>
-      <label>Motivos (últimos 5 anos):
-        <textarea name="motivos_crimes_rod" rows="2"></textarea>
-      </label>
+        <label><input type="radio" name="crimes_rod" value="sim"> Sim</label><br>
 
-      <!-- Apreensão do título -->
-      <label>Apreensão do título:</label>
-      <div class="radio-group">
+        <label for="motivos_crimes_rod">Motivos (últimos 5 anos):</label>
+        <textarea id="motivos_crimes_rod" name="motivos_crimes_rod" rows="2"></textarea>
+
+
+        <!-- Apreensão do título -->
+        <span>Apreensão do título:</span>
+
         <label><input type="radio" name="apreensao_titulo" value="nao"> Não</label>
         <label><input type="radio" name="apreensao_titulo" value="sim"> Sim</label>
-        <label>Quantas vezes? <input type="number" name="vezes_apreensao" min="0"></label>
-      </div>
-      <label>Motivos:
-        <textarea name="motivos_apreensao" rows="2"></textarea>
-      </label>
+        <label>Quantas vezes? <input type="number" name="vezes_apreensao" min="0"></label><br>
 
-      <!-- Caducidade e cancelamento -->
-      <label>Caducidade e cancelamento de títulos de condução:</label>
-      <div class="radio-group">
+        <label>Motivos:
+          <textarea name="motivos_apreensao" rows="2"></textarea>
+        </label>
+
+        <!-- Caducidade e cancelamento -->
+        <span>Caducidade e cancelamento de títulos de condução:</span>
+
         <label><input type="radio" name="caducidade" value="nao"> Não</label>
         <label><input type="radio" name="caducidade" value="sim"> Sim</label>
         <label>Quantas vezes? <input type="number" name="vezes_caducidade" min="0"></label>
-      </div>
-      <label>Motivos:
-        <textarea name="motivos_caducidade" rows="2"></textarea>
-      </label>
 
-      <!-- Acidentes -->
-      <label>Acidentes como condutor nos últimos 5 anos / 2 anos:</label>
-      <label>Com vítimas:
-        <textarea name="acidentes_vitimas" rows="2" placeholder="Feridos ligeiros, feridos graves, mortes"></textarea>
-      </label>
+        <label for="motivos_caducidade">Motivos:</label>
+        <textarea id="motivos_caducidade" name="motivos_caducidade" rows="2"></textarea>
 
-      <!-- Avaliações psicológicas -->
-      <label>Avaliações psicológicas anteriores:</label>
-      <div class="radio-group">
+
+        <!-- Acidentes -->
+        <span>Acidentes como condutor</span>
+        <label><input type="radio" name="acidente_como" value="nao"> Não</label>
+        <label><input type="radio" name="acidente_como" value="sim"> Sim</label>
+
+        <label><input type="radio" name="acidente_ano" value="nao"> Últimos 5 anos</label>
+        <label><input type="radio" name="acidente_ano" value="sim"> 2 anos</label><br>
+
+        <span>Com vítimas:</span>
+        <label><input type="radio" name="acidente_vitima" value="nao"> Feridos ligeiros</label>
+        <label><input type="radio" name="acidente_vitima" value="sim"> Feridos graves</label>
+        <label><input type="radio" name="acidente_vitima" value="sim"> Mortes</label><br>
+
+        <!-- Avaliações psicológicas -->
+        <span>Avaliações psicológicas anteriores:</span>
+        
         <label><input type="radio" name="avaliacoes" value="nao"> Não</label>
         <label><input type="radio" name="avaliacoes" value="sim"> Sim</label>
-        <label>Quantas: <input type="number" name="quantas_avaliacoes" min="0"></label>
-      </div>
+        <label>Quantas: <input type="number" name="quantas_avaliacoes" min="0"></label><br>
+        
 
-      <!-- Resultado -->
-      <label>Resultado:</label>
-      <div class="radio-group">
+        <!-- Resultado -->
+       <span> Resultado:</span>
+  
         <label><input type="radio" name="resultado" value="apto"> Apto</label>
-        <label><input type="radio" name="resultado" value="inapto"> Inapto</label>
+        <label><input type="radio" name="resultado" value="inapto"> Inapto</label><br>
+   
+
+        <!-- Data e assinatura -->
+        <label>Data:
+          <input type="date" name="data">
+        </label>
+        <label>Assinatura:
+          <input type="text" name="assinatura">
+        </label>
       </div>
 
-      <!-- Data e assinatura -->
-      <label>Data:
-        <input type="date" name="data">
-      </label>
-      <label>Assinatura:
-        <input type="text" name="assinatura">
-      </label>
-      </div>
-      
     </fieldset>
 
     <!-- Parte 4 - Avaliação cognitiva -->
@@ -370,7 +369,8 @@
       <div>
         <p>Para Condutor envolvidos em acidentes graves (Reações)</p>
         <label for="reacoes_trauma">
-          Reações ao traumas (Estado emocional) <textarea name="reacoes_trauma" id="reacoes_trauma" rows="3" cols="40"></textarea>
+          Reações ao traumas (Estado emocional) <textarea name="reacoes_trauma" id="reacoes_trauma" rows="3"
+            cols="40"></textarea>
         </label>
       </div>
 
@@ -399,7 +399,7 @@
       </div>
 
       <div>
-        <label for="obs_geral">Observação geral do perfil psicológico do condutor 
+        <label for="obs_geral">Observação geral do perfil psicológico do condutor
           (Padrões comportamentais que destacam)
         </label>
         <!-- mantive 4 campos de texto como no original, agora com ids únicos -->
@@ -417,12 +417,12 @@
 
       <div>
         <label for="psicometrico_resultado_1">
-          <input type="text" id="psicometrico_resultado_1" name="psicometrico_resultado_1">Resultado 
+          <input type="text" id="psicometrico_resultado_1" name="psicometrico_resultado_1">Resultado
           <input type="text" id="psicometrico_resultado_2" name="psicometrico_resultado_2">
         </label>
 
         <label for="psicometrico_resultado_3">
-          <input type="text" id="psicometrico_resultado_3" name="psicometrico_resultado_3">Resultado 
+          <input type="text" id="psicometrico_resultado_3" name="psicometrico_resultado_3">Resultado
           <input type="text" id="psicometrico_resultado_4" name="psicometrico_resultado_4">
         </label>
       </div>
@@ -509,10 +509,12 @@
 
     </fieldset>
 
-    <p>OBS: Necessidade de acompanhamentos psicológicos (caso o condutor apresente sintomas de TEPT (Pertubação de estresse pós traumático, ansiedade, depressão, etc.))</p>
+    <p>OBS: Necessidade de acompanhamentos psicológicos (caso o condutor apresente sintomas de TEPT (Pertubação de
+      estresse pós traumático, ansiedade, depressão, etc.))</p>
 
     <div>
-      <p>Local e data <input type="text" name="local" id="local">, <input type="date" name="data_assinatura" id="data_assinatura"></p>
+      <p>Local e data <input type="text" name="local" id="local">, <input type="date" name="data_assinatura"
+          id="data_assinatura"></p>
       <p>O Psicólogo <input type="text" name="psicologo" id="psicologo"></p>
       <p>CP nº <input type="number" name="cp_numero" id="cp_numero"></p>
     </div>
@@ -522,4 +524,5 @@
   </form>
 
 </body>
+
 </html>

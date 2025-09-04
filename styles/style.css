@@ -14,12 +14,12 @@ body {
 /* ========== CORPO DA PÁGINA PRINCIPAL ========== */
 #principal {
   background: #084386;
-  background-image: url("../Image/group_1049_144964019467af4abd52ecd.png"); 
+  background-image: url("../Image/group_1049_144964019467af4abd52ecd.png");
   background-size: 100%;
-  background-position: center;  
-  background-repeat: no-repeat; 
-  min-height: 100vh;            
-  color: white;                 
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
 }
 
 .caixa_fichas {
@@ -28,7 +28,7 @@ body {
   padding: 25px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .caixa_fichas ul {
-  list-style: none;       
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -95,9 +95,9 @@ form {
   max-width: 800px;
   margin: 20px auto;
   background: #fff;
-  padding: 25px; 
+  padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 fieldset {
@@ -115,9 +115,10 @@ fieldset {
   margin-bottom: 15px;
 }
 
-.processo_1, .processo_2 {
+.processo_1,
+.processo_2 {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
 }
 
 .processo label {
@@ -134,20 +135,21 @@ legend {
   font-weight: bold;
   margin-bottom: 10px;
   padding: 0 10px;
-  color: #0d62b6;;
+  color: #0d62b6;
+  ;
 }
 
 /* ========== LINHAS DE CAMPOS ========== */
 .form-grupo {
   display: flex;
-  gap: 15px;     
+  gap: 15px;
   margin-bottom: 15px;
 }
 
 .form-grupo label {
   flex: 1;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   margin-top: 5px;
   font-size: 15px;
   text-align: center;
@@ -167,23 +169,11 @@ legend {
   display: flex;
   gap: 10px;
   line-height: 50px;
-  align-items: flex-start; /* alinha os itens pelo topo */
-  
-}
-/*
-.grupo-condicional {
-  display: flex;
-  align-items: center;
-  gap: 15px; 
+  align-items: flex-start;
+  /* alinha os itens pelo topo */
+
 }
 
-.grupo-condicional label {
-  display: flex;
-  align-items: center;
-  gap: 5px; 
-}
-
-*/
 .campo-condicional {
   display: flex;
   align-items: center;
@@ -234,6 +224,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
 }
+
 .processo_ficha2 {
   display: flex;
   flex-direction: column;
@@ -258,18 +249,32 @@ button:hover {
 }
 
 /* ========== Ficha 2 ========== */
+.dados-conducao {
+  line-height: 35px;
+}
+
 .dados-conducao label {
-  display: block;
   margin-top: 10px;
 }
 
 .dados-conducao input[type="text"],
- input[type="number"],
- textarea,
- select {
-  width: 100%;
+.dados-conducao select {
   padding: 5px;
   margin-top: 5px;
   box-sizing: border-box;
 }
 
+.dados-conducao input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.dados-conducao textarea {
+  display: block;
+  padding: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  width: 100%;
+}
