@@ -242,140 +242,180 @@
 
       <div class="dados-conducao">
 
-        <span>Experiência:</span>
-        <label><input type="radio" name="experiencia" value="nao"> Não</label>
-        <label><input type="radio" name="experiencia" value="sim"> Sim</label><br>
-        <label>Nº de anos: <input type="number" name="anos_experiencia" min="0"></label>
+        <!-- Experiência -->
+        <div class="radio-group">
+          <span>Experiência:</span>
+          <label><input type="radio" name="experiencia" value="nao"> Não</label>
+          <label><input type="radio" name="experiencia" value="sim"> Sim</label>
+        </div>
 
-        <label>Nº km no último ano:
-          <input type="number" name="km_ultimo_ano" min="0">
-        </label><br>
+        <div class="campo-normal">
+          <label>Nº de anos: <input type="number" name="anos_experiencia" min="0"></label>
+        </div>
+
+        <div class="campo-normal">
+          <label>Nº km no último ano: <input type="number" name="km_ultimo_ano" min="0"></label>
+        </div>
 
         <!-- Condutor profissional -->
-        <span>Condutor profissional (motorista, examinador, instrutor):</span>
+        <div class="radio-group">
+          <span>Condutor profissional (motorista, examinador, instrutor):</span>
+          <label><input type="radio" name="condutor_profissional" value="nao"> Não</label>
+          <label><input type="radio" name="condutor_profissional" value="sim"> Sim</label>
+        </div>
 
-        <label><input type="radio" name="condutor_profissional" value="nao"> Não</label>
-        <label><input type="radio" name="condutor_profissional" value="sim"> Sim</label><br>
-        <label>Qual: <input type="text" name="qual_profissao"></label>
-
+        <div class="campo-normal">
+          <label>Qual: <input type="text" name="qual_profissao"></label>
+        </div>
 
         <!-- Contra ordenações -->
-        <span>Contra ordenações (coimas):</span>
+        <div class="radio-group">
+          <span>Contra ordenações (coimas):</span>
+          <label><input type="radio" name="contra_ord" value="nao"> Não</label>
+          <label><input type="radio" name="contra_ord" value="sim"> Sim</label>
+        </div>
 
-        <label><input type="radio" name="contra_ord" value="nao"> Não</label>
-        <label><input type="radio" name="contra_ord" value="sim"> Sim</label><br>
-
-        <label for="motivos_contra_ord">Motivos (últimos 5 anos):</label><br>
-        <textarea id="motivos_contra_ord" name="motivos_contra_ord" rows="2" cols="40"></textarea>
-
+        <div class="campo-normal">
+          <label for="motivos_contra_ord">Motivos (últimos 5 anos):</label>
+          <textarea id="motivos_contra_ord" name="motivos_contra_ord" rows="2"></textarea>
+        </div>
 
         <!-- Crimes rodoviários -->
-        <label>Crimes rodoviários:</label>
+        <div class="radio-group">
+          <span>Crimes rodoviários:</span>
+          <label><input type="radio" name="crimes_rod" value="nao"> Não</label>
+          <label><input type="radio" name="crimes_rod" value="sim"> Sim</label>
+        </div>
 
-        <label><input type="radio" name="crimes_rod" value="nao"> Não</label>
-        <label><input type="radio" name="crimes_rod" value="sim"> Sim</label><br>
-
-        <label for="motivos_crimes_rod">Motivos (últimos 5 anos):</label>
-        <textarea id="motivos_crimes_rod" name="motivos_crimes_rod" rows="2"></textarea>
-
+        <div class="campo-normal">
+          <label for="motivos_crimes_rod">Motivos (últimos 5 anos):</label>
+          <textarea id="motivos_crimes_rod" name="motivos_crimes_rod" rows="2"></textarea>
+        </div>
 
         <!-- Apreensão do título -->
-        <span>Apreensão do título:</span>
+        <div class="radio-group">
+          <span>Apreensão do título:</span>
+          <label><input type="radio" name="apreensao_titulo" value="nao"> Não</label>
+          <label><input type="radio" name="apreensao_titulo" value="sim"> Sim</label>
+        </div>
 
-        <label><input type="radio" name="apreensao_titulo" value="nao"> Não</label>
-        <label><input type="radio" name="apreensao_titulo" value="sim"> Sim</label>
-        <label>Quantas vezes? <input type="number" name="vezes_apreensao" min="0"></label><br>
+        <div class="campo-normal">
+          <label>Quantas vezes? <input type="number" name="vezes_apreensao" min="0"></label>
+        </div>
 
-        <label>Motivos:
-          <textarea name="motivos_apreensao" rows="2"></textarea>
-        </label>
+        <div class="campo-normal">
+          <label for="motivos_apreensao">Motivos:</label>
+          <textarea id="motivos_apreensao" name="motivos_apreensao" rows="2"></textarea>
+        </div>
 
-        <!-- Caducidade e cancelamento -->
-        <span>Caducidade e cancelamento de títulos de condução:</span>
+        <!-- Caducidade -->
+        <div class="radio-group">
+          <span>Caducidade e cancelamento de títulos de condução:</span>
+          <label><input type="radio" name="caducidade" value="nao"> Não</label>
+          <label><input type="radio" name="caducidade" value="sim"> Sim</label>
+        </div>
 
-        <label><input type="radio" name="caducidade" value="nao"> Não</label>
-        <label><input type="radio" name="caducidade" value="sim"> Sim</label>
-        <label>Quantas vezes? <input type="number" name="vezes_caducidade" min="0"></label>
+        <div class="campo-normal">
+          <label>Quantas vezes? <input type="number" name="vezes_caducidade" min="0"></label>
+        </div>
 
-        <label for="motivos_caducidade">Motivos:</label>
-        <textarea id="motivos_caducidade" name="motivos_caducidade" rows="2"></textarea>
-
+        <div class="campo-normal">
+          <label for="motivos_caducidade">Motivos:</label>
+          <textarea id="motivos_caducidade" name="motivos_caducidade" rows="2"></textarea>
+        </div>
 
         <!-- Acidentes -->
-        <span>Acidentes como condutor</span>
-        <label><input type="radio" name="acidente_como" value="nao"> Não</label>
-        <label><input type="radio" name="acidente_como" value="sim"> Sim</label>
+        <div class="radio-group">
+          <span>Acidentes como condutor:</span>
+          <label><input type="radio" name="acidente_como" value="nao"> Não</label>
+          <label><input type="radio" name="acidente_como" value="sim"> Sim</label>
+        </div>
 
-        <label><input type="radio" name="acidente_ano" value="nao"> Últimos 5 anos</label>
-        <label><input type="radio" name="acidente_ano" value="sim"> 2 anos</label><br>
+        <div class="radio-group">
+          <span>Período:</span>
+          <label><input type="radio" name="acidente_ano" value="5anos"> Últimos 5 anos</label>
+          <label><input type="radio" name="acidente_ano" value="2anos"> Últimos 2 anos</label>
+        </div>
 
-        <span>Com vítimas:</span>
-        <label><input type="radio" name="acidente_vitima" value="nao"> Feridos ligeiros</label>
-        <label><input type="radio" name="acidente_vitima" value="sim"> Feridos graves</label>
-        <label><input type="radio" name="acidente_vitima" value="sim"> Mortes</label><br>
+        <div class="radio-group">
+          <span>Com vítimas:</span>
+          <label><input type="radio" name="acidente_vitima" value="ligeiros"> Feridos ligeiros</label>
+          <label><input type="radio" name="acidente_vitima" value="graves"> Feridos graves</label>
+          <label><input type="radio" name="acidente_vitima" value="mortos"> Mortes</label>
+        </div>
 
         <!-- Avaliações psicológicas -->
-        <span>Avaliações psicológicas anteriores:</span>
-        
-        <label><input type="radio" name="avaliacoes" value="nao"> Não</label>
-        <label><input type="radio" name="avaliacoes" value="sim"> Sim</label>
-        <label>Quantas: <input type="number" name="quantas_avaliacoes" min="0"></label><br>
-        
+        <div class="radio-group">
+          <span>Avaliações psicológicas anteriores:</span>
+          <label><input type="radio" name="avaliacoes" value="nao"> Não</label>
+          <label><input type="radio" name="avaliacoes" value="sim"> Sim</label>
+        </div>
+
+        <div class="campo-normal">
+          <label>Quantas: <input type="number" name="quantas_avaliacoes" min="0"></label>
+        </div>
 
         <!-- Resultado -->
-       <span> Resultado:</span>
-  
-        <label><input type="radio" name="resultado" value="apto"> Apto</label>
-        <label><input type="radio" name="resultado" value="inapto"> Inapto</label><br>
-   
+        <div class="radio-group">
+          <span>Resultado:</span>
+          <label><input type="radio" name="resultado" value="apto"> Apto</label>
+          <label><input type="radio" name="resultado" value="inapto"> Inapto</label>
+        </div>
 
         <!-- Data e assinatura -->
-        <label>Data:
-          <input type="date" name="data">
-        </label>
-        <label>Assinatura:
-          <input type="text" name="assinatura">
-        </label>
+        <div class="campo-normal">
+          <label>Data: <input type="date" name="data"></label>
+        </div>
+
+        <div class="campo-normal">
+          <label>Assinatura: <input type="text" name="assinatura"></label>
+        </div>
+
       </div>
+
 
     </fieldset>
 
     <!-- Parte 4 - Avaliação cognitiva -->
     <fieldset>
-      <legend>4 Avaliação Cognitiva</legend>
+      <legend>4. Avaliação Cognitiva</legend>
 
-      <div>
-        <label for="capacidade_atencao">Capacidade de atenção:
-          <input type="radio" id="atencao_curto" name="capacidade_atencao" value="curto"> Curto
-          <input type="radio" id="atencao_longo" name="capacidade_atencao" value="longo"> Longo
-          <input type="radio" id="atencao_medio" name="capacidade_atencao" value="medio"> Médio
-        </label>
+      <div class="radio-group">
+        <span>Capacidade de atenção e memória:</span>
+        <label><input type="radio" name="capacidade_atencao" value="curto"> Curto</label>
+        <label><input type="radio" name="capacidade_atencao" value="longo"> Longo</label>
+        <label><input type="radio" name="capacidade_atencao" value="medio"> Médio</label>
+
       </div>
 
-      <div>
-        <label for="capacidade_julgamento">Capacidade de julgamento e tomada de decisão:
-          <input type="radio" id="julgamento_rapida" name="capacidade_julgamento" value="rapida"> Rápida
-          <input type="radio" id="julgamento_media" name="capacidade_julgamento" value="media"> Média
-          <input type="radio" id="julgamento_lenta" name="capacidade_julgamento" value="lenta"> Lenta
-          <input type="radio" id="julgamento_muito_lenta" name="capacidade_julgamento" value="muito_lenta"> Muito lenta
-        </label>
+      <div class="radio-group">
+        <span>Capacidade de julgamento e tomada de decisão:</span>
+        <label><input type="radio" name="capacidade_julgamento" value="rapida"> Rápida</label>
+        <label><input type="radio" name="capacidade_julgamento" value="media"> Média</label>
+        <label><input type="radio" name="capacidade_julgamento" value="lenta"> Lenta</label>
+        <label><input type="radio" name="capacidade_julgamento" value="muito_lenta"> Muito Lenta</label>
+
       </div>
 
-      <div>
+      <div class="campo-normal">
         <label for="reagir">Como reage em situação de risco</label>
-        <textarea name="reagir" id="reagir" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
+        <textarea name="reagir" id="reagir" rows="2" placeholder="Descreva aqui..."></textarea>
       </div>
 
-      <div>
-        <p>Para Condutor envolvidos em acidentes graves (Reações)</p>
-        <label for="reacoes_trauma">
-          Reações ao traumas (Estado emocional) <textarea name="reacoes_trauma" id="reacoes_trauma" rows="3"
-            cols="40"></textarea>
-        </label>
+      <div class="campo-normal">
+        <label>Para Condutor envolvidos em acidentes graves (Reações)</label>
       </div>
 
-      <div>
-        <p>Sintomas Pós traumáticos</p>
+      <div class="campo-normal">
+        <label for="reacoes_trauma">Reações ao traumas (Estado emocional)</label>
+        <textarea name="reacoes_trauma" id="reacoes_trauma" rows="2" placeholder="Descreva aqui..."></textarea>
+      </div>
+
+      <div class="campo-normal">
+        <label>Sintomas Pós traumáticos</label>
+      </div>
+
+
 
         <label for="hipervilancia">Hipervigilância:
           <input type="radio" id="hipervilancia_sim" name="hipervilancia" value="sim">Sim
