@@ -245,111 +245,100 @@
 
     <!-- Parte 3 - Dados de condução -->
     <fieldset>
-      <legend>3 Dados relativos à condução automóvel</legend>
+      <legend>3. Dados relativos à condução automóvel</legend>
 
-      <div class="grupo-condicional">
-        <label for="experiencia">Experiência:
-          <input type="radio" id="experiencia_nao" name="experiencia" value="nao"> Não
-          <input type="radio" id="experiencia_sim" name="experiencia" value="sim"> Sim
-        </label>
+      <div class="dados-conducao">
+          <label>Experiência:</label>
+          <label><input type="radio" name="experiencia" value="nao"> Não</label>
+          <label><input type="radio" name="experiencia" value="sim"> Sim</label>
+          <label>Nº de anos: <input type="number" name="anos_experiencia" min="0"></label>
+  
 
-        <label for="anos_experiencia">nº anos:
-          <input type="number" id="anos_experiencia" name="anos_experiencia">
-        </label>
+      <!-- Quilometragem -->
+      <label>Nº km no último ano:
+        <input type="number" name="km_ultimo_ano" min="0">
+      </label>
+
+      <!-- Condutor profissional -->
+      <label>Condutor profissional (motorista, examinador, instrutor):</label>
+      <div class="radio-group">
+        <label><input type="radio" name="condutor_profissional" value="nao"> Não</label>
+        <label><input type="radio" name="condutor_profissional" value="sim"> Sim</label>
+        <label>Qual: <input type="text" name="qual_profissao"></label>
       </div>
 
-      <div class="grupo-condicional">
-        <label for="km">nº km no último ano
-          <input type="number" id="km" name="km">
-        </label>
+      <!-- Contra ordenações -->
+      <label>Contra ordenações (coimas):</label>
+      <div class="radio-group">
+        <label><input type="radio" name="contra_ord" value="nao"> Não</label>
+        <label><input type="radio" name="contra_ord" value="sim"> Sim</label>
+      </div>
+      <label>Motivos (últimos 5 anos):
+        <textarea name="motivos_contra_ord" rows="2"></textarea>
+      </label>
 
-        <label for="condutor_profissional">Condutor profissional (motorista, examinador, instrutor):
-          <input type="radio" id="condutor_prof_nao" name="condutor_profissional" value="nao"> Não
-          <input type="radio" id="condutor_prof_sim" name="condutor_profissional" value="sim"> Sim
-        </label>
+      <!-- Crimes rodoviários -->
+      <label>Crimes rodoviários:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="crimes_rod" value="nao"> Não</label>
+        <label><input type="radio" name="crimes_rod" value="sim"> Sim</label>
+      </div>
+      <label>Motivos (últimos 5 anos):
+        <textarea name="motivos_crimes_rod" rows="2"></textarea>
+      </label>
 
-        <div class="campo-condicional" id="campo-condutor_profissional">
-          Qual <input type="text" name="condutor_profissional_quais"> 
-        </div>
+      <!-- Apreensão do título -->
+      <label>Apreensão do título:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="apreensao_titulo" value="nao"> Não</label>
+        <label><input type="radio" name="apreensao_titulo" value="sim"> Sim</label>
+        <label>Quantas vezes? <input type="number" name="vezes_apreensao" min="0"></label>
+      </div>
+      <label>Motivos:
+        <textarea name="motivos_apreensao" rows="2"></textarea>
+      </label>
+
+      <!-- Caducidade e cancelamento -->
+      <label>Caducidade e cancelamento de títulos de condução:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="caducidade" value="nao"> Não</label>
+        <label><input type="radio" name="caducidade" value="sim"> Sim</label>
+        <label>Quantas vezes? <input type="number" name="vezes_caducidade" min="0"></label>
+      </div>
+      <label>Motivos:
+        <textarea name="motivos_caducidade" rows="2"></textarea>
+      </label>
+
+      <!-- Acidentes -->
+      <label>Acidentes como condutor nos últimos 5 anos / 2 anos:</label>
+      <label>Com vítimas:
+        <textarea name="acidentes_vitimas" rows="2" placeholder="Feridos ligeiros, feridos graves, mortes"></textarea>
+      </label>
+
+      <!-- Avaliações psicológicas -->
+      <label>Avaliações psicológicas anteriores:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="avaliacoes" value="nao"> Não</label>
+        <label><input type="radio" name="avaliacoes" value="sim"> Sim</label>
+        <label>Quantas: <input type="number" name="quantas_avaliacoes" min="0"></label>
       </div>
 
-      <div class="grupo-condicional">
-        <label>Contra ordenações (coimas):
-          <input type="radio" name="contra_ordenacoes" value="nao">Não
-          <input type="radio" name="contra_ordenacoes" value="sim">Sim
-        </label>
-
-        <div class="campo-condicional" id="campo-contra_ordenacoes">
-          Motivos (últimos 5 anos) <input type="text" name="contra_ordenacoes_quais"> 
-        </div>
+      <!-- Resultado -->
+      <label>Resultado:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="resultado" value="apto"> Apto</label>
+        <label><input type="radio" name="resultado" value="inapto"> Inapto</label>
       </div>
 
-      <div class="grupo-condicional">
-        <label for="crimes_rodoviarios">Crimes rodoviários:
-          <input type="radio" id="crimes_nao" name="crimes_rodoviarios" value="nao">Não
-          <input type="radio" id="crimes_sim" name="crimes_rodoviarios" value="sim">Sim
-        </label>
-
-        <div class="campo-condicional" id="campo-crimes_rodoviarios">
-          Motivos (últimos 5 anos) <textarea name="crimes_rodoviarios_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-        </div>
+      <!-- Data e assinatura -->
+      <label>Data:
+        <input type="date" name="data">
+      </label>
+      <label>Assinatura:
+        <input type="text" name="assinatura">
+      </label>
       </div>
-
-      <div class="grupo-condicional">
-        <label for="apreensao_titulo">Apreensão do título:
-          <input type="radio" id="apreensao_nao" name="apreensao_titulo" value="nao">Não
-          <input type="radio" id="apreensao_sim" name="apreensao_titulo" value="sim">Sim
-        </label>
-
-        <div class="campo-condicional" id="campo-apreensao_titulo">
-          Quantas vezes? <input type="number" id="apreensao_quantas" name="apreensao_quantas" min="0">
-          Motivos <textarea name="apreensao_titulo_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-        </div>
-      </div>
-
-      <div class="grupo-condicional">
-        <label for="caducidade">Caducidade e cancelamento de títulos de condução:
-          <input type="radio" id="caducidade_nao" name="caducidade" value="nao">Não
-          <input type="radio" id="caducidade_sim" name="caducidade" value="sim">Sim
-        </label>
-
-        <div class="campo-condicional" id="campo-caducidade">
-          Quantas vezes? <input type="number" id="caducidade_quantas" name="caducidade_quantas" min="0">
-          Motivos <textarea name="caducidade_motivos" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-        </div>
-      </div>
-
-      <div class="grupo-condicional">
-        <label for="acidente_condutor">Acidentes como condutor:
-          <input type="radio" id="acidente_nao" name="acidente_condutor" value="nao">Não
-          <input type="radio" id="acidente_sim" name="acidente_condutor" value="sim">Sim
-        </label>
-
-        <div class="campo-condicional" id="campo-acidente_condutor">
-          últimos 5 anos, 2 anos 
-          com vítimas: feridos ligeiros, feridos graves, mortes &gt;
-        </div>
-      </div>
-
-      <div class="grupo-condicional">
-        <label for="avaliacoes_psicologicas">Avaliações psicológicas anteriores:
-          <input type="radio" id="avaliacoes_nao" name="avaliacoes_psicologicas" value="nao">Não
-          <input type="radio" id="avaliacoes_sim" name="avaliacoes_psicologicas" value="sim">Sim
-        </label>
-
-        <div class="campo-condicional" id="campo-avaliacoes_psicologicas">
-          Quantas <textarea name="avaliacoes_psicologicas_quais" rows="3" cols="40" placeholder="Descreva aqui..."></textarea>
-        </div>
-      </div>
-
-      <div class="grupo-condicional">
-        <label for="resultado">Resultado:
-          <input type="radio" id="resultado_apto" name="resultado" value="apto">Apto
-          <input type="radio" id="resultado_inapto" name="resultado" value="inapto">Inapto
-        </label>
-      </div>
-
-      <p>Data e assinatura</p>
+      
     </fieldset>
 
     <!-- Parte 4 - Avaliação cognitiva -->
