@@ -273,7 +273,17 @@ button:hover {
 .campo-normal input[type="text"] {
   padding: 5px;
   margin-top: 5px;
+  margin-right: 10px;
   box-sizing: border-box;
+}
+
+.campo-normal input[type="radio"] {
+  margin-right: 8px;
+
+}
+.campo-normal {
+  margin-bottom: 3px;
+  
 }
 
 .campo-normal textarea {

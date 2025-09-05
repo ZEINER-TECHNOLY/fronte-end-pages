@@ -380,73 +380,72 @@
     <fieldset>
       <legend>4. Avaliação Cognitiva</legend>
 
-      <div class="radio-group">
-        <span>Capacidade de atenção e memória:</span>
-        <label><input type="radio" name="capacidade_atencao" value="curto"> Curto</label>
-        <label><input type="radio" name="capacidade_atencao" value="longo"> Longo</label>
-        <label><input type="radio" name="capacidade_atencao" value="medio"> Médio</label>
+      <div class="dados-conducao">
+        <div class="radio-group">
+          <span>Capacidade de atenção e memória:</span>
+          <label><input type="radio" name="capacidade_atencao" value="curto"> Curto</label>
+          <label><input type="radio" name="capacidade_atencao" value="longo"> Longo</label>
+          <label><input type="radio" name="capacidade_atencao" value="medio"> Médio</label>
 
-      </div>
+        </div>
 
-      <div class="radio-group">
-        <span>Capacidade de julgamento e tomada de decisão:</span>
-        <label><input type="radio" name="capacidade_julgamento" value="rapida"> Rápida</label>
-        <label><input type="radio" name="capacidade_julgamento" value="media"> Média</label>
-        <label><input type="radio" name="capacidade_julgamento" value="lenta"> Lenta</label>
-        <label><input type="radio" name="capacidade_julgamento" value="muito_lenta"> Muito Lenta</label>
+        <div class="radio-group">
+          <span>Capacidade de julgamento e tomada de decisão:</span>
+          <label><input type="radio" name="capacidade_julgamento" value="rapida"> Rápida</label>
+          <label><input type="radio" name="capacidade_julgamento" value="media"> Média</label>
+          <label><input type="radio" name="capacidade_julgamento" value="lenta"> Lenta</label>
+          <label><input type="radio" name="capacidade_julgamento" value="muito_lenta"> Muito Lenta</label>
 
-      </div>
+        </div>
 
-      <div class="campo-normal">
-        <label for="reagir">Como reage em situação de risco</label>
-        <textarea name="reagir" id="reagir" rows="2" placeholder="Descreva aqui..."></textarea>
-      </div>
+        <div class="campo-normal">
+          <label for="reagir">Como reage em situação de risco</label>
+          <textarea name="reagir" id="reagir" rows="2" placeholder="Descreva aqui..."></textarea>
+        </div>
 
-      <div class="campo-normal">
-        <label>Para Condutor envolvidos em acidentes graves (Reações)</label>
-      </div>
+        <div class="campo-normal">
+          <label>Para Condutor envolvidos em acidentes graves (Reações)</label>
+        </div>
 
-      <div class="campo-normal">
-        <label for="reacoes_trauma">Reações ao traumas (Estado emocional)</label>
-        <textarea name="reacoes_trauma" id="reacoes_trauma" rows="2" placeholder="Descreva aqui..."></textarea>
-      </div>
+        <div class="campo-normal">
+          <label for="reacoes_trauma">Reações ao traumas (Estado emocional)</label>
+          <textarea name="reacoes_trauma" id="reacoes_trauma" rows="2" placeholder="Descreva aqui..."></textarea>
+        </div>
 
-      <div class="campo-normal">
-        <label>Sintomas Pós traumáticos</label>
-      </div>
+        <div class="campo-normal">
+          <label>Sintomas Pós traumáticos</label>
+        </div>
 
+        <div class="radio-group">
+          <span>Hipervigilância:</span>
+          <label><input type="radio" name="hipervilancia" value="sim">Sim</label>
+          <label><input type="radio" name="hipervilancia" value="nao">Não</label>
+        </div>
 
+        <div class="radio-group">
+          <span>Flash backs:</span>
+          <label><input type="radio" name="flash_backs" value="sim">Sim</label>
+          <label><input type="radio" name="flash_backs" value="nao">Não</label>
+        </div>
 
-        <label for="hipervilancia">Hipervigilância:
-          <input type="radio" id="hipervilancia_sim" name="hipervilancia" value="sim">Sim
-          <input type="radio" id="hipervilancia_nao" name="hipervilancia" value="nao">Não
-        </label>
+        <div class="radio-group">
+          <span>Pesadelos:</span>
+          <label><input type="radio" name="pesadelos" value="sim">Sim</label>
+          <label><input type="radio" name="pesadelos" value="nao">Não</label>
+        </div>
 
-        <label for="flash_backs">Flash backs:
-          <input type="radio" id="flash_sim" name="flash_backs" value="sim">Sim
-          <input type="radio" id="flash_nao" name="flash_backs" value="nao">Não
-        </label>
+        <div class="radio-group">
+          <span>Medo:</span>
+          <label><input type="radio" name="medo" value="sim">Sim</label>
+          <label><input type="radio" name="medo" value="nao">Não</label>
+        </div>
 
-        <label for="pesadelos">Pesadelos:
-          <input type="radio" id="pesadelos_sim" name="pesadelos" value="sim">Sim
-          <input type="radio" id="pesadelos_nao" name="pesadelos" value="nao">Não
-        </label>
-
-        <label for="medo">Medo:
-          <input type="radio" id="medo_sim" name="medo" value="sim">Sim
-          <input type="radio" id="medo_nao" name="medo" value="nao">Não
-        </label>
-      </div>
-
-      <div>
-        <label for="obs_geral">Observação geral do perfil psicológico do condutor
-          (Padrões comportamentais que destacam)
-        </label>
-        <!-- mantive 4 campos de texto como no original, agora com ids únicos -->
-        <input type="text" id="obs_geral_1" name="obs_geral_1">
-        <input type="text" id="obs_geral_2" name="obs_geral_2">
-        <input type="text" id="obs_geral_3" name="obs_geral_3">
-        <input type="text" id="obs_geral_4" name="obs_geral_4">
+        <div class="campo-normal">
+          <label for="obs_geral">Observação geral do perfil psicológico do condutor
+            (Padrões comportamentais que destacam)
+          </label>
+          <textarea name="obs_geral" id="obs_geral" rows="4"></textarea>
+        </div>
       </div>
 
     </fieldset>
@@ -455,16 +454,20 @@
     <fieldset>
       <legend>5. Avaliação Psicométrica (testes utilizados)</legend>
 
-      <div>
-        <label for="psicometrico_resultado_1">
-          <input type="text" id="psicometrico_resultado_1" name="psicometrico_resultado_1">Resultado
-          <input type="text" id="psicometrico_resultado_2" name="psicometrico_resultado_2">
-        </label>
+      <div class="dados-conducao">
+        <div class="campo-normal">
+          <label for="psicometrico_resultado_1">
+            <input type="text" id="psicometrico_resultado_1" name="psicometrico_resultado_1">Resultado
+            <input type="text" id="psicometrico_resultado_2" name="psicometrico_resultado_2">
+          </label>
+        </div>
 
-        <label for="psicometrico_resultado_3">
-          <input type="text" id="psicometrico_resultado_3" name="psicometrico_resultado_3">Resultado
-          <input type="text" id="psicometrico_resultado_4" name="psicometrico_resultado_4">
-        </label>
+        <div class="campo-normal">
+          <label for="psicometrico_resultado_3">
+            <input type="text" id="psicometrico_resultado_3" name="psicometrico_resultado_3">Resultado
+            <input type="text" id="psicometrico_resultado_4" name="psicometrico_resultado_4">
+          </label>
+        </div>
       </div>
 
     </fieldset>
@@ -473,20 +476,20 @@
     <fieldset>
       <legend>6. Observações durante a aplicação do teste</legend>
 
-      <div>
-        <label for="clareza_resposta">Clareza nas respostas
+      <div class="dados-conducao">
+        <label class="campo-normal" for="clareza_resposta">Clareza nas respostas
           <input type="text" id="clareza_resposta" name="clareza_resposta">
         </label>
 
-        <label for="sinais_ansiedade">Sinais de ansiedade
+        <label class="campo-normal" for="sinais_ansiedade">Sinais de ansiedade
           <input type="text" id="sinais_ansiedade" name="sinais_ansiedade">
         </label>
 
-        <label for="sinais_impulsividade">Sinais de impulsividade ou desatenção
+        <label class="campo-normal" for="sinais_impulsividade">Sinais de impulsividade ou desatenção
           <input type="text" id="sinais_impulsividade" name="sinais_impulsividade">
         </label>
 
-        <label for="linguagem_comunicacao">Linguagem e comunicação
+        <label class="campo-normal" for="linguagem_comunicacao">Linguagem e comunicação
           <input type="text" id="linguagem_comunicacao" name="linguagem_comunicacao">
         </label>
       </div>
@@ -497,42 +500,44 @@
     <fieldset>
       <legend>7. Histórico de Acidente</legend>
 
-      <div>
+      <div class="campo-normal">
         <label for="descricao_acidente">Descrição do acidente (Detalhes sobre o ocorrido)
           <textarea name="descricao_acidente" id="descricao_acidente" rows="3" cols="40"></textarea>
         </label>
       </div>
 
-      <div>
-        <p>Causa do acidente</p>
-        <label for="fatores_externos">Fatores externos
-          <input type="radio" id="fatores_externos_sim" name="fatores_externos" value="sim">Sim
-          <input type="radio" id="fatores_externos_nao" name="fatores_externos" value="nao">Não
-        </label>
-
-        <label for="falha_humama">Falha Humana
-          <input type="radio" id="falha_sim" name="falha_humama" value="sim">Sim
-          <input type="radio" id="falha_nao" name="falha_humama" value="nao">Não
-        </label>
-
-        <label for="fatores_ambientais">Fatores ambientais
-          <input type="radio" id="ambientais_sim" name="fatores_ambientais" value="sim">Sim
-          <input type="radio" id="ambientais_nao" name="fatores_ambientais" value="nao">Não
-        </label>
+      <div class="campo-normal">
+        <label>Causa do acidente</label>
       </div>
 
-      <div>
-        <label for="acidente_consid_grave">Acidente considerado grave
-          <input type="radio" id="grave_sim" name="acidente_consid_grave" value="sim">Sim
-          <input type="radio" id="grave_nao" name="acidente_consid_grave" value="nao">Não
-        </label>
+      <div class="campo-normal">
+        <span>Fatores externos</span>
+        <label><input type="radio" name="fatores_externos" value="sim">Sim</label>
+        <label><input type="radio" name="fatores_externos" value="nao">Não</label>
       </div>
 
-      <div>
-        <label for="acidentes_mortais">Acidente com vítimas mortais
-          <input type="radio" id="mortais_sim" name="acidentes_mortais" value="sim">Sim
-          <input type="radio" id="mortais_nao" name="acidentes_mortais" value="nao">Não
-        </label>
+      <div class="campo-normal">
+        <span>Falha Humana</span>
+        <label><input type="radio" name="falha_humama" value="sim">Sim</label>
+        <label><input type="radio" name="falha_humama" value="nao">Não</label>
+      </div>
+
+      <div class="campo-normal">
+        <span>Fatores ambientais</span>
+        <label><input type="radio" name="fatores_ambientais" value="sim">Sim</label>
+        <label><input type="radio" name="fatores_ambientais" value="nao">Não</label>
+      </div>
+
+      <div class="campo-normal">
+        <span>Acidente considerado grave</span>
+        <label><input type="radio" name="acidente_consid_grave" value="sim">Sim</label>
+        <label><input type="radio" name="acidente_consid_grave" value="nao">Não</label>
+      </div>
+
+      <div class="campo-normal">
+        <span>Acidente com vítimas mortais</span>
+        <label><input type="radio" name="acidentes_mortais" value="sim">Sim</label>
+        <label><input type="radio" name="acidentes_mortais" value="nao">Não</label>
       </div>
 
     </fieldset>
@@ -541,19 +546,20 @@
     <fieldset>
       <legend>8. Conclusão</legend>
 
-      <label for="candidato_esta">O candidato está
-        <input type="radio" id="candidato_apto" name="candidato_esta" value="apto">Apto
-        <input type="radio" id="candidato_inapto" name="candidato_esta" value="inapto">Inapto
-        <input type="radio" id="candidato_pendente" name="candidato_esta" value="pendente">Pendente
-      </label>
+      <div class="campo-normal">
+        <span> candidato está</span>
+        <label><input type="radio" name="candidato_esta" value="apto">Apto</label>
+        <label><input type="radio" name="candidato_esta" value="inapto">Inapto</label>
+        <label><input type="radio" name="candidato_esta" value="pendente">Pendente</label>
+      </div>
 
     </fieldset>
 
-    <p>OBS: Necessidade de acompanhamentos psicológicos (caso o condutor apresente sintomas de TEPT (Pertubação de
-      estresse pós traumático, ansiedade, depressão, etc.))</p>
+    <p>OBS: Necessidade de acompanhamentos psicológicos caso o condutor apresente sintomas de TEPT (Pertubação de
+      estresse pós traumático, ansiedade, depressão, etc.)</p>
 
     <div>
-      <p>Local e data <input type="text" name="local" id="local">, <input type="date" name="data_assinatura"
+      <p>Local e data <input type="text" name="local" id="local"> <input type="date" name="data_assinatura"
           id="data_assinatura"></p>
       <p>O Psicólogo <input type="text" name="psicologo" id="psicologo"></p>
       <p>CP nº <input type="number" name="cp_numero" id="cp_numero"></p>
