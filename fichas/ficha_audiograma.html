@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audiograma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 85%;
+            table-layout: fixed;
+        }
+
+        .header-table td {
+            padding: 4px;
+            vertical-align: middle;
+            overflow: hidden;
+            white-space: nowrap;
+            border: 1px solid black;
+        }
+
+        /* Inputs ocupam toda a célula */
+        .header-table input,
+        .header-table select {
+            width: 95%;
+            box-sizing: border-box;
+            border: none;
+            font-size: 12px;
+            background: transparent;
+            outline: none;
+            padding: 2px;
+        }
+
+        /* larguras proporcionais */
+        .col-name {width: 37%;}
+
+        .col-gender {width: 16%;}
+
+        .col-age {width: 7%;}
+
+        .col-tel {width: 15%;}
+
+        .col-address {width: 25%;}
+
+
+
+        .footer-table {
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .footer-table td {
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        .audiogram-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .ear {
+            width: 50%;
+        }
+
+        .ear table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ear td,
+        .ear th {
+            border: 1px solid black;
+            text-align: center;
+            height: 20px;
+            padding: 2px;
+        }
+
+        .ear caption {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .footer-table {
+            margin-top: 10px;
+        }
+
+        .footer-table td {
+            vertical-align: top;
+        }
+
+        .signature {
+            text-align: right;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>AUDIOGRAMA</h2>
+
+    <!-- Cabeçalho -->
+    <table class="header-table">
+        <tr>
+            <td class="col-name">
+                Nome: <input type="text" name="name">
+            </td>
+            <td class="col-gender">
+                Género:
+                <select name="gender" id="gender">
+                    <option value="">-- Selecione --</option>
+                    <option value="male">Masculino</option>
+                    <option value="female">Feminino</option>
+                    <option value="other">Outros</option>
+                </select>
+            </td>
+            <td class="col-age">
+                Idade: <input type="number" name="age" min="0">
+            </td>
+        
+            <td class="col-tel">
+                Telefone: <input type="tel" name="telephone">
+            </td>
+            <td class="col-address">
+                Endereço: <input type="text" name="address">
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <!-- Grades -->
+    <div class="audiogram-container">
+        <!-- Right Ear -->
+        <div class="ear">
+            <table>
+                <caption>Right Ear (R)</caption>
+                <tr>
+                    <th>dB</th>
+                    <th>125</th>
+                    <th>250</th>
+                    <th>500</th>
+                    <th>1K</th>
+                    <th>2K</th>
+                    <th>4K</th>
+                    <th>8K</th>
+                </tr>
+                <!-- Linhas de -10 até 120 -->
+                <tr>
+                    <td>-10</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>60</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>70</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>80</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>110</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td colspan="7"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Left Ear -->
+        <div class="ear">
+            <table>
+                <caption>Left Ear (L)</caption>
+                <tr>
+                    <th>dB</th>
+                    <th>125</th>
+                    <th>250</th>
+                    <th>500</th>
+                    <th>1K</th>
+                    <th>2K</th>
+                    <th>4K</th>
+                    <th>8K</th>
+                </tr>
+                <!-- Linhas de -10 até 120 -->
+                <tr>
+                    <td>-10</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>60</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>70</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>80</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>110</td>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td colspan="7"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <table class="footer-table">
+        <tr>
+            <td style="width:50%;">
+                Medical history:<br><br>
+                SRS<br>
+                Right ear ____ % &nbsp;&nbsp; Left ear ____ % &nbsp;&nbsp; Binaural ____ %
+            </td>
+            <td colspan="2">
+                Left Ear (Blue)<br>
+                AC: X (Mask)<br>
+                BC: ] (Mask)
+            </td>
+            <td colspan="2">
+                Right Ear (Red)<br>
+                AC: O (Unmask)<br>
+                BC: [ (Unmask)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="signature">
+                Signature: ____________________
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

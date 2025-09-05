@@ -558,12 +558,24 @@
     <p>OBS: Necessidade de acompanhamentos psicológicos caso o condutor apresente sintomas de TEPT (Pertubação de
       estresse pós traumático, ansiedade, depressão, etc.)</p>
 
-    <div>
-      <p>Local e data <input type="text" name="local" id="local"> <input type="date" name="data_assinatura"
-          id="data_assinatura"></p>
-      <p>O Psicólogo <input type="text" name="psicologo" id="psicologo"></p>
-      <p>CP nº <input type="number" name="cp_numero" id="cp_numero"></p>
+    <div class="campo-normal">
+      <label for="local">Local:</label>
+      <input type="text" name="local" id="local">
+
+      <label for="data_assinatura">Data:</label>
+      <input type="date" name="data_assinatura" id="data_assinatura">
     </div>
+
+    <div class="campo-normal">
+      <label for="psicologo">O Psicólogo:</label>
+      <input type="text" name="psicologo" id="psicologo">
+    </div>
+
+    <div class="campo-normal">
+      <label for="cp_numero">CP nº:</label>
+      <input type="number" name="cp_numero" id="cp_numero">
+    </div>
+
 
     <button type="submit">Enviar Formulário</button>
     <a href="../index.html" class="btn-voltar">⬅ Voltar à Página Inicial</a>

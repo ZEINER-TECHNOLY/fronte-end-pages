@@ -270,6 +270,7 @@ button:hover {
   box-sizing: border-box;
 }
 
+.campo-normal input[type="date"],
 .campo-normal input[type="text"] {
   padding: 5px;
   margin-top: 5px;
