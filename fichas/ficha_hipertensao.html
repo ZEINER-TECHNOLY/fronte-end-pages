@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ficha para Rastreio de Hipertensão Arterial</title>
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
+
 <body>
 
   <header>
@@ -14,62 +16,70 @@
     <h2>FICHA PARA RASTREIO DE HIPERTENSÃO ARTERIAL</h2>
   </header>
 
-  <form id="ficha-hipertensao">
+  <form id="ficha-hipertensao" method="post">
     <!-- IDENTIFICAÇÃO PESSOAL -->
     <fieldset>
       <legend>Identificação Pessoal</legend>
 
-      <div class="row">
-        <label for="patente">Patente:</label>
-        <input id="patente" name="patente" type="text" />
-      </div>
+      <div class="grid-form">
+        <div class="campo">
+          <label for="patente">Patente:</label>
+          <input id="patente" name="patente" type="text" />
+        </div>
 
-      <div class="row">
-        <label for="nome">Nome completo:</label>
-        <input id="nome" name="nome" type="text" />
-      </div>
+        <div class="campo">
+          <label for="nome">Nome completo:</label>
+          <input id="nome" name="nome" type="text" />
+        </div>
 
-      <div class="row">
-        <label>Sexo:</label>
-        <div>
-          <label class="inline"><input type="radio" name="sexo" value="M" /> Masculino</label>
-          <label class="inline"><input type="radio" name="sexo" value="F" /> Feminino</label>
-          <span class="inline"><strong>Idade:</strong>
-            <input type="number" name="idade" min="0" step="1" style="width:90px" /> anos
-          </span>
+        <div class="campo">
+          <label>Sexo:</label>
+          <div>
+            <label class="inline"><input type="radio" name="sexo" value="M" /> Masculino</label>
+            <label class="inline"><input type="radio" name="sexo" value="F" /> Feminino</label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" name="idade" min="0" step="1" /> anos
+        </div>
+
+
+        <div class="campo">
+          <label for="nascimento">Data de nascimento:</label>
+          <input id="nascimento" name="nascimento" type="date" />
+        </div>
+
+        <div class="campo">
+          <label for="nip">NIP:</label>
+          <input id="nip" name="nip" type="text" />
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone/Contacto:</label>
+          <input id="telefone" name="telefone" type="tel" />
+        </div>
+
+        <div class="campo">
+          <label for="endereco">Endereço:</label>
+          <input id="endereco" name="endereco" type="text" />
         </div>
       </div>
-
-      <div class="row">
-        <label for="nascimento">Data de nascimento:</label>
-        <input id="nascimento" name="nascimento" type="date" />
-      </div>
-
-      <div class="row">
-        <label for="nip">NIP:</label>
-        <input id="nip" name="nip" type="text" />
-      </div>
-
-      <div class="row">
-        <label for="telefone">Telefone/Contacto:</label>
-        <input id="telefone" name="telefone" type="tel" />
-      </div>
-
-      <div class="row">
-        <label for="endereco">Endereço:</label>
-        <input id="endereco" name="endereco" type="text" />
-      </div>
     </fieldset>
+
 
     <!-- ANTECEDENTES PESSOAIS -->
     <fieldset>
       <legend>Antecedentes Pessoais</legend>
       <div class="antecedentes_pessoais">
-        <label class="inline"><input type="checkbox" name="antecedentes" value="hipertensao" /> Hipertensão Arterial</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="hipertensao" /> Hipertensão
+          Arterial</label>
         <label class="inline"><input type="checkbox" name="antecedentes" value="diabetes" /> Diabetes Mellitus</label>
         <label class="inline"><input type="checkbox" name="antecedentes" value="dislipidemia" /> Dislipidemia</label>
         <label class="inline"><input type="checkbox" name="antecedentes" value="drc" /> Doença Renal Crónica</label>
-        <label class="inline"><input type="checkbox" name="antecedentes" value="avc_enfarte" /> Histórico de AVC ou Enfarte</label>
+        <label class="inline"><input type="checkbox" name="antecedentes" value="avc_enfarte" /> Histórico de AVC ou
+          Enfarte</label>
         <label class="inline"><input type="checkbox" name="antecedentes" value="tabagismo" /> Tabagismo</label>
         <label class="inline"><input type="checkbox" name="antecedentes" value="etilismo" /> Etilismo</label>
         <label class="inline"><input type="checkbox" name="antecedentes" value="sedentarismo" /> Sedentarismo</label>
@@ -134,7 +144,8 @@
         <label class="inline"><input type="checkbox" name="sintomas" value="palpitacoes" /> Palpitações</label>
         <label class="inline"><input type="checkbox" name="sintomas" value="visao_turva" /> Visão turva</label>
         <label class="inline"><input type="checkbox" name="sintomas" value="dor_toracica" /> Dor torácica</label>
-        <label class="inline"><input type="checkbox" name="sintomas" value="edema_mi" /> Edema nos membros inferiores</label>
+        <label class="inline"><input type="checkbox" name="sintomas" value="edema_mi" /> Edema nos membros
+          inferiores</label>
         <label class="inline"><input type="checkbox" name="sintomas" value="nenhum" /> Nenhum</label>
       </div>
     </fieldset>
@@ -143,11 +154,16 @@
     <fieldset>
       <legend>Orientações Realizadas</legend>
       <div class="orientacoes_realizadas">
-        <label class="inline"><input type="checkbox" name="orientacoes" value="encaminhado" /> Encaminhado para consulta médica</label>
-        <label class="inline"><input type="checkbox" name="orientacoes" value="habitos" /> Orientado a manter hábitos saudáveis</label>
-        <label class="inline"><input type="checkbox" name="orientacoes" value="repetir_pa" /> Repetir PA em nova consulta</label>
-        <label class="inline"><input type="checkbox" name="orientacoes" value="educacao" /> Educação sobre alimentação e atividade física</label>
-        <label class="inline"><input type="checkbox" name="orientacoes" value="medicacao" /> Orientação sobre uso correcto da medicação</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="encaminhado" /> Encaminhado para consulta
+          médica</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="habitos" /> Orientado a manter hábitos
+          saudáveis</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="repetir_pa" /> Repetir PA em nova
+          consulta</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="educacao" /> Educação sobre alimentação e
+          atividade física</label>
+        <label class="inline"><input type="checkbox" name="orientacoes" value="medicacao" /> Orientação sobre uso
+          correcto da medicação</label>
       </div>
 
       <div class="row" style="margin-top:12px">
@@ -186,4 +202,5 @@
   <a href="../index.html" class="btn-voltar">⬅ Voltar à Página Inicial</a>
 
 </body>
+
 </html>

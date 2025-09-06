@@ -233,6 +233,48 @@ button:hover {
 
 
 /* ========== Ficha Hipertensão ========== */
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* cada campo ocupa mínimo 200px e cresce */
+  gap: 15px;  /* espaçamento entre linhas e colunas */
+}
+
+.campo label {
+  display: block; /* label em cima do input */
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"],
+.campo input[type="date"] {
+  width: 100%; /* ocupa todo espaço da célula */
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.campo div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.campo input[type="number"] {
+  width: 80px; /* ajusta largura do campo idade */
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+
+.inline {
+  margin-right: 10px;
+}
+
+
+
+
+
 .antecedentes_pessoais {
   display: flex;
   flex-direction: column;
@@ -253,7 +295,8 @@ button:hover {
 .dados-conducao {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* espaçamento entre todos os blocos */
+  gap: 8px;
+  /* espaçamento entre todos os blocos */
 }
 
 .radio-group {
@@ -264,7 +307,8 @@ button:hover {
 }
 
 .campo-normal input[type="number"] {
-  width: 60px; /* cabe 4 dígitos */
+  width: 60px;
+  /* cabe 4 dígitos */
   padding: 5px;
   margin-top: 5px;
   box-sizing: border-box;
@@ -282,9 +326,10 @@ button:hover {
   margin-right: 8px;
 
 }
+
 .campo-normal {
   margin-bottom: 3px;
-  
+
 }
 
 .campo-normal textarea {
