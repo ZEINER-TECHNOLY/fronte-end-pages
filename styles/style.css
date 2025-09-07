@@ -90,6 +90,7 @@ p {
   margin-bottom: 10px;
 }
 
+
 /* ========== FORMULÁRIO ========== */
 form {
   max-width: 800px;
@@ -107,6 +108,64 @@ fieldset {
   margin-bottom: 20px;
 }
 
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  color: #0d62b6;
+  ;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* cada campo ocupa mínimo 200px e cresce */
+  gap: 15px;
+}
+
+.grid-form input:hover {
+  border: solid 2px #0066cc;
+  transition: 0.5s;
+}
+
+.campo label {
+  display: block;
+  /* label em cima do input */
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"],
+.campo input[type="email"],
+.campo select,
+.campo input[type="date"] {
+  width: 100%;
+  /* ocupa todo espaço da célula */
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.campo div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.campo input[type="number"] {
+  width: 80px;
+  /* ajusta largura do campo idade */
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.inline {
+  margin-right: 10px;
+}
+
+
+
+/* ========== Ficha 1 ========== */
 .processo {
   display: flex;
   flex-direction: column;
@@ -131,46 +190,13 @@ fieldset {
   padding: 5px;
 }
 
-legend {
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding: 0 10px;
-  color: #0d62b6;
-  ;
-}
-
-/* ========== LINHAS DE CAMPOS ========== */
-.form-grupo {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.form-grupo label {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  margin-top: 5px;
-  font-size: 15px;
-  text-align: center;
-}
-
-.form-grupo input {
-  width: 100%;
-  padding: 5px;
-}
-
-.form-grupo input:hover {
-  border: solid 1px #0066cc;
-  transition: 0.5s;
-}
-
 .grupo-condicional {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  line-height: 50px;
   align-items: flex-start;
   /* alinha os itens pelo topo */
+  margin-bottom: 10px;
 
 }
 
@@ -182,8 +208,18 @@ legend {
 }
 
 .campo-condicional input {
+  width: 600px;
   padding: 5px;
-  flex: 1;
+
+}
+
+.campo-condicional.separado {
+  margin-bottom: 10px;
+}
+
+.campo-condicional.separado input {
+  width: 530px;
+  padding: 5px;
 }
 
 /* ========== BOTÃO ========== */
@@ -219,6 +255,38 @@ button:hover {
   transform: scale(1.05);
 }
 
+
+
+
+/* ========== Ficha Hipertensão ========== */
+
+.antecedentes_pessoais {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.row input[type="number"],
+.row input[type="date"] {
+  width: 100px;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.row input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+
+
 /* ========== Ficha 2 ========== */
 .p_ficha2 {
   display: flex;
@@ -231,66 +299,11 @@ button:hover {
   gap: 10px;
 }
 
-
-/* ========== Ficha Hipertensão ========== */
-.grid-form {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* cada campo ocupa mínimo 200px e cresce */
-  gap: 15px;  /* espaçamento entre linhas e colunas */
+.processo_ficha2 input[type="text"],
+.processo_ficha2 input[type="date"] {
+  padding: 5px;
 }
 
-.campo label {
-  display: block; /* label em cima do input */
-  margin-bottom: 4px;
-  font-weight: 500;
-}
-
-.campo input[type="text"],
-.campo input[type="tel"],
-.campo input[type="date"] {
-  width: 100%; /* ocupa todo espaço da célula */
-  padding: 6px;
-  box-sizing: border-box;
-}
-
-.campo div {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.campo input[type="number"] {
-  width: 80px; /* ajusta largura do campo idade */
-  padding: 6px;
-  box-sizing: border-box;
-}
-
-
-.inline {
-  margin-right: 10px;
-}
-
-
-
-
-
-.antecedentes_pessoais {
-  display: flex;
-  flex-direction: column;
-}
-
-.sintomas {
-  display: flex;
-  flex-direction: column;
-}
-
-.orientacoes_realizadas {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ========== Ficha 2 ========== */
 
 .dados-conducao {
   display: flex;
@@ -329,7 +342,14 @@ button:hover {
 
 .campo-normal {
   margin-bottom: 3px;
+}
 
+.campo-normal.destaque {
+  padding: 10px;
+  border-left: 5px solid red;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .campo-normal textarea {
@@ -338,4 +358,77 @@ button:hover {
   margin-top: 5px;
   width: 100%;
   box-sizing: border-box;
+}
+
+
+/* ========== Responsividade ========== */
+
+@media (max-width: 480px) {
+  .grupo-condicional {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .grupo-condicional span {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .campo-condicional {
+    flex-direction: column;
+    /* coloca label em cima do input */
+    align-items: stretch;
+    /* faz input ocupar toda a largura */
+    gap: 6px;
+  }
+
+  .campo-condicional input {
+    width: 100%;
+    /* ocupa 100% do espaço disponível */
+    max-width: 100%;
+    /* garante que não estoure */
+  }
+
+  .campo-condicional.separado input {
+    width: 100%;
+    /* idem, para versão separada */
+  }
+
+  .p_ficha2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .row {
+    flex-direction: column;
+    /* inputs empilhados no mobile */
+    gap: 8px;
+  }
+
+  .antecedentes_pessoais {
+    gap: 8px;
+    /* mais espaço para clique com dedo */
+  }
+
+  .campo label {
+    font-size: 14px;
+    /* aumenta legibilidade */
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    /* evita zoom automático no iOS/Android */
+  }
+  .radio-group,
+  .campo-normal {
+    flex-direction: column;   /* empilha os itens */
+    align-items: flex-start;  /* alinha à esquerda */
+  }
+
+   .radio-group label {
+    width: 100%;              /* cada opção ocupa uma linha */
+  }
 }

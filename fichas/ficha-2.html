@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulário Centro Médico</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
@@ -19,7 +20,9 @@
   <form id="ficha-medica" method="">
     <fieldset>
       <div class="p_ficha2">
-        <p>Entidade / Psicólogo</p>
+        <label for="">
+          <p>Entidade / Psicólogo</p>
+        </label>
         <div class="processo_ficha2">
           <label for="processo">Processo:
             <input type="text" id="processo" name="processo">
@@ -35,74 +38,89 @@
     <fieldset>
       <legend>1. Identificação Pessoal</legend>
 
-      <div class="form-grupo">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
+      <div class="grid-form">
+        <div class="campo">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome">
+        </div>
 
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" min="0" max="100">
+        <div class="campo">
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" name="idade" min="0" max="100">
+        </div>
+
+        <div class="campo">
+          <label for="residencia">Residência:</label>
+          <input type="text" id="residencia" name="residencia">
+        </div>
+
+        <div class="campo">
+          <label class="required" for="nacionalidade">Nacionalidade:</label>
+          <input type="text" id="nacionalidade" name="nacionalidade">
+        </div>
+
+        <div class="campo">
+          <label for="naturalidade">Naturalidade:</label>
+          <input type="text" id="naturalidade" name="naturalidade">
+        </div>
+
+        <div class="campo">
+          <label for="contactos">Contactos:</label>
+          <input type="tel" id="contactos" name="contactos">
+        </div>
+
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="campo">
+          <label for="profissao">Profissão:</label>
+          <input type="text" id="profissao" name="profissao">
+        </div>
+
+        <div class="campo">
+          <label for="bi">B.I:</label>
+          <input type="text" id="bi" name="bi">
+        </div>
+
+        <div class="campo">
+          <label for="carta">Carta de Condução nº:</label>
+          <input type="text" id="carta" name="carta">
+        </div>
+
+        <div class="campo">
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" name="sexo">
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="habilitacao">Habilitação Literária:</label>
+          <input type="text" id="habilitacao" name="habilitacao">
+        </div>
+
+        <div class="campo">
+          <label for="tipo_avaliacao">Tipo de Avaliação:</label>
+          <input type="text" id="tipo_avaliacao" name="tipo_avaliacao">
+        </div>
+
+        <div class="campo">
+          <label for="primeira_avaliacao">Primeira Avaliação:</label>
+          <input type="text" id="primeira_avaliacao" name="primeira_avaliacao">
+        </div>
+
+        <div class="campo">
+          <label for="reavaliacao">Reavaliação Pós Acidente:</label>
+          <input type="text" id="reavaliacao" name="reavaliacao">
+        </div>
+
       </div>
 
-      <div class="form-grupo">
-        <label for="residencia">Residência:</label>
-        <input type="text" id="residencia" name="residencia">
-      </div>
-
-      <div class="form-grupo">
-        <label class="required" for="nacionalidade">Nacionalidade:</label>
-        <input type="text" id="nacionalidade" name="nacionalidade">
-
-        <label for="naturalidade">Naturalidade:</label>
-        <input type="text" id="naturalidade" name="naturalidade">
-      </div>
-
-      <div class="form-grupo">
-        <label for="contactos">Contactos:</label>
-        <input type="tel" id="contactos" name="contactos">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      </div>
-
-      <div class="form-grupo">
-        <label for="profissao">Profissão:</label>
-        <input type="text" id="profissao" name="profissao">
-
-        <label for="bi">B.I:</label>
-        <input type="text" id="bi" name="bi">
-      </div>
-
-      <div class="form-grupo">
-        <label for="carta">Carta de Condução nº:</label>
-        <input type="text" id="carta" name="carta">
-
-        <label for="sexo" style="margin-top: 15px;">Sexo:</label>
-        <select id="sexo" name="sexo">
-          <option>Masculino</option>
-          <option>Feminino</option>
-        </select>
-      </div>
-
-      <div class="form-grupo">
-        <label for="habilitacao">Habilitação Literária:</label>
-        <input type="text" id="habilitacao" name="habilitacao">
-
-        <label for="tipo_avaliacao">Tipo de Avaliação:</label>
-        <input type="text" id="tipo_avaliacao" name="tipo_avaliacao">
-      </div>
-
-      <div class="form-grupo">
-        <label for="primeira_avaliacao">Primeira Avaliação:</label>
-        <input type="text" id="primeira_avaliacao" name="primeira_avaliacao">
-      </div>
-
-      <div class="form-grupo">
-        <label for="reavaliacao">Reavaliação Pós Acidente:</label>
-        <input type="text" id="reavaliacao" name="reavaliacao">
-      </div>
-
-      <div class="">
-        <label for="avaliacao_solicitada">Avaliação solicitada por (DTSER, MÉDICO, DECISÃO JUDICIAL,
+      <div class="campo">
+        <label style="margin-top: 20px;" for="avaliacao_solicitada">Avaliação solicitada por (DTSER, MÉDICO, DECISÃO JUDICIAL,
           PSICÓLOGO)</label><br>
         <input type="text" id="avaliacao_solicitada" name="avaliacao_solicitada">
       </div>
@@ -196,7 +214,7 @@
         </div>
       </div>
 
-      <div class="campo-condicional">
+      <div class="campo-condicional separado">
         <label for="quantidade">Quantidade / dia:</label>
         <input type="text" id="quantidade" name="quantidade">
       </div>
@@ -412,7 +430,7 @@
           <textarea name="reacoes_trauma" id="reacoes_trauma" rows="2" placeholder="Descreva aqui..."></textarea>
         </div>
 
-        <div class="campo-normal">
+        <div class="campo-normal destaque">
           <label>Sintomas Pós traumáticos</label>
         </div>
 
@@ -506,7 +524,7 @@
         </label>
       </div>
 
-      <div class="campo-normal">
+      <div class="campo-normal destaque">
         <label>Causa do acidente</label>
       </div>
 

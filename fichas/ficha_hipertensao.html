@@ -85,7 +85,7 @@
         <label class="inline"><input type="checkbox" name="antecedentes" value="sedentarismo" /> Sedentarismo</label>
       </div>
 
-      <div class="row" style="margin-top:12px">
+      <div class="row">
         <label>História familiar de hipertensão:</label>
         <div>
           <label class="inline"><input type="radio" name="hf_hta" value="sim" /> Sim</label>
@@ -126,7 +126,7 @@
       <div class="grid-2">
         <div class="row">
           <label for="altura">Altura (cm):</label>
-          <input id="altura" name="altura" type="number" />
+          <input id="altura" name="altura" type="number" min="0" />
         </div>
         <div class="row">
           <label for="peso">Peso (kg):</label>
@@ -138,7 +138,7 @@
     <!-- SINTOMAS REFERIDOS -->
     <fieldset>
       <legend>SINTOMAS REFERIDOS</legend>
-      <div class="sintomas">
+      <div class="antecedentes_pessoais">
         <label class="inline"><input type="checkbox" name="sintomas" value="cefaleia" /> Cefaleia</label>
         <label class="inline"><input type="checkbox" name="sintomas" value="tonturas" /> Tonturas</label>
         <label class="inline"><input type="checkbox" name="sintomas" value="palpitacoes" /> Palpitações</label>
@@ -153,7 +153,7 @@
     <!-- ORIENTAÇÕES REALIZADAS -->
     <fieldset>
       <legend>Orientações Realizadas</legend>
-      <div class="orientacoes_realizadas">
+      <div class="antecedentes_pessoais">
         <label class="inline"><input type="checkbox" name="orientacoes" value="encaminhado" /> Encaminhado para consulta
           médica</label>
         <label class="inline"><input type="checkbox" name="orientacoes" value="habitos" /> Orientado a manter hábitos
@@ -166,7 +166,7 @@
           correcto da medicação</label>
       </div>
 
-      <div class="row" style="margin-top:12px">
+      <div class="row">
         <label for="outras">Outras:</label>
         <input id="outras" name="outras" type="text" />
       </div>
