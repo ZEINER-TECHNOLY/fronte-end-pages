@@ -165,7 +165,7 @@ legend {
 
 
 
-/* ========== Ficha 1 ========== */
+/* ========== Ficha de Dados ========== */
 .processo {
   display: flex;
   flex-direction: column;
@@ -287,7 +287,7 @@ button:hover {
 
 
 
-/* ========== Ficha 2 ========== */
+/* ========== Ficha de Avaliação Psicológica ========== */
 .p_ficha2 {
   display: flex;
   justify-content: space-between;
