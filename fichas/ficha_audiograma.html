@@ -5,206 +5,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audiograma</title>
+    <style>
+        h2 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-table {
+            border-collapse: collapse;
+            border-spacing: 50px;
+            margin: 20px auto;
+            width: 90%;
+            table-layout: fixed;
+        }
+
+        .header-table td {
+            padding: 4px;
+            vertical-align: middle;
+            overflow: hidden;
+            white-space: nowrap;
+            border: 2px solid black;
+
+        }
+
+        /* Inputs ocupam toda a célula */
+        .header-table input,
+        .header-table select {
+            width: 95%;
+            box-sizing: border-box;
+            border: none;
+            font-size: 12px;
+            background: transparent;
+            outline: none;
+            padding: 2px;
+        }
+
+        /* larguras proporcionais  */
+        .col-nome {
+            width: 37%;
+        }
+
+        .col-genero {
+            width: 16%;
+        }
+
+        .col-idade {
+            width: 7%;
+        }
+
+        .col-tel {
+            width: 15%;
+        }
+
+        .col-endereco {
+            width: 25%;
+        }
+
+
+        /* Tabela Horizontal e Vertical */
+        .horizontal_vertical {
+            width: 100%;
+            margin-left: 2px;
+
+        }
+
+        .horizontal_vertical table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            table-layout: fixed;
+        }
+
+        .horizontal_vertical thead th {
+            border: none;
+            background: transparent;
+            font-size: 12px;
+        }
+
+        /* Ajustar 125 e 500 para a direita */
+        .horizontal_vertical table thead th:nth-child(1),
+        .horizontal_vertical table thead th:nth-child(3) {
+            padding-left: 18px;
+        }
+
+
+
+        /* Primeira linha do tbody */
+        /* Primeira linha do thead */
+        .principal_tabela table thead tr:first-child th {
+            height: 0px;
+            /* altura desejada */
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+
+
+        /* Última linha do tbody */
+        .principal_tabela table tbody tr:last-child td {
+            height: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+
+
+
+
+
+
+        .grid-container {
+            display: flex;
+            gap: 40px;
+            width: 90%;
+            margin: 0px auto;
+            padding: 10px;
+            justify-content: flex-start;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            flex: 1 1 auto;
+            max-width: 100%;
+        }
+
+        .grid h3 {
+            text-align: center;
+        }
+
+
+        /* Tabela Vertical e Tabela Principal */
+        .double_tabela {
+            display: flex;
+        }
+
+        .principal_tabela table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .principal_tabela table th,
+        .principal_tabela table td {
+            border: 1px solid black;
+            padding: 2px;
+            text-align: center;
+            height: 30px;
+        }
+
+        .principal_tabela table input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            text-align: center;
+            font-size: 14px;
+            font-family: inherit;
+            padding: 0;
+        }
+
+        .principal_tabela table th:nth-child(4),
+        .principal_tabela table td:nth-child(4) {
+            border-right: 1px dashed rgb(0, 0, 0);
+        }
+
+        .principal_tabela table th:nth-child(5),
+        .principal_tabela table td:nth-child(5) {
+            border-left: 1px dashed black;
+            ;
+        }
+
+        .principal_tabela table th:nth-child(6),
+        .principal_tabela table td:nth-child(6) {
+            border-right: 1px dashed black;
+        }
+
+        .principal_tabela table th:nth-child(7),
+        .principal_tabela table td:nth-child(7) {
+            border-left: 1px dashed black;
+            ;
+        }
+
+        .principal_tabela table th:nth-child(8),
+        .principal_tabela table td:nth-child(8) {
+            border-right: 1px dashed black;
+        }
+
+        .principal_tabela table th:nth-child(9),
+        .principal_tabela table td:nth-child(9) {
+            border-left: 1px dashed black;
+            ;
+        }
+
+        .principal_tabela table th:nth-child(10),
+        .principal_tabela table td:nth-child(10) {
+            border-right: 1px dashed black;
+        }
+
+        .principal_tabela table th:nth-child(11),
+        .principal_tabela table td:nth-child(11) {
+            border-left: 1px dashed black;
+        }
+
+
+
+
+
+        .vertical_tabela table {
+            height: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            table-layout: fixed;
+            box-sizing: border-box;
+        }
+
+        .vertical_tabela thead th,
+        .vertical_tabela tbody td {
+            border: none;
+            background: transparent;
+            font-size: 12px;
+
+        }
+
+        .vertical_tabela thead th:nth-child(1) {
+            padding-top: 12px;
+        }
+
+
+
+
+        .vertical_tabela table {
+            height: 100%;
+        }
+
+
+        .horizontal_baixo {
+            width: 100%;
+            marin-left: 20px;
+
+        }
+
+        .horizontal_baixo table {
+            width: 67%;
+            margin-left: 39%;
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+            background-color: blueviolet;
+        }
+
+        .horizontal_baixo thead th {
+            border: none;
+            background: transparent;
+            font-size: 12px;
+        }
+
+        /* Ajustar 125 e 500 para a direita */
+        .horizontal_baixo table thead th:nth-child(1) {
+            padding-left: 28px;
+        }
+        .horizontal_baixo table thead th:nth-child(3) {
+            padding-left: 28px;
+        }
+        .horizontal_baixo table thead th:nth-child(4) {
+            padding-left: 43px;
+        }
+    </style>
 </head>
-<style>
-    h2 {
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    .header-table {
-        border-collapse: collapse;
-        border-spacing: 50px;
-        margin: 20px auto;
-        width: 85%;
-        table-layout: fixed;
-    }
-
-    .header-table td {
-        padding: 4px;
-        vertical-align: middle;
-        overflow: hidden;
-        white-space: nowrap;
-        border: 2px solid black;
-
-    }
-
-    /* Inputs ocupam toda a célula */
-    .header-table input,
-    .header-table select {
-        width: 95%;
-        box-sizing: border-box;
-        border: none;
-        font-size: 12px;
-        background: transparent;
-        outline: none;
-        padding: 2px;
-    }
-
-    /* larguras proporcionais  */
-    .col-nome {
-        width: 37%;
-    }
-
-    .col-genero {
-        width: 16%;
-    }
-
-    .col-idade {
-        width: 7%;
-    }
-
-    .col-tel {
-        width: 15%;
-    }
-
-    .col-endereco {
-        width: 25%;
-    }
-
-
-    /* 2 tabela  */
-    .grid-container {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        /* permite scroll horizontal */
-        padding: 10px;
-        justify-content: flex-start;
-        /* ou center se quiser centralizar */
-    }
-
-    .grid {
-        display: flex;
-        flex-direction: column;
-        margin: 0px auto;
-        flex: 1 1 auto;
-        /* permite que a grid ocupe espaço disponível */
-        max-width: 45%;
-        /* ajusta largura máxima */
-    }
-
-    .horizontal_vertical {
-        margin: 0px auto;
-        max-width: 45%;
-    }
-
-    .grid table {
-        border-collapse: collapse;
-        width: 100%;
-        margin: 0 auto;
-        table-layout: fixed;
-    }
-
-    .grid table th,
-    .grid table td {
-        border: 1px solid black;
-        padding: 2px;
-        text-align: left;
-        height: 10px;
-    }
-
-
-    .principal_tabela table th:nth-child(4),
-    .principal_tabela table td:nth-child(4) {
-        border-right: 1px dashed rgb(0, 0, 0);
-    }
-
-    .principal_tabela table th:nth-child(5),
-    .principal_tabela table td:nth-child(5) {
-        border-left: 1px dashed black;
-        ;
-    }
-
-    .principal_tabela table th:nth-child(6),
-    .principal_tabela table td:nth-child(6) {
-        border-right: 1px dashed black;
-    }
-
-    .principal_tabela table th:nth-child(7),
-    .principal_tabela table td:nth-child(7) {
-        border-left: 1px dashed black;
-        ;
-    }
-
-    .principal_tabela table th:nth-child(8),
-    .principal_tabela table td:nth-child(8) {
-        border-right: 1px dashed black;
-    }
-
-    .principal_tabela table th:nth-child(9),
-    .principal_tabela table td:nth-child(9) {
-        border-left: 1px dashed black;
-        ;
-    }
-
-    .principal_tabela table th:nth-child(10),
-    .principal_tabela table td:nth-child(10) {
-        border-right: 1px dashed black;
-    }
-
-    .principal_tabela table th:nth-child(11),
-    .principal_tabela table td:nth-child(11) {
-        border-left: 1px dashed black;
-    }
-
-    .principal_tabela table tbody tr:last-child td {
-        height: 4px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        line-height: 12px;
-        overflow: hidden;
-    }
-
-    .principal_tabela table thead tr:last-child th {
-        height: 4px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        line-height: 12px;
-        overflow: hidden;
-    }
-
-    .principal_tabela table input {
-        width: 100%;
-        border: none;
-        outline: none;
-        background: transparent;
-        text-align: center;
-        font-size: 14px;
-        font-family: inherit;
-        padding: 0;
-    }
-
-    .principal_tabela h3 {
-        text-align: center;
-    }
-
-
-
-
-    /* Tabela Horizontal e Vertical */
-    .horizontal_vertical {
-        width: 100%;
-    }
-    .horizontal_vertical table {
-        border-collapse: collapse;
-        text-align: center;
-        margin-left: -125px;
-       
-    }
-
-    .horizontal_vertical thead th {
-        border: none;
-        background: transparent;
-        font-size: 12px;
-        width: 60px;
-    }
-
-
-</style>
 
 <body>
+
     <h2>AUDIOGRAMA</h2>
 
     <!-- Cabeçalho -->
@@ -241,6 +314,15 @@
             <h3>Right Ear (R)</h3>
             <div class="horizontal_vertical">
                 <table>
+                    <colgroup>
+                        <col style="width: 18.2857%;">
+                        <col style="width: 13.2857%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 11.2857%;">
+                        <col style="width: 6.2857%;">
+                    </colgroup>
                     <thead>
                         <tr>
                             <th>125</th>
@@ -249,497 +331,650 @@
                             <th>1k</th>
                             <th>2k</th>
                             <th>4k</th>
-                            <th>8k</th>
+                            <th style="text-align: right;">8k</th>
                         </tr>
                     </thead>
-                    
+
                 </table>
             </div>
-            <div class="principal_tabela">
+            <div class="double_tabela">
+                <div class="vertical_tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>-10</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                            </tr>
+                            <tr>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>110</td>
+                            </tr>
+                            <tr>
+                                <td>120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="principal_tabela">
+                    <table>
+                        <colgroup>
+                            <col style="width: 1%;">
+                            <col style="width: 16.33%;">
+                            <col style="width: 16.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 1%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="horizontal_baixo">
                 <table>
                     <colgroup>
-                        <col style="width: 1.33%;">
-                        <col style="width: 15.33%;">
-                        <col style="width: 15.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 1.33%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 13.2857%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 16.2857%;">
                     </colgroup>
                     <thead>
                         <tr>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
+                            <th>750</th>
+                            <th>1.5k</th>
+                            <th>3k</th>
+                            <th>6k</th>
+                            <th>Hz</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                    </tbody>
+
                 </table>
             </div>
         </div>
 
-
-        <!-- Tabela da direita (cópia) -->
+        <!-- Tabela da direita -->
         <div class="grid">
             <h3>Left Ear (L)</h3>
             <div class="horizontal_vertical">
                 <table>
+                    <colgroup>
+                        <col style="width: 18.2857%;">
+                        <col style="width: 13.2857%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 11.2857%;">
+                        <col style="width: 6.2857%;">
+                    </colgroup>
                     <thead>
                         <tr>
-                            <th>dB</th> <!-- canto superior esquerdo -->
                             <th>125</th>
                             <th>250</th>
                             <th>500</th>
                             <th>1k</th>
                             <th>2k</th>
                             <th>4k</th>
-                            <th>8k</th>
+                            <th style="text-align: right;">8k</th>
                         </tr>
                     </thead>
-                    
+
                 </table>
             </div>
-            <div class="principal_tabela">
+            <div class="double_tabela">
+                <div class="vertical_tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>-10</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                            </tr>
+                            <tr>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>110</td>
+                            </tr>
+                            <tr>
+                                <td>120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="principal_tabela">
+                    <table>
+                        <colgroup>
+                            <col style="width: 1%;">
+                            <col style="width: 16.33%;">
+                            <col style="width: 16.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 9%;">
+                            <col style="width: 7.33%;">
+                            <col style="width: 1%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                                <th><input type="text"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="horizontal_baixo">
                 <table>
                     <colgroup>
-                        <col style="width: 1.33%;">
-                        <col style="width: 15.33%;">
-                        <col style="width: 15.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 10.33%;">
-                        <col style="width: 6.33%;">
-                        <col style="width: 1.33%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 13.2857%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 16.2857%;">
                     </colgroup>
                     <thead>
                         <tr>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
-                            <th><input type="text" name="" id=""></th>
+                            <th>750</th>
+                            <th>1.5k</th>
+                            <th>3k</th>
+                            <th>6k</th>
+                            <th>Hz</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                    </tbody>
+
                 </table>
             </div>
         </div>
