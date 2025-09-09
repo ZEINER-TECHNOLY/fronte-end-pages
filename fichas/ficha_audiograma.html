@@ -249,8 +249,8 @@
         }
 
         .horizontal_baixo table {
-            width: 67%;
-            margin-left: 39%;
+            width: 100%;
+            margn-left: 39%;
             border-collapse: collapse;
             text-align: center;
             table-layout: fixed;
@@ -263,15 +263,76 @@
             font-size: 12px;
         }
 
+
+
         /* Ajustar 125 e 500 para a direita */
         .horizontal_baixo table thead th:nth-child(1) {
             padding-left: 28px;
         }
+
         .horizontal_baixo table thead th:nth-child(3) {
             padding-left: 28px;
         }
+
         .horizontal_baixo table thead th:nth-child(4) {
             padding-left: 43px;
+        }
+
+
+
+        .tabela_debaixo {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 10px;
+        }
+
+        .tab_a_left {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .tab_esquerda {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .tab_esquerda td {
+            border: 1px solid #000;
+            /* borda preta */
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .tab_esquerda tr:first-child td {
+            background-color: #f9f9f9;
+            /* primeira linha mais clara */
+        }
+
+        .tab_esquerda tr:nth-child(2) td {
+            font-weight: bold;
+            /* Medical history em negrito */
+            background-color: #e6e6e6;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .tab_esquerda tr:nth-child(3) td {
+            font-weight: normal;
+            background-color: #fff;
+        }
+
+        .tab_esquerda tr:nth-child(4) td {
+            font-style: italic;
+            background-color: #fafafa;
+        }
+
+        .tab_esquerda td:first-child {
+            text-align: left;
+            /* primeira coluna alinhada à esquerda */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -956,27 +1017,74 @@
                     </table>
                 </div>
             </div>
+
             <div class="horizontal_baixo">
                 <table>
-                    <colgroup>
-                        <col style="width: 18.2857%;">
-                        <col style="width: 13.2857%;">
-                        <col style="width: 18.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 16.2857%;">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>750</th>
-                            <th>1.5k</th>
-                            <th>3k</th>
-                            <th>6k</th>
-                            <th>Hz</th>
-                        </tr>
-                    </thead>
+                    <colgrup>
+
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>750</th>
+                                <th>1.5k</th>
+                                <th>3k</th>
+                                <th>6k</th>
+                                <th>Hz</th>
+                            </tr>
+                        </thead>
 
                 </table>
             </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="tabela_debaixo">
+        <div class="tab_a_left">
+            <table class="tab_esquerda">
+                <colgroup>
+                    <col style="width: 17%;">
+                    <col style="width: 17%;">
+                    <col style="width: 17%;">
+                    <col style="width: 16%;">
+                    <col style="width: 16%;">
+                    <col style="width: 17%;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Medical history:</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">SRS</td>
+                        <td>Right ear</td>
+                        <td>Left ear</td>
+                        <td>Binatural</td>
+                        <td colspan="2"></td>
+
+                    </tr>
+                    <tr>
+
+                        <td>%</td>
+                        <td>%</td>
+                        <td>%</td>
+                        <td colspan="2">Signature</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab_a_right">
+
         </div>
     </div>
 
