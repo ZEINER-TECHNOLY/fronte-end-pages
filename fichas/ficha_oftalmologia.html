@@ -1,281 +1,414 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Formulário - Análises Clínicas (Replica)</title>
   <style>
-    :root{ --border:#222; --muted:#666; }
-    body{font-family: Arial, Helvetica, sans-serif; background:#f3f3f3; padding:20px}
-    .sheet{width:820px; margin:0 auto; background:white; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,0.08)}
-    h1{font-size:16px; margin:0 0 8px}
-    .row{display:flex; gap:12px}
-    table{border-collapse:collapse; width:100%;}
-    .bordered td, .bordered th{border:1px solid var(--border); padding:6px; font-size:13px}
-    .thin td, .thin th{border:1px solid #bbb; padding:6px; font-size:12px}
-    .small{font-size:12px}
-    .section{margin-bottom:14px}
-    .two-col{display:flex; gap:12px}
-    .col-60{flex:0 0 60%}
-    .col-40{flex:1}
-    .center{text-align:center}
-    .right{text-align:right}
-    .checkbox{display:inline-block; width:14px; height:14px; border:1px solid var(--border); vertical-align:middle; margin-right:6px}
-    .signature{height:54px; border-bottom:1px solid #999}
-    /* Specific layout to resemble original */
-    .top-grid{display:grid; grid-template-columns:1fr 220px; gap:12px; align-items:start}
-    .block-title{font-weight:700; font-size:12px; margin-bottom:6px}
-    .visual-table td{padding:8px}
-    .visual-table thead th:first-child{border: none;}
+    :root {
+      --border: #222;
+      --muted: #666;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f3f3;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .titulo {
+      font-size: small;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .bordered td,
+    .bordered th {
+      border: 1px solid var(--border);
+      padding: 6px;
+      font-size: 13px;
+    }
+
+    .none {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .tab_audicao thead tr th:first-child {
+      border: none;
+      padding-top: 120px;
+    }
+
+    .tab_audicao thead tr {
+      height: 160px;
+    }
+
+    .tab_audicao thead tr th:nth-child(2),
+    .tab_audicao thead tr th:nth-child(3) {
+      padding-bottom: 100px;
+    }
+
+    .visao_intermedia td,
+    .visao_intermedia th {
+      border: 1px solid #080808;
+      padding: 6px;
+      font-size: 12px;
+    }
+
+    .visao_intermedia thead th:first-child {
+      border: none;
+    }
+
+    .oculos td input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+    }
+
+
+    .small {
+      font-size: 12px;
+    }
+
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .checkbox {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--border);
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .signature {
+      height: 54px;
+      border-bottom: 1px solid #999;
+    }
+
+    /* Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 50px;
+      align-items: start;
+      width: 820px;
+      margin: 0 auto;
+      background: white;
+      padding: 38px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .left_grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Tabelas visuais */
+    .visual-table td {
+      padding: 8px;
+    }
+
+    .visual-table thead th:first-child {
+      border: none;
+    }
+
     .visual-table thead th:nth-child(3),
     .visual-table thead th:nth-child(4),
-    .visual-table thead th:nth-child(5){border: none;}
-    .aud-table td{padding:6px; text-align:center}
-    .note{font-size:12px; color:var(--muted)}
+    .visual-table thead th:nth-child(5) {
+      border: none;
+    }
+
+    /* Audiograma */
+    .aud-table td {
+      padding: 6px;
+      text-align: center;
+    }
+
+    /* Notas */
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+    }
   </style>
 </head>
+
 <body>
-  <div class="sheet">
-    <div class="top-grid">
+  <div class="grid">
+    <div class="left_grid">
+      <h1>Oftalmologia - Acuidade visual</h1>
       <div>
-        <h1>Oftalmologia - Acuidade visual</h1>
-        <div class="section">
-          <table class="bordered visual-table" aria-label="Acuidade Visual">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="center">Sem correção</th>
-                <th></th>
-                <th class="center">Óculos</th>
-                <th class="center">Lentes de contacto</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Olho direito</td>
-                <td></td>
-                <td class="center">com correção</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Olho esquerdo</td>
-                <td></td>
-                <td class="center">com correção</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Ambos</td>
-                <td></td>
-                <td class="center">com correção</td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="titulo">(30) Acuidade visual à distância de 6 metros</div>
+        <table class="bordered visual-table" aria-label="Acuidade Visual">
+          <colgroup>
+            <col style="width: 23%;"> <!-- primeira coluna -->
+            <col style="width: 21%;"> <!-- ajustei para caber 100% -->
+            <col style="width: 21%;">
+            <col style="width: 15%;">
+            <col style="width: 20%;">
+          </colgroup>
 
-        <div class="section">
-          <div class="block-title">(31) Visão Intermédia - N1 a 100 cm</div>
-          <table class="thin">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="center">Sem correção</th>
-                <th></th>
-                <th class="center">Com correção</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>N14 a 100 cm</td>
-                <td class="center">Sim</td>
-                <td class="center">Não</td>
-                <td class="center">Sim</td>
-                <td class="center">Não</td>
-              </tr>
-              <tr>
-                <td>Olho direito</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Olho esquerdo</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Ambos</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="section">
-          <div class="block-title">(32) Visão de perto - N5 a 30-50 cm</div>
-          <table class="bordered small">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="center">Sem correção</th>
-                <th></th>
-                <th class="center">Com correção</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>N14 a 100 cm</td>
-                <td class="center">Sim</td>
-                <td class="center">Não</td>
-                <td class="center">Sim</td>
-                <td class="center">Não</td>
-              </tr>
-              <tr>
-                <td>Olho direito</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Olho esquerdo</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Ambos</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
+          <thead>
+            <tr>
+              <th></th>
+              <th class="center">Sem correção</th>
+              <th></th>
+              <th class="center">Óculos</th>
+              <th class="center">Lentes de contacto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Olho direito</td>
+              <td></td>
+              <td class="center">com correção</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Olho esquerdo</td>
+              <td></td>
+              <td class="center">com correção</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ambos</td>
+              <td></td>
+              <td class="center">com correção</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div>
-        <div class="section">
-          <div class="block-title">(33) Óculos / (34) Lentes de contacto</div>
-          <div style="display:flex; gap:12px; align-items:center; margin-bottom:8px">
-            <label><span class="checkbox"></span>Óculos</label>
-            <label><span class="checkbox"></span>Lentes de contacto</label>
-          </div>
+      <div class="section">
+        <div class="titulo">(31) Visão Intermédia</div>
+        <table class="none">
+          <tr>
+            <td></td>
+            <td>Sem correcção</td>
+            <td>Com correcção</td>
+          </tr>
+        </table>
+        <table class="visao_intermedia">
+          <colgroup>
+            <col style="width: 28%;"> <!-- primeira coluna -->
+            <col style="width: 18%;"> <!-- ajustei para caber 100% -->
+            <col style="width: 18%;">
+            <col style="width: 18%;">
+            <col style="width: 18%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="center">N14 a 100 cm</th>
+              <th class="center">Sim</th>
+              <th class="center">Não</th>
+              <th class="center">Sim</th>
+              <th class="center">Não</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Olho direito</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Olho esquerdo</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ambos</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          <div class="block-title">(35) Percepção da cor</div>
-          <table class="thin small" style="margin-bottom:10px">
-            <tbody>
-              <tr>
-                <td>Normal</td>
-                <td class="center">[ ]</td>
-                <td>Anormal</td>
-                <td class="center">[ ]</td>
-              </tr>
-              <tr>
-                <td>Nº de placas</td>
-                <td>--</td>
-                <td>Nº de erros</td>
-                <td>--</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="section">
+        <div class="titulo">(32) Visão de perto</div>
+        <table class="none">
+          <tr>
+            <td></td>
+            <td>Sem correcção</td>
+            <td>Com correcção</td>
+          </tr>
+        </table>
+        <table class="visao_intermedia">
+          <colgroup>
+            <col style="width: 28%;"> <!-- primeira coluna -->
+            <col style="width: 18%;"> <!-- ajustei para caber 100% -->
+            <col style="width: 18%;">
+            <col style="width: 18%;">
+            <col style="width: 18%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="center">N5 a 30-50 cm</th>
+              <th class="center">Sim</th>
+              <th class="center">Não</th>
+              <th class="center">Sim</th>
+              <th class="center">Não</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>(36) Olho direito</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>(37) Olho esquerdo</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>(38) Ambos</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          <div class="block-title">Diagnóstico</div>
-          <div style="min-height:110px; border:1px dashed #bbb; padding:8px; font-size:13px">&nbsp;</div>
 
-          <div style="margin-top:10px">
-            <div class="block-title">Recomendações</div>
-            <div style="min-height:80px; border:1px dashed #bbb; padding:8px">&nbsp;</div>
-          </div>
+      <div class="section">
+        <h2>ORL</h2>
+        <div class="titulo">(40) Audição</div>
+        <table class="bordered tab_audicao">
+          <colgroup>
+            <col style="width: 60%;"> <!-- primeira coluna -->
+            <col style="width: 20%;"> <!-- ajustei para caber 100% -->
+            <col style="width: 20%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th style="text-align: left;">Quando (41) não feito</th>
+              <th class="center">Ouvido direito</th>
+              <th class="center">Ouvido esquerdo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Teste de Conversação a 2m de costas para o examinador</td>
+              <td><label><input type="radio" name="ouv_direito" value="sim">Sim</label></td>
+              <td><label><input type="radio" name="ouv_esquerdo" value="sim" id="">Sim</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="radio" name="ouv_direito" value="nao" id="">Não</label></td>
+              <td><label><input type="radio" name="ouv_esquerdo" value="nao" id="">Não</label></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          <div style="margin-top:10px">
-            <div class="block-title">Assinatura do Médico</div>
-            <div class="signature"></div>
-          </div>
-        </div>
+      <div class="section">
+        <div class="titulo">(41) Triagem audiométrica (Audiograma)</div>
+        <table class="bordered aud-table">
+          <thead>
+            <tr>
+              <th>Hz</th>
+              <th>500</th>
+              <th>1000</th>
+              <th>2000</th>
+              <th>3000</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Direito</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Esquerdo</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="titulo">Análises Clínicas</div>
+        <p class="note">ANAC-PEL Form 40-3 (August 2022) - Page 5 of 11</p>
       </div>
 
     </div>
 
-    <div class="section">
-      <h2 style="font-size:14px; margin:8px 0">ORL</h2>
-      <div class="two-col">
-        <div class="col-60">
-          <div class="block-title">(40) Audição</div>
-          <table class="thin" style="width:100%">
-            <tbody>
-              <tr>
-                <td style="width:50%">Quando (41) não feito</td>
-                <td>Teste de conversação a 2 m de costas para examinador</td>
-              </tr>
-              <tr>
-                <td>Ouvido direito</td>
-                <td>Sim [ ] Não [ ]</td>
-              </tr>
-              <tr>
-                <td>Ouvido esquerdo</td>
-                <td>Sim [ ] Não [ ]</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-40">
-          <div class="block-title">Diagnóstico</div>
-          <div style="min-height:100px; border:1px dashed #bbb; padding:8px">&nbsp;</div>
-        </div>
+
+    <div class="right_grid">
+      <div class="section">
+        <table class="bordered">
+          <tr>
+            <th>(33) Óculos</th>
+            <th>(34) Lentes de contacto</th>
+          </tr>
+        </table>
+        <table class="bordered oculos">
+          <tbody>
+            <tr>
+              <td><label><input type="radio" name="oculo" value="sim">Sim</label></td>
+              <td><label><input type="radio" name="oculo" value="nao">Não</label></td>
+              <td><label><input type="radio" name="lentes_contato" value="sim">Sim</label></td>
+              <td><label><input type="radio" name="lentes_contato" value="nao">Não</label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><label>Tipo: <input type="text" placeholder="escreva aqui..."></label></td>
+              <td colspan="2"><label>Tipo: <input type="text" placeholder="escreva aqui..."></label></td>
+            </tr>
+          </tbody>
+          <tbody>
+
+          </tbody>
+        </table>
+
       </div>
     </div>
 
-    <div class="section">
-      <div class="block-title">(41) Triagem audiométrica (Audiograma)</div>
-      <table class="bordered aud-table" style="width:48%;">
-        <thead>
-          <tr>
-            <th>Hz</th>
-            <th>500</th>
-            <th>1000</th>
-            <th>2000</th>
-            <th>3000</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Direito</td>
-            <td>5</td>
-            <td>10</td>
-            <td>15</td>
-            <td>20</td>
-          </tr>
-          <tr>
-            <td>Esquerdo</td>
-            <td>5</td>
-            <td>10</td>
-            <td>20</td>
-            <td>20</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
-    <div class="section">
-      <div class="block-title">Análises Clínicas</div>
-      <p class="note">ANAC-PEL Form 40-3 (August 2022) - Page 5 of 11</p>
-    </div>
 
   </div>
 </body>
+
 </html>
