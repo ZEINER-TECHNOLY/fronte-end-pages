@@ -1,7 +1,7 @@
 # 📋 Projeto de Fichas Médicas
 
 Este projeto é uma aplicação **frontend** para a criação e gestão de fichas médicas.  
-Ele foi desenvolvido em **HTML, CSS e JavaScript**, com foco em praticidade e organização.
+Ele foi desenvolvido em **HTML e CSS**, com foco em praticidade e organização.
 
 ---
 
@@ -19,7 +19,6 @@ Ele foi desenvolvido em **HTML, CSS e JavaScript**, com foco em praticidade e or
 fronte-end-pages/
 │── index.html # Página principal
 │── styles/ # Pasta com arquivos CSS
-│── scripts/ # Pasta com arquivos JavaScript
 │── images/ # Pasta com imagens usadas no projeto
 │── README.md # Documentação do projeto
 
@@ -31,7 +30,6 @@ fronte-end-pages/
 
 - **HTML5**  
 - **CSS3**  
-- **JavaScript (ES6+)**
 
 ---
 
