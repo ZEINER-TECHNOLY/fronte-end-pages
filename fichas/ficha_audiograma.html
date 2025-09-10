@@ -244,37 +244,35 @@
 
         .horizontal_baixo {
             width: 100%;
-            marin-left: 20px;
+            margin-left: 20px;
 
         }
 
         .horizontal_baixo table {
             width: 100%;
-            margn-left: 39%;
             border-collapse: collapse;
             text-align: center;
             table-layout: fixed;
-            background-color: blueviolet;
         }
 
-        .horizontal_baixo thead th {
-            border: none;
+        .horizontal_baixo tbody th {
             background: transparent;
             font-size: 12px;
         }
 
-
-
         /* Ajustar 125 e 500 para a direita */
-        .horizontal_baixo table thead th:nth-child(1) {
-            padding-left: 28px;
+        .horizontal_baixo table tbody th:nth-child(5) {
+            padding-right: 60px;
+        }
+        .horizontal_baixo table tbody th:nth-child(6) {
+            padding-right: 8px;
         }
 
-        .horizontal_baixo table thead th:nth-child(3) {
-            padding-left: 28px;
+        .horizontal_baixo table tbody th:nth-child(3) {
+            padding-left: 14px;
         }
 
-        .horizontal_baixo table thead th:nth-child(4) {
+        .horizontal_baixo table tbody th:nth-child(4) {
             padding-left: 43px;
         }
 
@@ -752,15 +750,17 @@
                         <col style="width: 16.2857%;">
                         <col style="width: 16.2857%;">
                     </colgroup>
-                    <thead>
+                    <tbody>
                         <tr>
+                            <th></th>
+                            <th></th>
                             <th>750</th>
-                            <th>1.5k</th>
-                            <th>3k</th>
-                            <th>6k</th>
-                            <th>Hz</th>
+                            <th style="text-align: left;">1.5k</th>
+                            <th style="text-align: right;">3k</th>
+                            <th style="text-align: right;">6k</th>
+                            <th style="text-align: right;">Hz</th>
                         </tr>
-                    </thead>
+                    </tbody>
 
                 </table>
             </div>
@@ -1081,26 +1081,29 @@
 
             <div class="horizontal_baixo">
                 <table>
-                    <colgrup>
-
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>2</th>
-                                <th>2</th>
-                                <th>2</th>
-                                <th>2</th>
-                                <th>2</th>
-                                <th>750</th>
-                                <th>1.5k</th>
-                                <th>3k</th>
-                                <th>6k</th>
-                                <th>Hz</th>
-                            </tr>
-                        </thead>
+                    <colgroup>
+                        <col style="width: 18.2857%;">
+                        <col style="width: 13.2857%;">
+                        <col style="width: 18.2857%;">
+                        <col style="width: 16.2857%;">
+                        <col style="width: 16.2857%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>750</th>
+                            <th style="text-align: left;">1.5k</th>
+                            <th style="text-align: right;">3k</th>
+                            <th style="text-align: right;">6k</th>
+                            <th style="text-align: right;">Hz</th>
+                        </tr>
+                    </tbody>
 
                 </table>
             </div>
+
+            
 
 
         </div>
@@ -1169,6 +1172,8 @@
 
         </div>
     </div>
+
+    
 
 </body>
 
