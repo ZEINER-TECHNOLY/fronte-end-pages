@@ -281,58 +281,119 @@
 
 
         .tabela_debaixo {
-            display: grid;
-            grid-template-columns: 1fr 300px;
+            display: flex;
             gap: 10px;
         }
 
         .tab_a_left {
             width: 100%;
             margin-top: 20px;
+            margin-left: 30px;
+            flex: 1 1 60%;
+            min-width: 300px;
         }
 
-        .tab_esquerda {
+        .tab_a_right {
+
+            margin-top: 20px;
+            margin-right: 30px;
+            flex: 1 1 40%;
+            min-width: 200px;
+        }
+
+        .tab_medical {
             width: 100%;
             border-collapse: collapse;
             font-family: Arial, sans-serif;
             font-size: 14px;
         }
 
-        .tab_esquerda td {
+        .tab_medical td {
             border: 1px solid #000;
-            /* borda preta */
             padding: 8px;
             text-align: center;
             vertical-align: middle;
         }
 
-        .tab_esquerda tr:first-child td {
-            background-color: #f9f9f9;
-            /* primeira linha mais clara */
-        }
-
-        .tab_esquerda tr:nth-child(2) td {
-            font-weight: bold;
-            /* Medical history em negrito */
-            background-color: #e6e6e6;
+        .tab_medical tr:first-child td {
+            height: 25px;
+            padding-top: 30px;
             text-align: left;
-            padding-left: 10px;
+            font-weight: bold;
         }
 
-        .tab_esquerda tr:nth-child(3) td {
+        .tab_medical tr:nth-child(2) td {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tab_medical tr:nth-child(3) td {
             font-weight: normal;
-            background-color: #fff;
+            text-align: right;
         }
 
-        .tab_esquerda tr:nth-child(4) td {
-            font-style: italic;
-            background-color: #fafafa;
+        .tab_medical tr:nth-child(1) td:last-child {
+            border-bottom: none;
         }
 
-        .tab_esquerda td:first-child {
-            text-align: left;
-            /* primeira coluna alinhada à esquerda */
+        .tab_medical .signature {
+            padding-right: 400px;
+            padding-top: 30px;
+        }
+
+        .tab_medical td.signature {
+            border-top: none;
+        }
+
+        .tab_medical td.m_history {
+            border-right: none;
+        }
+
+        .tab_medical tr:first-child td:last-child {
+            border-left: none;
+        }
+
+        .tabela_diresq {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabela_diresq td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .tabela_diresq .diagonal {
+            position: relative;
+            height: 35px;
+            border: 1px solid black;
+        }
+
+        .tabela_diresq .diagonal:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top: 1px solid #000;
+            transform: rotate(17deg);
+            transform-origin: top left;
+        }
+
+        /* Cabeçalhos */
+        .tabela_diresq .header {
             font-weight: bold;
+        }
+
+        /* Símbolos centralizados */
+        .tabela_diresq .symbol {
+            font-size: 18px;
+        }
+
+        /* Texto menor para (Masked) */
+        .tabela_diresq .masked {
+            font-size: 12px;
         }
     </style>
 </head>
@@ -1048,42 +1109,63 @@
 
     <div class="tabela_debaixo">
         <div class="tab_a_left">
-            <table class="tab_esquerda">
+            <table class="tab_medical">
                 <colgroup>
-                    <col style="width: 17%;">
-                    <col style="width: 17%;">
-                    <col style="width: 17%;">
-                    <col style="width: 16%;">
-                    <col style="width: 16%;">
-                    <col style="width: 17%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 48%;">
                 </colgroup>
                 <tbody>
                     <tr>
-                        <td rowspan="2">Medical history:</td>
-                        <td colspan="5"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5"></td>
+                        <td class="m_history" colspan="4">Medical history:</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td rowspan="2">SRS</td>
                         <td>Right ear</td>
                         <td>Left ear</td>
                         <td>Binatural</td>
-                        <td colspan="2"></td>
-
+                        <td class="signature" rowspan="2">Signature:</td>
                     </tr>
                     <tr>
-
                         <td>%</td>
                         <td>%</td>
                         <td>%</td>
-                        <td colspan="2">Signature</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="tab_a_right">
+            <table class="tabela_diresq">
+                <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                </colgroup>
+                <tr>
+                    <td class="diagonal"></td>
+                    <td colspan="2" class="header">Left Ear (Blue)</td>
+                    <td colspan="2" class="header">Right Ear (Red)</td>
+                </tr>
+                <tr>
+                    <td class="header">AC:</td>
+                    <td class="symbol">X</td>
+                    <td class="symbol">□<br><span class="masked">(Masked)</span></td>
+                    <td class="symbol">○</td>
+                    <td class="symbol">△<br><span class="masked">(Masked)</span></td>
+                </tr>
+                <tr>
+                    <td class="header">BC:</td>
+                    <td class="symbol">&gt;</td>
+                    <td class="symbol">]<br><span class="masked">(Masked)</span></td>
+                    <td class="symbol">&lt;</td>
+                    <td class="symbol">[<br><span class="masked">(Masked)</span></td>
+                </tr>
+            </table>
 
         </div>
     </div>
