@@ -2,1178 +2,1359 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audiograma</title>
-    <style>
-        h2 {
-            text-align: center;
-            margin-top: 30px;
-            padding: 0;
-        }
-
-        .header-table {
-            border-collapse: collapse;
-            border-spacing: 50px;
-            margin: 20px auto;
-            width: 90%;
-            table-layout: fixed;
-        }
-
-        .header-table td {
-            padding: 4px;
-            vertical-align: middle;
-            overflow: hidden;
-            white-space: nowrap;
-            border: 2px solid black;
-
-        }
-
-        /* Inputs ocupam toda a célula */
-        .header-table input,
-        .header-table select {
-            width: 95%;
-            box-sizing: border-box;
-            border: none;
-            font-size: 12px;
-            background: transparent;
-            outline: none;
-            padding: 2px;
-        }
-
-        /* larguras proporcionais  */
-        .col-nome {
-            width: 37%;
-        }
-
-        .col-genero {
-            width: 16%;
-        }
-
-        .col-idade {
-            width: 7%;
-        }
-
-        .col-tel {
-            width: 15%;
-        }
-
-        .col-endereco {
-            width: 25%;
-        }
-
-
-        /* Tabela Horizontal e Vertical */
-        .horizontal_vertical {
-            width: 100%;
-            margin-left: 2px;
-
-        }
-
-        .horizontal_vertical table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            table-layout: fixed;
-        }
-
-        .horizontal_vertical thead th {
-            border: none;
-            background: transparent;
-            font-size: 12px;
-        }
-
-        /* Ajustar 125 e 500 para a direita */
-        .horizontal_vertical table thead th:nth-child(1),
-        .horizontal_vertical table thead th:nth-child(3) {
-            padding-left: 18px;
-        }
-
-
-
-        /* Primeira linha do tbody */
-        /* Primeira linha do thead */
-        .principal_tabela table thead tr:first-child th {
-            height: 0px;
-            /* altura desejada */
-            padding-top: 0px;
-            padding-bottom: 0px;
-        }
-
-
-
-        /* Última linha do tbody */
-        .principal_tabela table tbody tr:last-child td {
-            height: 0px;
-            padding-top: 0px;
-            padding-bottom: 0px;
-        }
-
-
-
-
-
-
-
-        .grid-container {
-            display: flex;
-            gap: 40px;
-            width: 90%;
-            margin: 0px auto;
-            padding: 10px;
-            justify-content: flex-start;
-        }
-
-        .grid {
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            flex: 1 1 auto;
-            max-width: 100%;
-        }
-
-        .grid h3 {
-            text-align: center;
-        }
-
-
-        /* Tabela Vertical e Tabela Principal */
-        .double_tabela {
-            display: flex;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audiograma</title>
+  <style>
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      padding: 0;
+    }
+
+    .header-table {
+      border-collapse: collapse;
+      border-spacing: 50px;
+      margin: 20px auto;
+      width: 90%;
+      table-layout: fixed;
+    }
+
+    .header-table td {
+      padding: 4px;
+      vertical-align: middle;
+      overflow: hidden;
+      white-space: nowrap;
+      border: 2px solid black;
+
+    }
+
+    /* Inputs ocupam toda a célula */
+    .header-table input,
+    .header-table select {
+      width: 95%;
+      box-sizing: border-box;
+      border: none;
+      font-size: 12px;
+      background: transparent;
+      outline: none;
+      padding: 2px;
+    }
+
+    /* larguras proporcionais  */
+    .col-nome {
+      width: 37%;
+    }
+
+    .col-genero {
+      width: 16%;
+    }
+
+    .col-idade {
+      width: 7%;
+    }
+
+    .col-tel {
+      width: 15%;
+    }
+
+    .col-endereco {
+      width: 25%;
+    }
+
+
+    /* Tabela Horizontal e Vertical */
+    .horizontal_vertical {
+      width: 100%;
+      margin-left: 2px;
+
+    }
+
+    .horizontal_vertical table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      table-layout: fixed;
+    }
+
+    .horizontal_vertical thead th {
+      border: none;
+      background: transparent;
+      font-size: 12px;
+    }
+
+    /* Ajustar 125 e 500 para a direita */
+    .horizontal_vertical table thead th:nth-child(1),
+    .horizontal_vertical table thead th:nth-child(3) {
+      padding-left: 18px;
+    }
+
+
+
+    /* Primeira linha do tbody */
+    /* Primeira linha do thead */
+    .principal_tabela table thead tr:first-child th {
+      height: 0px;
+      /* altura desejada */
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+
+
+    /* Última linha do tbody */
+    .principal_tabela table tbody tr:last-child td {
+      height: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+
+
+
+
+
+
+    .grid-container {
+      display: flex;
+      gap: 40px;
+      width: 90%;
+      margin: 0px auto;
+      padding: 10px;
+      justify-content: flex-start;
+    }
+
+    .grid {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      flex: 1 1 auto;
+      max-width: 100%;
+    }
+
+    .grid h3 {
+      text-align: center;
+    }
+
+
+    /* Tabela Vertical e Tabela Principal */
+    .double_tabela {
+      display: flex;
+    }
 
-        .principal_tabela table {
-            border-collapse: collapse;
-            width: 100%;
-            table-layout: fixed;
-        }
+    .principal_tabela table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
 
-        .principal_tabela table th,
-        .principal_tabela table td {
-            border: 1px solid black;
-            padding: 2px;
-            text-align: center;
-            height: 30px;
-        }
+    .principal_tabela table th,
+    .principal_tabela table td {
+      border: 1px solid black;
+      padding: 2px;
+      text-align: center;
+      height: 30px;
+    }
 
-        .principal_tabela table input {
-            width: 100%;
-            border: none;
-            outline: none;
-            background: transparent;
-            text-align: center;
-            font-size: 14px;
-            font-family: inherit;
-            padding: 0;
-        }
-
-        .principal_tabela table th:nth-child(4),
-        .principal_tabela table td:nth-child(4) {
-            border-right: 1px dashed rgb(0, 0, 0);
-        }
-
-        .principal_tabela table th:nth-child(5),
-        .principal_tabela table td:nth-child(5) {
-            border-left: 1px dashed black;
-            ;
-        }
+    .principal_tabela table input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      text-align: center;
+      font-size: 14px;
+      font-family: inherit;
+      padding: 0;
+    }
 
-        .principal_tabela table th:nth-child(6),
-        .principal_tabela table td:nth-child(6) {
-            border-right: 1px dashed black;
-        }
+    .principal_tabela table th:nth-child(4),
+    .principal_tabela table td:nth-child(4) {
+      border-right: 1px dashed rgb(0, 0, 0);
+    }
+
+    .principal_tabela table th:nth-child(5),
+    .principal_tabela table td:nth-child(5) {
+      border-left: 1px dashed black;
+      ;
+    }
 
-        .principal_tabela table th:nth-child(7),
-        .principal_tabela table td:nth-child(7) {
-            border-left: 1px dashed black;
-            ;
-        }
-
-        .principal_tabela table th:nth-child(8),
-        .principal_tabela table td:nth-child(8) {
-            border-right: 1px dashed black;
-        }
+    .principal_tabela table th:nth-child(6),
+    .principal_tabela table td:nth-child(6) {
+      border-right: 1px dashed black;
+    }
 
-        .principal_tabela table th:nth-child(9),
-        .principal_tabela table td:nth-child(9) {
-            border-left: 1px dashed black;
-            ;
-        }
-
-        .principal_tabela table th:nth-child(10),
-        .principal_tabela table td:nth-child(10) {
-            border-right: 1px dashed black;
-        }
-
-        .principal_tabela table th:nth-child(11),
-        .principal_tabela table td:nth-child(11) {
-            border-left: 1px dashed black;
-        }
-
-
-
-
-
-        .vertical_tabela table {
-            height: 100%;
-            border-collapse: collapse;
-            text-align: right;
-            table-layout: fixed;
-            box-sizing: border-box;
-        }
-
-        .vertical_tabela thead th,
-        .vertical_tabela tbody td {
-            border: none;
-            background: transparent;
-            font-size: 12px;
-
-        }
-
-        .vertical_tabela thead th:nth-child(1) {
-            padding-top: 12px;
-        }
-
-
-
-
-        .vertical_tabela table {
-            height: 100%;
-        }
-
-
-        .horizontal_baixo {
-            width: 100%;
-            margin-left: 20px;
-
-        }
-
-        .horizontal_baixo table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-            table-layout: fixed;
-        }
-
-        .horizontal_baixo tbody th {
-            background: transparent;
-            font-size: 12px;
-        }
-
-        /* Ajustar 125 e 500 para a direita */
-        .horizontal_baixo table tbody th:nth-child(5) {
-            padding-right: 60px;
-        }
-        .horizontal_baixo table tbody th:nth-child(6) {
-            padding-right: 8px;
-        }
-
-        .horizontal_baixo table tbody th:nth-child(3) {
-            padding-left: 14px;
-        }
-
-        .horizontal_baixo table tbody th:nth-child(4) {
-            padding-left: 43px;
-        }
-
-
-
-        .tabela_debaixo {
-            display: flex;
-            gap: 10px;
-        }
-
-        .tab_a_left {
-            width: 100%;
-            margin-top: 20px;
-            margin-left: 30px;
-            flex: 1 1 60%;
-            min-width: 300px;
-        }
-
-        .tab_a_right {
-
-            margin-top: 20px;
-            margin-right: 30px;
-            flex: 1 1 40%;
-            min-width: 200px;
-        }
-
-        .tab_medical {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-
-        .tab_medical td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .tab_medical tr:first-child td {
-            height: 25px;
-            padding-top: 30px;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        .tab_medical tr:nth-child(2) td {
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .tab_medical tr:nth-child(3) td {
-            font-weight: normal;
-            text-align: right;
-        }
-
-        .tab_medical tr:nth-child(1) td:last-child {
-            border-bottom: none;
-        }
-
-        .tab_medical .signature {
-            padding-right: 400px;
-            padding-top: 30px;
-        }
-
-        .tab_medical td.signature {
-            border-top: none;
-        }
-
-        .tab_medical td.m_history {
-            border-right: none;
-        }
-
-        .tab_medical tr:first-child td:last-child {
-            border-left: none;
-        }
-
-        .tabela_diresq {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .tabela_diresq td {
-            border: 1px solid black;
-            text-align: center;
-        }
-
-        .tabela_diresq .diagonal {
-            position: relative;
-            height: 35px;
-            border: 1px solid black;
-        }
-
-        .tabela_diresq .diagonal:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-top: 1px solid #000;
-            transform: rotate(17deg);
-            transform-origin: top left;
-        }
-
-        /* Cabeçalhos */
-        .tabela_diresq .header {
-            font-weight: bold;
-        }
-
-        /* Símbolos centralizados */
-        .tabela_diresq .symbol {
-            font-size: 18px;
-        }
-
-        /* Texto menor para (Masked) */
-        .tabela_diresq .masked {
-            font-size: 12px;
-        }
-    </style>
+    .principal_tabela table th:nth-child(7),
+    .principal_tabela table td:nth-child(7) {
+      border-left: 1px dashed black;
+      ;
+    }
+
+    .principal_tabela table th:nth-child(8),
+    .principal_tabela table td:nth-child(8) {
+      border-right: 1px dashed black;
+    }
+
+    .principal_tabela table th:nth-child(9),
+    .principal_tabela table td:nth-child(9) {
+      border-left: 1px dashed black;
+      ;
+    }
+
+    .principal_tabela table th:nth-child(10),
+    .principal_tabela table td:nth-child(10) {
+      border-right: 1px dashed black;
+    }
+
+    .principal_tabela table th:nth-child(11),
+    .principal_tabela table td:nth-child(11) {
+      border-left: 1px dashed black;
+    }
+
+
+
+
+
+    .vertical_tabela table {
+      height: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      table-layout: fixed;
+      box-sizing: border-box;
+    }
+
+    .vertical_tabela thead th,
+    .vertical_tabela tbody td {
+      border: none;
+      background: transparent;
+      font-size: 12px;
+
+    }
+
+    .vertical_tabela thead th:nth-child(1) {
+      padding-top: 12px;
+    }
+
+
+
+
+    .vertical_tabela table {
+      height: 100%;
+    }
+
+
+    .horizontal_baixo {
+      width: 100%;
+      margin-left: 20px;
+
+    }
+
+    .horizontal_baixo table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      table-layout: fixed;
+    }
+
+    .horizontal_baixo tbody th {
+      background: transparent;
+      font-size: 12px;
+    }
+
+    /* Ajustar 125 e 500 para a direita */
+    .horizontal_baixo table tbody th:nth-child(5) {
+      padding-right: 60px;
+    }
+
+    .horizontal_baixo table tbody th:nth-child(6) {
+      padding-right: 8px;
+    }
+
+    .horizontal_baixo table tbody th:nth-child(3) {
+      padding-left: 14px;
+    }
+
+    .horizontal_baixo table tbody th:nth-child(4) {
+      padding-left: 43px;
+    }
+
+
+
+    .tabela_debaixo {
+      display: flex;
+      gap: 10px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .tab_a_left {
+      margin-top: 20px;
+      flex: 1 1 60%;
+      min-width: 300px;
+    }
+
+    .tab_a_right {
+      margin-top: 20px;
+      flex: 1 1 40%;
+    }
+
+    .tab_medical {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      table-layout: fixed;
+    }
+
+    .tab_medical td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .tab_medical tr:first-child td {
+      height: 25px;
+      padding-top: 30px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .tab_medical tr:nth-child(2) td {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .tab_medical tr:nth-child(3) td {
+      font-weight: normal;
+      text-align: right;
+    }
+
+    .tab_medical tr:nth-child(1) td:last-child {
+      border-bottom: none;
+    }
+
+    .tab_medical .signature input {
+      outline: none;
+      border: none;
+      font-size: 13px;
+      padding: 5px;
+    }
+
+    .tab_medical .signature {
+      padding-right: 400px;
+      padding-top: 30px;
+    }
+
+    .tab_medical td.signature {
+      border-top: none;
+    }
+
+    .tab_medical td.m_history {
+      border-right: none;
+    }
+
+    .tab_medical tr:first-child td:last-child {
+      border-left: none;
+    }
+
+    .tabela_diresq {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tabela_diresq td {
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .tabela_diresq .diagonal {
+      position: relative;
+      height: 35px;
+      border: 1px solid black;
+    }
+
+    .tabela_diresq .diagonal:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-top: 1px solid #000;
+      transform: rotate(17deg);
+      transform-origin: top left;
+    }
+
+    /* Cabeçalhos */
+    .tabela_diresq .header {
+      font-weight: bold;
+    }
+
+    /* Símbolos centralizados */
+    .tabela_diresq .symbol {
+      font-size: 18px;
+    }
+
+    /* Texto menor para (Masked) */
+    .tabela_diresq .masked {
+      font-size: 12px;
+    }
+
+
+    /* --- Responsividade para telas menores que 768px --- */
+    @media (max-width: 768px) {
+
+
+      /* Inputs e selects mais fáceis de clicar */
+      .header-table {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .header-table tr,
+      .header-table td {
+        padding: 10px;
+        width: 100%;
+      }
+
+      .header-table tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .header-table td {
+        border: 1px solid black;
+        padding: 8px 0;
+      }
+
+      .header-table .col-name,
+      .header-table .col-tel,
+      .header-table .col-endereco,
+      .header-table .col-genero,
+      .header-table .col-idade {
+        padding-left: 10px;
+        border-radius: 10px;
+        width: 94%;
+      }
+
+      .header-table input {
+        font-size: 15px;
+      }
+
+
+      /* Layout em coluna no mobile */
+      .grid-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .grid {
+        width: 100%;
+
+      }
+
+      .tabela_debaixo {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        box-sizing: border-box;
+      }
+
+      .tab_a_left {
+        flex: 1 1 auto;
+        overflow-x: auto;
+        /* ativa scroll local */
+        max-width: 100%;
+        /* não passa do container */
+      }
+
+      .tab_medical {
+        min-width: 500px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+
+      .tab_medical td {
+        border: 1px solid #000;
+        /* garante borda em cada célula */
+        padding: 4px;
+      }
+
+      .tab_medical .signature {
+        padding-right: 20px;
+      }
+
+      .tab_medical td {
+        border: 1px solid #000;
+        box-sizing: border-box;
+      }
+
+      /* Reduz fonte em tabelas */
+      .princpal_tabela table th,
+      .princpal_tabela table td,
+      .vertcal_tabela thead th,
+      .vertical_tabela tbody td {
+        font-size: 12px;
+      }
+
+      /* Centraliza títulos */
+      h2,
+      h3 {
+        font-size: 18px;
+        text-align: center;
+      }
+
+
+
+
+      .rolagem {
+        overflow-x: auto;
+        width: 100%;
+      }
+
+      .rolagem .principal_tabela table {
+        min-width: 500px;
+        width: 100%;
+        /* preenche o container */
+      }
+     
+
+      
+      .horizontal_baixo table {
+        font-size: 12px;
+        /* letras menores no mobile */
+      }
+      /* Ajustar 125 e 500 para a direita */
+    .horizontal_baixo table tbody th:nth-child(5) {
+      padding-left: 180px;
+    }
+
+    .horizontal_baixo table tbody th:nth-child(6) {
+      padding-left: 212px;
+    }
+
+    .horizontal_baixo table tbody th:nth-child(3) {
+      padding-left: 115px;
+    }
+
+    .horizontal_baixo table tbody th:nth-child(4) {
+      padding-left: 145px;
+    }
+    .horizontal_baixo table tbody th:nth-child(7) {
+      padding-left: 239px;
+    }
+
+
+  
+
+   
+
+    
+
+    /* Ajustar 125 e 500 para a direita */
+    .horizontal_vertical table thead th:nth-child(7) {
+      padding-left: 237px;
+    }
+    .horizontal_vertical table thead th:nth-child(6) {
+      padding-left: 188px;
+    }
+    .horizontal_vertical table thead th:nth-child(5) {
+      padding-left: 154px;
+    }
+    .horizontal_vertical table thead th:nth-child(4) {
+      padding-left: 116px;
+    }
+    
+    .horizontal_vertical table thead th:nth-child(3) {
+      padding-left: 88px;
+    }
+    .horizontal_vertical table thead th:nth-child(2) {
+      padding-left: 39px;
+    }
+   
+
+    
+    }
+  </style>
 </head>
 
 <body>
 
-    <h2>AUDIOGRAMA</h2>
+  <h2>AUDIOGRAMA</h2>
 
-    <!-- Cabeçalho -->
-    <table class="header-table">
+  <!-- Cabeçalho -->
+  <table class="header-table">
+    <tr>
+      <td class="col-name">
+        Nome: <input type="text" name="name" placeholder="escreva aqui...">
+      </td>
+      <td class="col-genero">
+        Género:
+        <select name="genero" id="genero">
+          <option value="">-- Selecione --</option>
+          <option value="male">Masculino</option>
+          <option value="female">Feminino</option>
+          <option value="other">Outros</option>
+        </select>
+      </td>
+      <td class="col-idade">
+        Idade: <input type="number" name="idade" min="0">
+      </td>
+      <td class="col-tel">
+        Telefone: <input type="tel" name="telefone" placeholder="escreva aqui...">
+      </td>
+      <td class="col-endereco">
+        Endereço: <input type="text" name="endereco" placeholder="escreva aqui...">
+      </td>
+    </tr>
+  </table>
+
+  <div class="grid-container">
+
+    <!-- Tabela da esquerda -->
+    <div class="grid">
+      <h3>Right Ear (R)</h3>
+      <div class="rolagem">
+        <div class="horizontal_vertical">
+          <table>
+            <colgroup>
+              <col style="width: 18.2857%;">
+              <col style="width: 13.2857%;">
+              <col style="width: 18.2857%;">
+              <col style="width: 16.2857%;">
+              <col style="width: 16.2857%;">
+              <col style="width: 11.2857%;">
+              <col style="width: 6.2857%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>125</th>
+                <th>250</th>
+                <th>500</th>
+                <th>1k</th>
+                <th>2k</th>
+                <th>4k</th>
+                <th style="text-align: right;">8k</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="double_tabela">
+          <div class="vertical_tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>-10</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>70</td>
+                </tr>
+                <tr>
+                  <td>80</td>
+                </tr>
+                <tr>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td>110</td>
+                </tr>
+                <tr>
+                  <td>120</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="principal_tabela">
+            <table>
+              <colgroup>
+                <col style="width: 1%;">
+                <col style="width: 16.33%;">
+                <col style="width: 16.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 1%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="horizontal_baixo">
+          <table>
+            <colgroup>
+              <col style="width: 18.2857%;">
+              <col style="width: 13.2857%;">
+              <col style="width: 18.2857%;">
+              <col style="width: 16.2857%;">
+              <col style="width: 16.2857%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>750</th>
+                <th style="text-align: left;">1.5k</th>
+                <th style="text-align: right;">3k</th>
+                <th style="text-align: right;">6k</th>
+                <th style="text-align: right;">Hz</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela da direita -->
+    <div class="grid">
+      <h3>Left Ear (L)</h3>
+      <div class="rolagem">
+        <div class="horizontal_vertical">
+          <table>
+            <colgroup>
+              <col style="width: 18.2857%;">
+              <col style="width: 13.2857%;">
+              <col style="width: 18.2857%;">
+              <col style="width: 16.2857%;">
+              <col style="width: 16.2857%;">
+              <col style="width: 11.2857%;">
+              <col style="width: 6.2857%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>125</th>
+                <th>250</th>
+                <th>500</th>
+                <th>1k</th>
+                <th>2k</th>
+                <th>4k</th>
+                <th style="text-align: right;">8k</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="double_tabela">
+          <div class="vertical_tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>-10</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>70</td>
+                </tr>
+                <tr>
+                  <td>80</td>
+                </tr>
+                <tr>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td>110</td>
+                </tr>
+                <tr>
+                  <td>120</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="principal_tabela">
+            <table>
+              <colgroup>
+                <col style="width: 1%;">
+                <col style="width: 16.33%;">
+                <col style="width: 16.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 9%;">
+                <col style="width: 7.33%;">
+                <col style="width: 1%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                  <th><input type="text"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="horizontal_baixo">
+          <table>
+            <colgroup>
+              <col style="width: 18.2857%;">
+              <col style="width: 13.2857%;">
+              <col style="width: 18.2857%;">
+              <col style="width: 16.2857%;">
+              <col style="width: 16.2857%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>750</th>
+                <th style="text-align: left;">1.5k</th>
+                <th style="text-align: right;">3k</th>
+                <th style="text-align: right;">6k</th>
+                <th style="text-align: right;">Hz</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tabela_debaixo">
+    <div class="tab_a_left">
+      <table class="tab_medical">
+        <colgroup>
+          <col style="width: 13%;">
+          <col style="width: 13%;">
+          <col style="width: 13%;">
+          <col style="width: 13%;">
+          <col style="width: 48%;">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td class="m_history" colspan="4">Medical history:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="2">SRS</td>
+            <td>Right ear</td>
+            <td>Left ear</td>
+            <td>Binatural</td>
+            <td class="signature" rowspan="2"><label>Signature: <input type="text" placeholder="assine aqui"></label>
+            </td>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>%</td>
+            <td>%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab_a_right">
+      <table class="tabela_diresq">
+        <colgroup>
+          <col style="width: 20%;">
+          <col style="width: 20%;">
+          <col style="width: 20%;">
+          <col style="width: 20%;">
+          <col style="width: 20%;">
+        </colgroup>
         <tr>
-            <td class="col-name">
-                Nome: <input type="text" name="name" placeholder="escreva aqui...">
-            </td>
-            <td class="col-genero">
-                Género:
-                <select name="genero" id="genero">
-                    <option value="">-- Selecione --</option>
-                    <option value="male">Masculino</option>
-                    <option value="female">Feminino</option>
-                    <option value="other">Outros</option>
-                </select>
-            </td>
-            <td class="col-idade">
-                Idade: <input type="number" name="idade" min="0">
-            </td>
-            <td class="col-tel">
-                Telefone: <input type="tel" name="telefone" placeholder="escreva aqui...">
-            </td>
-            <td class="col-endereco">
-                Endereço: <input type="text" name="endereco" placeholder="escreva aqui...">
-            </td>
+          <td class="diagonal"></td>
+          <td colspan="2" class="header">Left Ear (Blue)</td>
+          <td colspan="2" class="header">Right Ear (Red)</td>
         </tr>
-    </table>
+        <tr>
+          <td class="header">AC:</td>
+          <td class="symbol">X</td>
+          <td class="symbol">□<br><span class="masked">(Masked)</span></td>
+          <td class="symbol">○</td>
+          <td class="symbol">△<br><span class="masked">(Masked)</span></td>
+        </tr>
+        <tr>
+          <td class="header">BC:</td>
+          <td class="symbol">&gt;</td>
+          <td class="symbol">]<br><span class="masked">(Masked)</span></td>
+          <td class="symbol">&lt;</td>
+          <td class="symbol">[<br><span class="masked">(Masked)</span></td>
+        </tr>
+      </table>
 
-    <div class="grid-container">
-
-        <!-- Tabela da esquerda -->
-        <div class="grid">
-            <h3>Right Ear (R)</h3>
-            <div class="horizontal_vertical">
-                <table>
-                    <colgroup>
-                        <col style="width: 18.2857%;">
-                        <col style="width: 13.2857%;">
-                        <col style="width: 18.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 11.2857%;">
-                        <col style="width: 6.2857%;">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>125</th>
-                            <th>250</th>
-                            <th>500</th>
-                            <th>1k</th>
-                            <th>2k</th>
-                            <th>4k</th>
-                            <th style="text-align: right;">8k</th>
-                        </tr>
-                    </thead>
-
-                </table>
-            </div>
-            <div class="double_tabela">
-                <div class="vertical_tabela">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>-10</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>40</td>
-                            </tr>
-                            <tr>
-                                <td>50</td>
-                            </tr>
-                            <tr>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td>70</td>
-                            </tr>
-                            <tr>
-                                <td>80</td>
-                            </tr>
-                            <tr>
-                                <td>90</td>
-                            </tr>
-                            <tr>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>110</td>
-                            </tr>
-                            <tr>
-                                <td>120</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="principal_tabela">
-                    <table>
-                        <colgroup>
-                            <col style="width: 1%;">
-                            <col style="width: 16.33%;">
-                            <col style="width: 16.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 1%;">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="horizontal_baixo">
-                <table>
-                    <colgroup>
-                        <col style="width: 18.2857%;">
-                        <col style="width: 13.2857%;">
-                        <col style="width: 18.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 16.2857%;">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>750</th>
-                            <th style="text-align: left;">1.5k</th>
-                            <th style="text-align: right;">3k</th>
-                            <th style="text-align: right;">6k</th>
-                            <th style="text-align: right;">Hz</th>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-        </div>
-
-        <!-- Tabela da direita -->
-        <div class="grid">
-            <h3>Left Ear (L)</h3>
-            <div class="horizontal_vertical">
-                <table>
-                    <colgroup>
-                        <col style="width: 18.2857%;">
-                        <col style="width: 13.2857%;">
-                        <col style="width: 18.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 11.2857%;">
-                        <col style="width: 6.2857%;">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>125</th>
-                            <th>250</th>
-                            <th>500</th>
-                            <th>1k</th>
-                            <th>2k</th>
-                            <th>4k</th>
-                            <th style="text-align: right;">8k</th>
-                        </tr>
-                    </thead>
-
-                </table>
-            </div>
-            <div class="double_tabela">
-                <div class="vertical_tabela">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>-10</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>40</td>
-                            </tr>
-                            <tr>
-                                <td>50</td>
-                            </tr>
-                            <tr>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td>70</td>
-                            </tr>
-                            <tr>
-                                <td>80</td>
-                            </tr>
-                            <tr>
-                                <td>90</td>
-                            </tr>
-                            <tr>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>110</td>
-                            </tr>
-                            <tr>
-                                <td>120</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="principal_tabela">
-                    <table>
-                        <colgroup>
-                            <col style="width: 1%;">
-                            <col style="width: 16.33%;">
-                            <col style="width: 16.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 9%;">
-                            <col style="width: 7.33%;">
-                            <col style="width: 1%;">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                                <th><input type="text"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="horizontal_baixo">
-                <table>
-                    <colgroup>
-                        <col style="width: 18.2857%;">
-                        <col style="width: 13.2857%;">
-                        <col style="width: 18.2857%;">
-                        <col style="width: 16.2857%;">
-                        <col style="width: 16.2857%;">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>750</th>
-                            <th style="text-align: left;">1.5k</th>
-                            <th style="text-align: right;">3k</th>
-                            <th style="text-align: right;">6k</th>
-                            <th style="text-align: right;">Hz</th>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-
-            
-
-
-        </div>
     </div>
+  </div>
 
 
-    <div class="tabela_debaixo">
-        <div class="tab_a_left">
-            <table class="tab_medical">
-                <colgroup>
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                    <col style="width: 48%;">
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <td class="m_history" colspan="4">Medical history:</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">SRS</td>
-                        <td>Right ear</td>
-                        <td>Left ear</td>
-                        <td>Binatural</td>
-                        <td class="signature" rowspan="2">Signature:</td>
-                    </tr>
-                    <tr>
-                        <td>%</td>
-                        <td>%</td>
-                        <td>%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="tab_a_right">
-            <table class="tabela_diresq">
-                <colgroup>
-                    <col style="width: 20%;">
-                    <col style="width: 20%;">
-                    <col style="width: 20%;">
-                    <col style="width: 20%;">
-                    <col style="width: 20%;">
-                </colgroup>
-                <tr>
-                    <td class="diagonal"></td>
-                    <td colspan="2" class="header">Left Ear (Blue)</td>
-                    <td colspan="2" class="header">Right Ear (Red)</td>
-                </tr>
-                <tr>
-                    <td class="header">AC:</td>
-                    <td class="symbol">X</td>
-                    <td class="symbol">□<br><span class="masked">(Masked)</span></td>
-                    <td class="symbol">○</td>
-                    <td class="symbol">△<br><span class="masked">(Masked)</span></td>
-                </tr>
-                <tr>
-                    <td class="header">BC:</td>
-                    <td class="symbol">&gt;</td>
-                    <td class="symbol">]<br><span class="masked">(Masked)</span></td>
-                    <td class="symbol">&lt;</td>
-                    <td class="symbol">[<br><span class="masked">(Masked)</span></td>
-                </tr>
-            </table>
-
-        </div>
-    </div>
-
-    
 
 </body>
 
