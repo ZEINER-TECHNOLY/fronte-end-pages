@@ -364,6 +364,12 @@ button:hover {
 /* ========== Responsividade ========== */
 
 @media (max-width: 480px) {
+  .processo input {
+    width: 50%;
+  }
+  .row input[type="date"] {
+    width: 50%;
+  }
   .grupo-condicional {
     gap: 8px;
     margin-bottom: 12px;
