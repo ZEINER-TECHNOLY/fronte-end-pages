@@ -81,27 +81,34 @@
     .oculos tbody tr:first-child td:nth-child(1) {
       border-right: none;
     }
+
     .oculos tbody tr:first-child td:nth-child(2) {
       border-left: none;
     }
+
     .oculos tbody tr:first-child td:nth-child(3) {
       border-right: none;
     }
+
     .oculos tbody tr:first-child td:nth-child(4) {
       border-left: none;
     }
+
     .oculos tbody tr:first-child td:nth-child(1),
     .oculos tbody tr:first-child td:nth-child(2) {
-      border-bottom: 0;;
+      border-bottom: 0;
+      ;
     }
 
     .oculos tbody tr:first-child+tr td:nth-child(1),
     .oculos tbody tr:first-child+tr td:nth-child(2) {
       border-top: 0;
     }
-     .oculos tbody tr:first-child td:nth-child(3),
+
+    .oculos tbody tr:first-child td:nth-child(3),
     .oculos tbody tr:first-child td:nth-child(4) {
-      border-bottom: 0;;
+      border-bottom: 0;
+      ;
     }
 
     .oculos tbody tr:first-child+tr td:nth-child(3),
@@ -116,20 +123,22 @@
       border: none;
       outline: none;
     }
-    .cor_olho td input[type="number"]{
+
+    .cor_olho td input[type="number"] {
       width: 25%;
       box-sizing: border-box;
       border-right: none;
       border-left: none;
       border-top: none;
-      border-bottom: 1px dashed black;    
-      outline: none;  
+      border-bottom: 1px dashed black;
+      outline: none;
     }
 
     .cor_olho tbody tr:nth-child(1) td:nth-child(1),
     .cor_olho tbody tr:nth-child(1) td:nth-child(2) {
       border-bottom: 0;
     }
+
     .cor_olho tbody tr:nth-child(2) td:nth-child(1),
     .cor_olho tbody tr:nth-child(2) td:nth-child(2) {
       border-top: 0;
@@ -169,7 +178,7 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
-    .grid input[type="text"]{
+    .grid input[type="text"] {
       width: 100%;
       outline: none;
       text-align: center;
@@ -207,9 +216,68 @@
     .footer {
       margin-top: 20px;
     }
+
     .note {
       font-size: 12px;
       color: var(--muted);
+    }
+
+    td:has(input:hover) {
+      background-color: #a2a3a3;
+      transition: 0.3s ease;
+    }
+
+
+
+    /* ============================= */
+    /* RESPONSIVIDADE PARA MOBILE */
+    /* ============================= */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .abaixo {
+        margin-top: 20px;
+        /* remove o espaço gigante */
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 14px;
+      }
+
+      .titulo {
+        font-size: 12px;
+      }
+
+      .bordered td,
+      .bordered th {
+        padding: 4px;
+        font-size: 11px;
+      }
+
+      table {
+        font-size: 11px;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        font-size: 11px;
+      }
+
+      .grid {
+        padding: 10px;
+      }
+
+      .footer h1 {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -482,16 +550,20 @@
               <td>Nº de erros: <input type="number"></td>
             </tr>
             <tr>
-              <td colspan="2">TIO: Olho direito <input type="number"> Olho esquerdo <input type="number" name="" id=""></td>
+              <td colspan="2">TIO: Olho direito <input type="number"> Olho esquerdo <input type="number" name="" id="">
+              </td>
             </tr>
             <tr>
-              <td colspan="2"><label>Diagnóstico: <textarea name="diag_percepcao" id="diag_percepcao" placeholder="escreva aqui..." rows="6"></textarea></label></td>
+              <td colspan="2"><label>Diagnóstico: <textarea name="diag_percepcao" id="diag_percepcao"
+                    placeholder="escreva aqui..." rows="6"></textarea></label></td>
             </tr>
             <tr>
-              <td colspan="2"><label>Recomendação: <textarea name="recom_percepcao" id="recom_percepcao" placeholder="escreva aqui..." rows="6"></textarea></label></td>
+              <td colspan="2"><label>Recomendação: <textarea name="recom_percepcao" id="recom_percepcao"
+                    placeholder="escreva aqui..." rows="6"></textarea></label></td>
             </tr>
             <tr>
-              <td colspan="2"><label>Assinatura Médico <input type="text" placeholder="assine aqui..." name="" id=""></label></td>
+              <td colspan="2"><label>Assinatura Médico <input type="text" placeholder="assine aqui..." name=""
+                    id=""></label></td>
             </tr>
           </tbody>
         </table>
@@ -503,13 +575,16 @@
         <table class="bordered audi_diag">
           <tbody>
             <tr>
-              <td colspan="2"><label>Diagnóstico: <textarea name="diag_audicao" id="diag_audicao" placeholder="escreva aqui..." rows="6"></textarea></label></td>
+              <td colspan="2"><label>Diagnóstico: <textarea name="diag_audicao" id="diag_audicao"
+                    placeholder="escreva aqui..." rows="6"></textarea></label></td>
             </tr>
             <tr>
-              <td colspan="2"><label>Recomendação: <textarea name="recom_audicao" id="recom_audicao" placeholder="escreva aqui..." rows="6"></textarea></label></td>
+              <td colspan="2"><label>Recomendação: <textarea name="recom_audicao" id="recom_audicao"
+                    placeholder="escreva aqui..." rows="6"></textarea></label></td>
             </tr>
             <tr>
-              <td colspan="2"><label>Assinatura Médico <input type="text" placeholder="assine aqui..." name="" id=""></label></td>
+              <td colspan="2"><label>Assinatura Médico <input type="text" placeholder="assine aqui..." name=""
+                    id=""></label></td>
             </tr>
           </tbody>
         </table>
@@ -521,10 +596,10 @@
 
   </div>
   <div class="footer">
-        <h1>Análises Clínicas</h1>
-        <hr>
-        <p class="note">ANAC-PEL Form 40-3 (August 2022)</p>
-      </div>
+    <h1>Análises Clínicas</h1>
+    <hr>
+    <p class="note">ANAC-PEL Form 40-3 (August 2022)</p>
+  </div>
 </body>
 
 </html>
