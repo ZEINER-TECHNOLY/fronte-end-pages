@@ -1,222 +1,382 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Identificação e Avaliação de Condições de Saúde</title>
-  <!-- Referência ao CSS externo (crie styles/form.css) -->
-  <link rel="stylesheet" href="styles/form.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    td,
+    th {
+      border: 1px solid #333;
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    .juncao {
+      display: flex;
+    }
+
+    .naLinha {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .txt_visao {
+      margin-top: 100px;
+    }
+
+    .txt_audicao {
+      margin-top: 20px;
+    }
+
+    .txt_membros_superiores {
+      margin-top: 30px;
+    }
+
+    .txt_movimento {
+      margin-top: 55px;
+    }
+
+    .txt_membros_inferiores {
+      margin-top: 35px;
+    }
+
+    .txt_coluna_vertebral {
+      margin-top: 20px;
+    }
+
+    .txt_aparelho_cardiovascular {
+      margin-top: 50px;
+    }
+
+    .txt_sistema_nervoso {
+      margin-top: 95px;
+    }
+
+    .txt_doencas {
+      margin-top: 30px;
+    }
+
+    .colchet {
+      position: relative;
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .colchet::before,
+    .colchet::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 1px;
+      background: #000;
+    }
+
+    .colchet::before {
+      top: 0;
+      left: 0;
+    }
+
+    .colchet::after {
+      bottom: 0;
+      left: 0;
+    }
+
+    .colchet {
+      border-left: 2px solid #000;
+    }
+
+    /* ===== INPUTS ===== */
+    input[type="text"] {
+      padding: 6px 10px;
+      border: 1px solid #888;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 180px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #005bbb;
+      box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+      outline: none;
+    }
+
+    /* ===== LABELS ===== */
+    label {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* ===== LISTAS ===== */
+    ul.listas {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.listas li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+   
+
+
+    .estad_mental {
+      margin-bottom: 20px;
+    }
+
+    .estad_mental input {
+      display: block;
+      width: 80%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .observaçoes_i {
+      width: 80%;
+      margin: 20px auto 0 auto;
+    }
+
+    .observaçoes_i input {
+      display: block;
+      width: 100%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+  </style>
+
 </head>
+
 <body>
-  <main class="container">
-    <h1>Identificação, Avaliação de Condições de Saúde e Aptidão</h1>
+  <h1 style="color: #0d62b6;">Identificação, Avaliação de Condições de Saúde e Aptidão</h1>
 
-    <form id="ficha-saude">
-      <section class="bloco">
-        <h2>Identificação</h2>
-        <label>Nome completo
-          <input type="text" name="nome" />
-        </label>
-        <label>Data de nascimento
-          <input type="date" name="data_nasc" />
-        </label>
-        <label>Sexo
-          <select name="sexo">
-            <option value="">—</option>
-            <option value="M">Masculino</option>
-            <option value="F">Feminino</option>
-            <option value="O">Outro</option>
-          </select>
-        </label>
-      </section>
+  <table>
+    <tr>
+      <th></th>
+      <th>Lado direito</th>
+      <th>Lado esquerdo</th>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <div class="naLinha">
+          <div class="txt_visao">
+            <label for="visao_i">Visão</label>
+            <input type="text" id="visao_i" name="visao_i">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>
+                <div>Acuidade</div>
+                <div class="juncao">
+                  <div class="colchet"></div>
+                  <ul class="listas">
+                    <li>Sem correção <input type="text" name="sem_correcao"> 10 <input type="text" name="sem_correcao">
+                      10</li>
+                    <li>Com correção <input type="text" name="com_correcao"> 10 <input type="text" name="com_correcao">
+                      10</li>
 
-      <section class="bloco">
-        <h2>Visão</h2>
-        <div class="campo-row">
-          <fieldset>
-            <legend>Acuidades</legend>
-
-            <div class="acuidade">
-              <label>Olho direito — Sem correção
-                <input type="text" name="visao_d_sem" placeholder="ex: 1.0 / 10" />
-              </label>
-
-              <label>Olho direito — Com correção
-                <input type="text" name="visao_d_com" placeholder="ex: 1.0 / 10" />
-              </label>
-
-              <label>Olho esquerdo — Sem correção
-                <input type="text" name="visao_e_sem" placeholder="ex: 1.0 / 10" />
-              </label>
-
-              <label>Olho esquerdo — Com correção
-                <input type="text" name="visao_e_com" placeholder="ex: 1.0 / 10" />
-              </label>
-            </div>
-
-            <label>Senso cromático
-              <input type="text" name="senso_cromatico" />
-            </label>
-            <label>Nistagmo
-              <input type="text" name="nistagmo" />
-            </label>
-            <label>Inflamações crónicas
-              <input type="text" name="inflamacoes" />
-            </label>
-            <label>Anomalias físicas ou funcionais
-              <textarea name="anomalias" rows="2"></textarea>
-            </label>
-          </fieldset>
+                  </ul>
+              </li>
+              <li>Senso cromático <input type="text" name="senso_cromatico"></li>
+              <li>Nistagmo <input type="text" name="nistagmo"></li>
+              <li>Inflamações crónicas <input type="text" name="inflamacoes_cronicas"></li>
+              <li>Anomalias físicas ou funcionais <input type="text" name="anomalias_funcionais"></li>
+            </ul>
+          </div>
         </div>
-      </section>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <th>Metros</th>
+      <th>Metros</th>
+    </tr>
+    <tr>
+      <td>
+        <div class="naLinha">
+          <div class="txt_audicao">
+            <label for="audicao_i">Audição</label>
+            <input type="text" id="audicao_i" name="audicao_i">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Sem correção <input type="text" name="sem_correcao"></li>
+              <li>Com correção <input type="text" name="com_correcao"></li>
 
-      <section class="bloco">
-        <h2>Audição</h2>
-        <label>Voz citada
-          <input type="text" name="voz_citada" />
-        </label>
-        <label>Sem correção
-          <input type="text" name="audicao_sem" />
-        </label>
-        <label>Com correção
-          <input type="text" name="audicao_com" />
-        </label>
-      </section>
+            </ul>
+          </div>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="naLinha">
+          <div class="txt_membros_superiores">
+            <label for="membros_superiores">Membros superiores</label>
+            <input type="text" id="membros_superiores" name="membros_superiores">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Deformidade articulares e segmentares</li>
+            </ul>
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Braço <input type="text" name="braco"></li>
+              <li>Anteraço <input type="text" name="antebraco"></li>
+              <li>Mão <input type="text" name="mao"></li>
+            </ul>
+          </div>
+        </div>
 
-      <section class="bloco">
-        <h2>Membros Superiores</h2>
-        <label>Deformidade articulares e segmentares
-          <input type="text" name="ms_deformidade" />
-        </label>
-        <label>Braço
-          <input type="text" name="ms_braco" />
-        </label>
-        <label>Antebraço
-          <input type="text" name="ms_antebraco" />
-        </label>
-        <label>Mão
-          <input type="text" name="ms_mao" />
-        </label>
+        <div class="naLinha">
+          <div class="txt_movimento">
+            <label for="movimento">Movimento</label>
+            <input type="text" id="movimento" name="movimento">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Flexão <input type="text" name="flexao"></li>
+              <li>Extensão <input type="text" name="extensao"></li>
+              <li>Pronação <input type="text" name="pronacao"></li>
+              <li>Supinação <input type="text" name="supinacao"></li>
 
-        <fieldset>
-          <legend>Movimentos</legend>
-          <label>Flexão <input type="checkbox" name="ms_flexao" value="1" /></label>
-          <label>Extensão <input type="checkbox" name="ms_extensao" value="1" /></label>
-          <label>Pronação <input type="checkbox" name="ms_pronacao" value="1" /></label>
-          <label>Supinação <input type="checkbox" name="ms_supinacao" value="1" /></label>
-        </fieldset>
-      </section>
+            </ul>
+          </div>
+        </div>
 
-      <section class="bloco">
-        <h2>Membros Inferiores</h2>
-        <label>Deformidade articulares e segmentares
-          <input type="text" name="mi_deformidade" />
-        </label>
-        <label>Coxa
-          <input type="text" name="mi_coxa" />
-        </label>
-        <label>Perna
-          <input type="text" name="mi_perna" />
-        </label>
-        <label>Pé
-          <input type="text" name="mi_pe" />
-        </label>
+        <div class="naLinha">
+          <div class="txt_membros_inferiores">
+            <label for="membros_inferiores">Membros inferiores</label>
+            <input type="text" id="membros_inferiores" name="membros_inferiores">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Deformidade articulares e segmentares</li>
+            </ul>
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Coxa <input type="text" name="coxa"></li>
+              <li>Perna <input type="text" name="perna"></li>
+              <li>Pé <input type="text" name="pe"></li>
+            </ul>
+          </div>
+        </div>
 
-        <fieldset>
-          <legend>Movimentos</legend>
-          <label>Flexão <input type="checkbox" name="mi_flexao" value="1" /></label>
-          <label>Extensão <input type="checkbox" name="mi_extensao" value="1" /></label>
-        </fieldset>
-      </section>
+        <div class="naLinha">
+          <div class="txt_coluna_vertebral">
+            <label for="coluna_vertebral">Coluna vertebral</label>
+            <input type="text" id="coluna_vertebral" name="coluna_vertebral">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Deformidade <input type="text" name="deformidade"></li>
+              <li>Movimentos activos <input type="text" name="movimentos_activos"></li>
+            </ul>
+          </div>
+        </div>
 
-      <section class="bloco">
-        <h2>Coluna Vertebral</h2>
-        <label>Deformidade
-          <input type="text" name="coluna_deformidade" />
-        </label>
-        <label>Movimentos activos
-          <input type="text" name="coluna_mov_ativos" />
-        </label>
-      </section>
+        <div class="naLinha">
+          <div class="txt_aparelho_cardiovascular">
+            <label for="aparelho_cardiovascular">Aparelho cardiovascular</label>
+            <input type="text" id="aparelho_cardiovascular" name="aparelho_cardiovascular">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Lesões valvulares <input type="text" name="lesoes_valvulares"></li>
+              <li>Arritmia <input type="text" name="arritmia"></li>
+              <li>Doenças dos vasos <input type="text" name="doencas_vasos"></li>
+              <li>Tensão arterial <input type="text" name="tensao_arterial"></li>
+            </ul>
+          </div>
+        </div>
 
-      <section class="bloco">
-        <h2>Aparelho Cardiovascular</h2>
-        <label>Lesões valvulares
-          <input type="text" name="card_lesoes" />
-        </label>
-        <label>Arritmia
-          <input type="text" name="card_arritmia" />
-        </label>
-        <label>Doenças dos vasos
-          <input type="text" name="card_vasos" />
-        </label>
-        <label>Tensão arterial
-          <input type="text" name="card_tensao" />
-        </label>
-      </section>
+        <div class="naLinha">
+          <div class="txt_sistema_nervoso">
+            <label for="sistema_nervoso">Sistema nervoso</label>
+            <input type="text" id="sistema_nervoso" name="sistema_nervoso">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Marcha <input type="text" name="marcha"></li>
+              <li>Tremores <input type="text" name="tremores"></li>
+              <li>Reflexos <input type="text" name="reflexos"></li>
+              <li>Sinais de rombeg <input type="text" name="sinais_rombeg"></li>
+              <li>Prova dedo-nariz <input type="text" name="prova_dedo_nariz"></li>
+              <li>Prova calcanhar-joelho <input type="text" name="prova_calcanhar_joelho"></li>
+              <li>Estigmas de epilepsia <input type="text" name="estigmas_epilepsia"></li>
+            </ul>
+          </div>
+        </div>
 
-      <section class="bloco">
-        <h2>Sistema Nervoso</h2>
-        <label>Marcha
-          <input type="text" name="sist_marcha" />
-        </label>
-        <label>Tremores
-          <input type="text" name="sist_tremores" />
-        </label>
-        <label>Reflexos
-          <input type="text" name="sist_reflexos" />
-        </label>
-        <label>Sinais de Romberg
-          <input type="text" name="sist_romberg" />
-        </label>
-        <label>Prova dedo-nariz
-          <input type="text" name="sist_dedonariz" />
-        </label>
-        <label>Prova calcanhar-joelho
-          <input type="text" name="sist_calcanhar" />
-        </label>
-        <label>Estigmas de epilepsia
-          <input type="text" name="sist_epilepsia" />
-        </label>
-      </section>
+        <div class="estad_mental">
+          <label for="estado_mental">Estado mental</label>
+          <input type="text" id="estado_mental" name="estado_mental">
+        </div>
 
-      <section class="bloco">
-        <h2>Estado Mental</h2>
-        <label>Observações sobre o estado mental
-          <textarea name="estado_mental" rows="3"></textarea>
-        </label>
-      </section>
 
-      <section class="bloco">
-        <h2>Doenças crónicas ou com carácter progressivo</h2>
-        <label>Descrição
-          <textarea name="doencas_cronicas" rows="3" placeholder="Doenças que diminuem a capacidade para conduzir"></textarea>
-        </label>
+        <div class="naLinha">
+          <div class="txt_doencas">
+            <label for="doencas_capac_conduzir">Doenças crónicas ou com carácter progressivo que diminuam a capacidade
+              para conduzir</label>
+            <input type="text" id="doencas_capac_conduzir" name="doencas_capac_conduzir">
+          </div>
+          <div class="juncao">
+            <div class="colchet"></div>
+            <ul class="listas">
+              <li>Tuberculose pulmonar <input type="text" name="tuberculose_pulmonar"></li>
+              <li>Reumatismos (articulares) <input type="text" name="reumatismo"></li>
+            </ul>
+          </div>
+        </div>
 
-        <label>Tuberculose pulmonar
-          <input type="checkbox" name="tuberculose" value="1" />
-        </label>
-        <label>Reumatismos (articulares)
-          <input type="checkbox" name="reumatismos" value="1" />
-        </label>
-      </section>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
 
-      <section class="bloco">
-        <h2>Observações Gerais</h2>
-        <textarea name="observacoes" rows="4"></textarea>
-      </section>
+  </table>
 
-      <div class="acoes">
-        <button type="submit">Guardar</button>
-        <button type="reset">Limpar</button>
-      </div>
-    </form>
+  <div class="observaçoes_i">
+    <label for="observaçoes_i">Observações:</label>
+    <input type="text" id="observaçoes_i" name="observaçoes_i">
+    <input type="text" id="observaçoes_i" name="observaçoes_i">
+    <input type="text" id="observaçoes_i" name="observaçoes_i">
+  </div>
 
-    <a href="../index.html" class="btn-voltar">⬅ Voltar à Página Inicial</a>
-  </main>
-
-  <footer class="rodape">
-    <small>Formulário gerado com base numa ficha de avaliação médica.</small>
-  </footer>
 </body>
+
 </html>
