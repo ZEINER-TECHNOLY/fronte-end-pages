@@ -166,6 +166,32 @@
       border-left: none;
       border-right: none;
     }
+
+    .btn_ident {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 30px;
+      margin-right: 130px;
+      background-color: #007BFF;
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn_ident:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+      /* leve efeito ao passar o mouse */
+    }
+
+    .btn_ident:active {
+      background-color: #003d80;
+      /* azul ainda mais escuro */
+      transform: translateY(0);
+      /* remove o efeito ao clicar */
+    }
   </style>
 
 </head>
@@ -375,9 +401,14 @@
   <div class="observaçoes_i">
     <label for="observaçoes_i">Observações:</label>
     <input type="text" id="observaçoes_i" name="observaçoes_i">
-    <input type="text" >
-    <input type="text" >
+    <input type="text">
+    <input type="text">
   </div>
+
+  <div style="text-align: right;">
+    <a href="ficha_identificacao_2.html" class="btn_ident">Continuar parte 2</a>
+  </div>
+
 
 </body>
 
