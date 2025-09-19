@@ -2,463 +2,593 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Identificação e Avaliação de Condições de Saúde</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        body {
-            padding: 20px;
-        }
+    body {
+      padding: 20px;
+    }
 
-        .principal_flex {
-            display: flex;
-            gap: 30px;
-            margin: 50px auto 95px auto;
-            width: 85%;
-        }
+    .principal_flex {
+      display: flex;
+      gap: 30px;
+      margin: 50px auto 95px auto;
+      width: 85%;
+    }
 
-        .colunas_conteudo {
-            display: flex;
-            flex-direction: column;
-        }
+    .colunas_conteudo {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .primeira_coluna {
-            display: flex;
-            margin-bottom: 40px;
-        }
+    .primeira_coluna {
+      display: flex;
+      margin-bottom: 40px;
+    }
 
-        .coluna_de_cima {
-            flex: 1;
-        }
+    .coluna_de_cima {
+      flex: 1;
+    }
 
-        .right_texto {
-            margin-top: 140px;
-        }
+    .right_texto {
+      margin-top: 140px;
+    }
 
-        .colchet {
-            position: relative;
-            width: 20px;
-            margin-right: 10px;
-        }
+    .colchet {
+      position: relative;
+      width: 20px;
+      margin-right: 10px;
+    }
 
-        .colchet::before,
-        .colchet::after {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 1px;
-            background: #000;
-        }
+    .colchet::before,
+    .colchet::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 1px;
+      background: #000;
+    }
 
-        .colchet::before {
-            top: 0;
-            left: 0;
-        }
+    .colchet::before {
+      top: 0;
+      left: 0;
+    }
 
-        .colchet::after {
-            bottom: 0;
-            left: 0;
-        }
+    .colchet::after {
+      bottom: 0;
+      left: 0;
+    }
 
-        .colchet {
-            border-left: 2px solid #000;
-        }
+    .colchet {
+      border-left: 2px solid #000;
+    }
 
-        /* ===== INPUTS ===== */
-        input[type="text"] {
-            padding: 6px 10px;
-            border: 1px solid #888;
-            border-radius: 6px;
-            font-size: 14px;
-            width: 180px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
+    /* ===== INPUTS ===== */
+    input[type="text"] {
+      padding: 6px 10px;
+      border: 1px solid #888;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 180px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
 
-        input[type="text"]:focus {
-            border-color: #005bbb;
-            box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
-            outline: none;
-        }
+    input[type="text"]:focus {
+      border-color: #005bbb;
+      box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+      outline: none;
+    }
 
-        .motivos_da_proposta input {
-            display: block;
-            width: 100%;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            margin-top: 5px;
-        }
+    .motivos_da_proposta input {
+      display: block;
+      width: 100%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-top: 5px;
+    }
 
-        .right_texto input {
-            display: block;
-            width: 100%;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            margin-top: 5px;
-        }
+    .right_texto input {
+      display: block;
+      width: 100%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-top: 5px;
+    }
 
-        .linhaI {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
+    .linhaI {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
 
-        .linhaI label {
-            white-space: nowrap;
-            margin-right: 6px;
-        }
+    .linhaI label {
+      white-space: nowrap;
+      margin-right: 6px;
+    }
 
-        .linhaI input {
-            flex: 1;
-            border: none;
-            border-bottom: 1px solid #000;
-            background: transparent;
-        }
+    .linhaI input {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid #000;
+      background: transparent;
+    }
 
-        table.caixinhas {
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-        }
+    table.caixinhas {
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
 
-        .caixinhas td {
-            width: 32px;
-            height: 22px;
-            border: 1px solid #000;
-            text-align: center;
-            vertical-align: middle;
-            padding: 0;
-        }
+    .caixinhas td {
+      width: 32px;
+      height: 22px;
+      border: 1px solid #000;
+      text-align: center;
+      vertical-align: middle;
+      padding: 0;
+    }
 
-        .caixinhas input {
-            width: 100%;
-            height: 100%;
-            border: none;
-            text-align: center;
-            font-size: 12px;
-            background: transparent;
-        }
+    .caixinhas input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      text-align: center;
+      font-size: 12px;
+      background: transparent;
+    }
 
-        .fixo {
-            background: #ddd;
-            font-weight: bold;
-        }
+    .fixo {
+      background: #ddd;
+      font-weight: bold;
+    }
 
-        .assinatura_medico {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
+    .assinatura_medico {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
 
-        }
+    }
 
-        .assinatura_medico input {
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            margin-top: 5px;
-            padding: 5px;
-            width: 50%;
-        }
+    .assinatura_medico input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-top: 5px;
+      padding: 5px;
+      width: 50%;
+    }
 
-        .assi_saude {
-            margin-top: 30px;
-        }
-        .assi_saude input {
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            margin-top: 5px;
-            padding: 5px;
-        }
+    .assi_saude {
+      margin-top: 30px;
+    }
+
+    .assi_saude input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-top: 5px;
+      padding: 5px;
+    }
 
 
-        input.diferente {
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            margin-top: 5px;
-            padding: 5px;
-            width: 82%;
-        }
+    input.diferente {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-top: 5px;
+      padding: 5px;
+      width: 82%;
+    }
 
-        .assi_saude span {
-            margin: 0 5px;
-        }
+    .assi_saude span {
+      margin: 0 5px;
+    }
 
-        .right_flex {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
+    .right_flex {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
 
-        .right_flex input {
-            flex: 1;
-            margin-left: 5px;
-        }
-    </style>
+    .right_flex input {
+      flex: 1;
+      margin-left: 5px;
+    }
+
+
+
+    /*       RESPONSIVIDADE     */
+    /* ======================== */
+
+    /* Tablets (até 1024px) */
+    @media (max-width: 1024px) {
+      .principal_flex {
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+        margin: 30px auto;
+      }
+
+      .tabela-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        /* ativa rolagem horizontal */
+        -webkit-overflow-scrolling: touch;
+        /* scroll suave no iOS */
+      }
+
+      .tabela-wrapper table {
+        min-width: 500px;
+        /* garante que não "quebre" demais */
+      }
+
+      .colunas_conteudo {
+        width: 100%;
+      }
+
+      .right_texto {
+        margin-top: 20px;
+        /* tira aquele espaço gigante no tablet */
+        width: 100%;
+      }
+
+      .linhaI {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .linhaI input {
+        width: 100%;
+      }
+
+      .motivos_da_proposta input,
+      .assi_saude input,
+      .assinatura_medico input {
+        width: 100%;
+      }
+    }
+
+    /* Mobile (até 768px) */
+    @media (max-width: 768px) {
+      .principal_flex {
+        flex-direction: column;
+        width: 80%;
+        gap: 15px;
+      }
+
+      .tabela-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        /* ativa rolagem horizontal */
+        -webkit-overflow-scrolling: touch;
+        /* scroll suave no iOS */
+      }
+
+      .tabela-wrapper table {
+        min-width: 500px;
+        /* garante que não "quebre" demais */
+      }
+
+      .colchet {
+        display: none;
+        /* esconder colchetes no mobile */
+      }
+
+      .linhaI {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .linhaI label {
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100% !important;
+      }
+
+      .caixinhas td {
+        width: 24px;
+        height: 20px;
+      }
+
+      .assinatura_medico input,
+      .assi_saude input {
+        width: 100% !important;
+      }
+    }
+
+    /* Mobile bem pequeno (até 480px) */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .tabela-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        /* ativa rolagem horizontal */
+        -webkit-overflow-scrolling: touch;
+        /* scroll suave no iOS */
+      }
+
+      .tabela-wrapper table {
+        min-width: 500px;
+        /* garante que não "quebre" demais */
+      }
+
+      .caixinhas td {
+        width: 20px;
+        height: 18px;
+      }
+
+      label {
+        font-size: 13px;
+      }
+
+      input[type="text"] {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="principal_flex">
-        <div class="right_texto">
-            <label for="resultado_inspec_medico">Parecer da junta médica realizada na</label>
-            <input type="text" name="resultado_inspec_medico" id="resultado_inspec_medico">
-        </div>
-        <div class="colchet"></div>
-        <div class="colunas_conteudo">
-            <div class="primeira_coluna">
-                <div class="colchet"></div>
-                <div class="coluna_de_cima">
-                    <div class="linhaI">
-                        <label for="inapto">Inapto</label>
-                        <input type="text" id="inapto" name="inapto">
-                    </div>
-
-                    <div class="linhaI">
-                        <label for="condicoes">Apto. Condições a impor</label>
-                        <input type="text" id="condicoes" name="condicoes[]">
-                    </div>
-
-                    <div class="linhaI">
-                        <input type="text" name="condicoes[]">
-                    </div>
-
-                    <div class="linhaI">
-                        <input type="text" name="condicoes[]">
-                    </div>
-
-                    <div class="linhaI">
-                        <label for="inspecao">Proposto para inspecção especial na</label>
-                        <input type="text" id="inspecao" name="inspecao">
-                    </div>
-
-                    <div class="linhaI">
-                        <label for="saude">de Saúde de</label>
-                        <input type="text" id="saude" name="saude">
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="motivos_da_proposta">
-                <label for="motivos_proposta">Motivos da proposta</label>
-                <input type="text" name="motivos_proposta" id="motivos_proposta">
-                <input type="text" name="motivos_proposta">
-                <input type="text" name="motivos_proposta">
-                <input type="text" name="motivos_proposta">
-                <input type="text" name="motivos_proposta">
-                <input type="text" name="motivos_proposta">
-            </div>
-
-            <table class="caixinhas">
-                <tr>
-                    <!-- Dia -->
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-
-                    <!-- Texto fixo DE -->
-                    <td class="fixo">D</td>
-                    <td class="fixo">E</td>
-
-
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-
-                    <!-- Texto fixo 20 -->
-                    <td class="fixo">2</td>
-                    <td class="fixo">0</td>
-
-                    <!-- Ano (últimos 2 dígitos) -->
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                </tr>
-            </table>
-
-            <div class="assinatura_medico">
-                <label style="color: #005bbb;" for="o_medico">O MÉDICO</label>
-                <input type="text" name="o_medico" id="o_medico" placeholder="assine aqui">
-            </div>
-        </div>
+  <div class="principal_flex">
+    <div class="right_texto">
+      <label for="resultado_inspec_medico">Resultado da inspecção normal realizada pelo médico</label>
+      <input type="text" name="resultado_inspec_medico" id="resultado_inspec_medico">
     </div>
-    <div class="principal_flex">
-        <div class="right_texto">
-            <div class="right_flex">
-                <label for="parecer_da">Parecer da</label>
-                <input type="text" name="parecer_da" id="parecer_da">
-            </div>
-
-            <div class="right_flex">
-                <label for="de_saude"> de Saúde de </label>
-                <input type="text" name="de_saude" id="de_saude">
-            </div>
-        </div>
+    <div class="colchet"></div>
+    <div class="colunas_conteudo">
+      <div class="primeira_coluna">
         <div class="colchet"></div>
-        <div class="colunas_conteudo">
-            <div class="primeira_coluna">
-                <div class="colchet"></div>
-                <div class="coluna_de_cima">
-                    <div class="linhaI">
-                        <label for="inapto_2">Inapto</label>
-                        <input type="text" id="inapto_2" name="inapto_2">
-                    </div>
+        <div class="coluna_de_cima">
+          <div class="linhaI">
+            <label for="inapto">Inapto</label>
+            <input type="text" id="inapto" name="inapto">
+          </div>
 
-                    <div class="linhaI">
-                        <label for="condicoes_2">Apto. Condições a impor</label>
-                        <input type="text" id="condicoes_2" name="condicoes_2[]">
-                    </div>
+          <div class="linhaI">
+            <label for="condicoes">Apto. Condições a impor</label>
+            <input type="text" id="condicoes" name="condicoes[]">
+          </div>
 
-                    <div class="linhaI">
-                        <input type="text" name="condicoes_2[]">
-                    </div>
+          <div class="linhaI">
+            <input type="text" name="condicoes[]">
+          </div>
 
-                    <div class="linhaI">
-                        <input type="text" name="condicoes_2[]">
-                    </div>
+          <div class="linhaI">
+            <input type="text" name="condicoes[]">
+          </div>
 
-                    <div class="linhaI">
-                        <label for="inspecao_2">Proposto para inspecção especial na</label>
-                        <input type="text" id="inspecao_2" name="inspecao_2">
-                    </div>
+          <div class="linhaI">
+            <label for="inspecao">Proposto para inspecção especial na</label>
+            <input type="text" id="inspecao" name="inspecao">
+          </div>
 
-                    <div class="linhaI">
-                        <label for="saude_2">de Saúde de</label>
-                        <input type="text" id="saude_2" name="saude_2">
-                    </div>
+          <div class="linhaI">
+            <label for="saude">de Saúde de</label>
+            <input type="text" id="saude" name="saude">
+          </div>
 
-                </div>
-            </div>
-
-            <div class="motivos_da_proposta">
-                <label for="motivos_proposta_2">Motivos da proposta</label>
-                <input type="text" name="motivos_proposta" id="motivos_proposta_2">
-                <input type="text" name="motivos_proposta_2">
-                <input type="text" name="motivos_proposta_2">
-                <input type="text" name="motivos_proposta_2">
-                <input type="text" name="motivos_proposta_2">
-                <input type="text" name="motivos_proposta_2">
-            </div>
-
-            <table class="caixinhas">
-                <tr>
-                    <!-- Dia -->
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-
-                    <!-- Texto fixo DE -->
-                    <td class="fixo">D</td>
-                    <td class="fixo">E</td>
-
-
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-
-                    <!-- Texto fixo 20 -->
-                    <td class="fixo">2</td>
-                    <td class="fixo">0</td>
-
-                    <!-- Ano (últimos 2 dígitos) -->
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                </tr>
-            </table>
-
-            <div class="assi_saude">
-                <span>O</span><input type="text"><span>de Saúde,</span> <input type="text"><br>
-                <input class="assi_saude diferente" type="text">
-            </div>
         </div>
+      </div>
+
+      <div class="motivos_da_proposta">
+        <label for="motivos_proposta">Motivos da proposta</label>
+        <input type="text" name="motivos_proposta" id="motivos_proposta">
+        <input type="text" name="motivos_proposta">
+        <input type="text" name="motivos_proposta">
+        <input type="text" name="motivos_proposta">
+        <input type="text" name="motivos_proposta">
+        <input type="text" name="motivos_proposta">
+      </div>
+
+      
+        <div class="tabela-wrapper">
+          <table class="caixinhas">
+            <tr>
+              <!-- Dia -->
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <!-- Texto fixo DE -->
+              <td class="fixo">D</td>
+              <td class="fixo">E</td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+              <!-- Texto fixo 20 -->
+              <td class="fixo">2</td>
+              <td class="fixo">0</td>
+              <!-- Ano (últimos 2 dígitos) -->
+              <td><input type="text" maxlength="1"></td>
+              <td><input type="text" maxlength="1"></td>
+            </tr>
+          </table>
+        </div>
+      
+
+      <div class="assinatura_medico">
+        <label style="color: #005bbb;" for="o_medico">O MÉDICO</label>
+        <input type="text" name="o_medico" id="o_medico" placeholder="assine aqui">
+      </div>
     </div>
+  </div>
+  <div class="principal_flex">
+    <div class="right_texto">
+      <div class="right_flex">
+        <label for="parecer_da">Parecer da</label>
+        <input type="text" name="parecer_da" id="parecer_da">
+      </div>
 
-    <div class="principal_flex">
-        <div class="right_texto">
-            <div class="right_flex">
-                <label for="parecer_da_junta">Parecer da junta médica realizada na</label>
-                <input type="text" name="parecer_da_junta" id="parecer_da_junta">
-            </div>
-
-            <div class="right_flex">
-                <label for="de_saude_de"> de Saúde de </label>
-                <input type="text" name="de_saude_de" id="de_saude_de">
-            </div>
-        </div>
+      <div class="right_flex">
+        <label for="de_saude"> de Saúde de </label>
+        <input type="text" name="de_saude" id="de_saude">
+      </div>
+    </div>
+    <div class="colchet"></div>
+    <div class="colunas_conteudo">
+      <div class="primeira_coluna">
         <div class="colchet"></div>
-        <div class="colunas_conteudo">
+        <div class="coluna_de_cima">
+          <div class="linhaI">
+            <label for="inapto_2">Inapto</label>
+            <input type="text" id="inapto_2" name="inapto_2">
+          </div>
 
-            <div class="motivos_da_proposta">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
+          <div class="linhaI">
+            <label for="condicoes_2">Apto. Condições a impor</label>
+            <input type="text" id="condicoes_2" name="condicoes_2[]">
+          </div>
 
-            <table class="caixinhas">
-                <tr>
-                    <!-- Dia -->
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
+          <div class="linhaI">
+            <input type="text" name="condicoes_2[]">
+          </div>
 
-                    <!-- Texto fixo DE -->
-                    <td class="fixo">D</td>
-                    <td class="fixo">E</td>
+          <div class="linhaI">
+            <input type="text" name="condicoes_2[]">
+          </div>
 
+          <div class="linhaI">
+            <label for="inspecao_2">Proposto para inspecção especial na</label>
+            <input type="text" id="inspecao_2" name="inspecao_2">
+          </div>
 
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
+          <div class="linhaI">
+            <label for="saude_2">de Saúde de</label>
+            <input type="text" id="saude_2" name="saude_2">
+          </div>
 
-                    <!-- Texto fixo 20 -->
-                    <td class="fixo">2</td>
-                    <td class="fixo">0</td>
-
-                    <!-- Ano (últimos 2 dígitos) -->
-                    <td><input type="text" maxlength="1"></td>
-                    <td><input type="text" maxlength="1"></td>
-                </tr>
-            </table>
-
-            <div class="assinatura_medico">
-                <label style="color: #005bbb;" for="">Os membros da Junta Médica</label>
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
         </div>
+      </div>
+
+      <div class="motivos_da_proposta">
+        <label for="motivos_proposta_2">Motivos da proposta</label>
+        <input type="text" name="motivos_proposta" id="motivos_proposta_2">
+        <input type="text" name="motivos_proposta_2">
+        <input type="text" name="motivos_proposta_2">
+        <input type="text" name="motivos_proposta_2">
+        <input type="text" name="motivos_proposta_2">
+        <input type="text" name="motivos_proposta_2">
+      </div>
+
+      <div class="tabela-wrapper">
+        <table class="caixinhas">
+          <tr>
+            <!-- Dia -->
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <!-- Texto fixo DE -->
+            <td class="fixo">D</td>
+            <td class="fixo">E</td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <!-- Texto fixo 20 -->
+            <td class="fixo">2</td>
+            <td class="fixo">0</td>
+            <!-- Ano (últimos 2 dígitos) -->
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="assi_saude">
+        <span>O</span><input type="text"><span>de Saúde,</span> <input type="text"><br>
+        <input class="assi_saude diferente" type="text">
+      </div>
     </div>
+  </div>
+
+  <div class="principal_flex">
+    <div class="right_texto">
+      <div class="right_flex">
+        <label for="parecer_da_junta">Parecer da junta médica realizada na</label>
+        <input type="text" name="parecer_da_junta" id="parecer_da_junta">
+      </div>
+
+      <div class="right_flex">
+        <label for="de_saude_de"> de Saúde de </label>
+        <input type="text" name="de_saude_de" id="de_saude_de">
+      </div>
+    </div>
+    <div class="colchet"></div>
+    <div class="colunas_conteudo">
+
+      <div class="motivos_da_proposta">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </div>
+
+      <div class="tabela-wrapper">
+        <table class="caixinhas">
+          <tr>
+            <!-- Dia -->
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <!-- Texto fixo DE -->
+            <td class="fixo">D</td>
+            <td class="fixo">E</td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+            <!-- Texto fixo 20 -->
+            <td class="fixo">2</td>
+            <td class="fixo">0</td>
+            <!-- Ano (últimos 2 dígitos) -->
+            <td><input type="text" maxlength="1"></td>
+            <td><input type="text" maxlength="1"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="assinatura_medico">
+        <label style="color: #005bbb;" for="">Os membros da Junta Médica</label>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
