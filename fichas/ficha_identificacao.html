@@ -192,6 +192,101 @@
       transform: translateY(0);
       /* remove o efeito ao clicar */
     }
+
+
+    @media (max-width: 1024px) {
+      body {
+        padding: 15px;
+      }
+
+      table {
+        width: 95%;
+        /* ocupa mais espaço da tela */
+      }
+
+      input[type="text"] {
+        width: 150px;
+        /* inputs menores */
+      }
+
+      label {
+        font-size: 14px;
+      }
+
+      .btn_ident {
+        margin-right: 0;
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 80%;
+      }
+      
+    }
+
+    /* Mobile (até 768px) */
+    @media (max-width: 768px) {
+      table {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .naLinha {
+        flex-direction: column;
+        /* quebra em colunas no mobile */
+        gap: 10px;
+      }
+
+      input[type="text"] {
+        width: 95%;
+      }
+
+      .observaçoes_i {
+        width: 100%;
+      }
+
+      .btn_ident {
+        display: block;
+        margin: 20px auto 0 auto;
+        /* botão centralizado */
+        width: 100%;
+        text-align: center;
+      }
+      .btn_ident {
+        width: 80%;
+      }
+    }
+
+    /* Mobile pequeno (até 480px) */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      h1.titulo_main {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      label {
+        font-size: 13px;
+      }
+
+      table,
+      td,
+      th {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      input[type="text"] {
+        font-size: 13px;
+        padding: 5px;
+        width: 95%;
+      }
+
+      .btn_ident {
+        width: 80%;
+      }
+    }
   </style>
 
 </head>
